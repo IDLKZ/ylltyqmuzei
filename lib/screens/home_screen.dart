@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vertical_card_pager/vertical_card_pager.dart';
 import 'package:welcome/models/halls.dart';
 import 'package:welcome/services/api.dart';
 import 'package:welcome/mixins/mixins.dart';
@@ -11,9 +12,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   late Future<HallList> halls;
-
   @override
   void initState() {
     // TODO: implement initState
@@ -35,31 +34,39 @@ class _HomeScreenState extends State<HomeScreen> {
               )
             ),
         ],
-        backgroundColor: const Color(0xff57240e),
+        backgroundColor: Colors.black,
       ),
       body: Container(
         decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              colors: [
-                Color(0xff57240e),
-                Color(0xffff6628),
-              ],
-            )
+            color: Colors.white
+
         ),
         child: FutureBuilder<HallList>(
           future: halls,
           builder: (context, snapshot){
             if(!snapshot.hasError){
               if(snapshot.hasData){
-                return ListView.builder(
-                    itemCount: snapshot.data!.halls.length,
-                    itemBuilder: (context, index) {
-                      return Column(
-                        children: [HallDetailCard(hall: snapshot.data!.halls[index],)],
-                      );
-                    }
+
+                return SafeArea(
+                  child: Column(
+                    children: <Widget>[
+                      Expanded(
+                        child: Container(
+                          child: VerticalCardPager(
+                              titles: Mixin().getTitle(snapshot.data!.halls), // required
+                              images: Mixin().getImages(snapshot.data!.halls),  // required
+                              textStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold,fontFamily: "Pacifico"), // optional
+                              onPageChanged: (page) { // optional
+                              },
+                              onSelectedItem: (index) { // optional
+                              },
+                              initialPage: 0, // optional
+                              align : ALIGN.CENTER // optional
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 );
               } else {
                 return const Center(child: CircularProgressIndicator(color: Colors.white,),);
