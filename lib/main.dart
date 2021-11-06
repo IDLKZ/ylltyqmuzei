@@ -17,7 +17,7 @@ class Start extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => const WelcomeScreen(),
+        '/': (context) => WelcomeScreen(),
         '/home': (context) => const HomeScreen()
       },
     );
