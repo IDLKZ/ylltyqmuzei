@@ -13,7 +13,7 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
 
   CarouselController buttonCarouselController = CarouselController();
-
+  int currentPage = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,10 +24,16 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             children: [
               CarouselSlider(
                   options: CarouselOptions(
+                    initialPage: currentPage,
                     enableInfiniteScroll: false,
                     height: height,
                     viewportFraction: 1.0,
                     enlargeCenterPage: false,
+                    onPageChanged: (index,reason){
+                      setState(() {
+                          currentPage = index;
+                      });
+                    }
                     // autoPlay: false,
                   ),
                   items: <Widget>[
@@ -96,7 +102,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                               child: AnimatedTextKit(
                                 animatedTexts: [
                                   TypewriterAnimatedText(
-                                    'National Museum of the Republic of Kazakhstan',
+                                    '3D Tour in Museums Halls',
                                     textStyle: const TextStyle(
                                         fontSize: 40.0,
                                         fontWeight: FontWeight.w700,
@@ -137,7 +143,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                               child: AnimatedTextKit(
                                 animatedTexts: [
                                   TypewriterAnimatedText(
-                                    'National Museum of the Republic of Kazakhstan',
+                                    'Information Sculpture and View in our app',
                                     textStyle: const TextStyle(
                                         fontSize: 40.0,
                                         fontWeight: FontWeight.w700,
@@ -161,11 +167,37 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           );
         },
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => buttonCarouselController.nextPage(
-            duration: const Duration(milliseconds: 300), curve: Curves.linear),
-        child: const Text('→'),
-      ),
+      floatingActionButton: currentPage < 2 ? FloatingActionButton(
+        backgroundColor: Colors.black12,
+        focusColor: Colors.transparent,
+        hoverColor: Colors.transparent,
+        mini: false,
+        shape: const CircleBorder(
+            side:  BorderSide(color: Colors.white)
+        ),
+        onPressed: (){
+          buttonCarouselController.nextPage(
+              duration: const Duration(milliseconds: 300), curve: Curves.linear);
+        },
+        child: Icon(Icons.arrow_forward_ios, size: 30,color: Colors.white),
+      ) :
+      ElevatedButton(
+          style: ButtonStyle(
+            padding: MaterialStateProperty.all(const EdgeInsets.all(10)),
+            backgroundColor: MaterialStateProperty.all(Colors.transparent),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      side: const BorderSide(color: Colors.white)
+                  )
+              )
+          ),
+        onPressed: (){},
+        child: const Padding(
+          padding:  EdgeInsets.fromLTRB(10,8,10,8),
+          child:  Text("Let's start!",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+        ),
+      )
     );
   }
 }
