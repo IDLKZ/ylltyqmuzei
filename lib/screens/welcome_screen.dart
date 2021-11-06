@@ -180,7 +180,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           buttonCarouselController.nextPage(
               duration: const Duration(milliseconds: 300), curve: Curves.linear);
         },
-        child: Icon(Icons.arrow_forward_ios, size: 30,color: Colors.white),
+        child: const Icon(Icons.arrow_forward_ios, size: 30,color: Colors.white),
       ) :
       ElevatedButton(
           style: ButtonStyle(
@@ -193,7 +193,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   )
               )
           ),
-        onPressed: (){},
+        onPressed: (){
+            Navigator.pushNamedAndRemoveUntil(context, '/home', (Route<dynamic> route)=>false);
+        },
         child: const Padding(
           padding:  EdgeInsets.fromLTRB(10,8,10,8),
           child:  Text("Let's start!",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),

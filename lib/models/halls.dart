@@ -1,11 +1,7 @@
-import 'package:flutter/cupertino.dart';
 
 class HallList{
-
   List<Hall> halls;
-
   HallList({required this.halls});
-
 
   factory HallList.fromJson(List<dynamic> json){
     List<Hall> rawData = [];
@@ -13,15 +9,8 @@ class HallList{
       rawData.add(Hall.fromJson(item));
     }
     return HallList(halls: rawData);
-
   }
-
-
-
-
-
 }
-
 
 class Hall {
   late int id;
