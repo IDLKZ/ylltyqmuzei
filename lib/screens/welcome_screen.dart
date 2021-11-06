@@ -171,6 +171,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         backgroundColor: Colors.black12,
         focusColor: Colors.transparent,
         hoverColor: Colors.transparent,
+        splashColor: Colors.transparent,
         mini: false,
         shape: const CircleBorder(
             side:  BorderSide(color: Colors.white)
