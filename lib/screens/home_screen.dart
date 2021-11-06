@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:welcome/models/halls.dart';
 import 'package:welcome/services/api.dart';
-
+import 'package:welcome/mixins/mixins.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -37,7 +37,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
         backgroundColor: const Color(0xff57240e),
       ),
-      body: Container(
+      body: Mixin().isConnected() ?
+      Container(
         decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topRight,
@@ -62,12 +63,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     }
                 );
               } else {
-                return const Text('TIMA is an ERROR');
+                return const Center(child: CircularProgressIndicator(color: Colors.white,),);
               }
             } else {
               return const Center(child: CircularProgressIndicator(),);
             }
           },
+        ),
+      )
+      :const Center(
+        child: Card(
+          color: Colors.redAccent,
+          child: Text("Подключение к интернету отсутствует!",style: TextStyle(color: Colors.white),),
         ),
       ),
     );
@@ -100,8 +107,8 @@ class HallDetailCard extends StatelessWidget{
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   border: Border.all(width: 5, color: Colors.white),
-                  image: const DecorationImage(
-                      image: AssetImage('assets/images/golden_man.png'),
+                  image:  DecorationImage(
+                      image:NetworkImage(Mixin().getImage(hall.image)),
                       fit: BoxFit.cover
                   ),
                   boxShadow: const [
