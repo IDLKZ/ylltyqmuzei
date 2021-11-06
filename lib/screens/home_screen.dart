@@ -37,8 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
         backgroundColor: const Color(0xff57240e),
       ),
-      body: Mixin().isConnected() ?
-      Container(
+      body: Container(
         decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topRight,
@@ -71,12 +70,6 @@ class _HomeScreenState extends State<HomeScreen> {
           },
         ),
       )
-      :const Center(
-        child: Card(
-          color: Colors.redAccent,
-          child: Text("Подключение к интернету отсутствует!",style: TextStyle(color: Colors.white),),
-        ),
-      ),
     );
   }
 }
