@@ -51,25 +51,32 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Column(
                     children: <Widget>[
                       Expanded(
-                        child: Container(
-                          child: VerticalCardPager(
-                              titles: Mixin().getTitle(snapshot.data!.halls), // required
-                              images: Mixin().getImages(snapshot.data!.halls),  // required
-                              textStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold,fontFamily: "Pacifico"), // optional
-                              onPageChanged: (page) { // optional
+                        child: VerticalCardPager(
+                              titles: Mixin().getTitle(snapshot.data!.halls),
+                              // required
+                              images: Mixin().getImages(snapshot.data!.halls),
+                              // required
+                              textStyle: const TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: "Lobster",
+                                  fontSize: 10),
+                              // optional
+                              onPageChanged: (page) {
+
                               },
-                              onSelectedItem: (index) { // optional
+                              onSelectedItem: (index) {
+                                print('ok');
                               },
-                              initialPage: 0, // optional
-                              align : ALIGN.CENTER // optional
-                          ),
+                              initialPage: 3,
+                              // optional
+                              align: ALIGN.CENTER // optional
+                              ),
                         ),
-                      ),
                     ],
                   ),
                 );
               } else {
-                return const Center(child: CircularProgressIndicator(color: Colors.white,),);
+                return const Center(child: CircularProgressIndicator(color: Colors.red,),);
               }
             } else {
               return const Center(child: CircularProgressIndicator(),);

@@ -49,7 +49,7 @@ class Mixin{
                  color: Colors.black,
                image: DecorationImage(
                    colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.7), BlendMode.dstATop),
-                   image:NetworkImage(this.getImage(item.image)),
+                   image:NetworkImage(getImage(item.image)),
                  fit: BoxFit.cover
                )
              ),
