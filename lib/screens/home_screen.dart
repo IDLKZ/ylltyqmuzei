@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                               },
                               onSelectedItem: (index) {
-                                print('ok');
+                                Navigator.pushNamed(context, "/hall",arguments: snapshot.data!.halls[index].alias);
                               },
                               initialPage: 3,
                               // optional

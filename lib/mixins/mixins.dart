@@ -10,8 +10,22 @@ class Mixin{
    }
 
 
-     String getImage(String image){
-       return Constants.apiRes + image;
+     String getImage(String? image){
+       if(image != null){
+         return Constants.apiRes + image;
+       }
+       else{
+         return Constants.defaultImage;
+       }
+    }
+
+    String getMusic(String? musicUrl){
+       if(musicUrl != null){
+         return Constants.apiRes + musicUrl;
+       }
+       else{
+         return "https://jitsi.idl.kz/uploads/043Q42GUFe.mp3";
+       }
     }
 
     List<String> getTitle(dynamic data){
