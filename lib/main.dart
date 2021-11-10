@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:welcome/screens/home_screen.dart';
 import 'package:welcome/screens/single_hall.dart';
+import 'package:welcome/screens/tours.dart';
 import 'package:welcome/screens/welcome_screen.dart';
 
 void main() {
@@ -21,6 +22,7 @@ class Start extends StatelessWidget {
         '/': (context) => WelcomeScreen(),
         '/home': (context) => const HomeScreen(),
         "/hall":(context)=>const SingleHalls(),
+        "/tours":(context)=> Tours()
       },
     );
   }

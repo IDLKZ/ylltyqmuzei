@@ -94,7 +94,7 @@ class _SingleHallsState extends State<SingleHalls> {
                                           icon: const Icon(
                                             Icons.account_balance, size: 35,),
                                           onPressed: () {
-                                            Navigator.pop(context);
+                                            Navigator.pushNamed(context,"/tours",arguments: snapshot.data!.id.toString());
                                           },
                                           color: Colors.white,
                                           tooltip: "Тур в 360",

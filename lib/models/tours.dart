@@ -21,8 +21,8 @@ class TourList{
 class Tour {
   late int id;
   late int hallId;
-  int ?prevTour;
-  int ?nextTour;
+  Tour ?prevTour;
+  Tour ?nextTour;
   late String image;
   late String panorama;
   late String alias;
@@ -87,8 +87,8 @@ class Tour {
   Tour.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     hallId = json['hall_id'];
-    prevTour = json['prev_tour'];
-    nextTour = json['next_tour'];
+    prevTour = json['prev_tour'] != null  ? Tour.fromJson(json['prev_tour']) : null;
+    nextTour = json['next_tour']!= null  ? Tour.fromJson(json['next_tour']) : null;
     image = json['image'];
     panorama = json['panorama'];
     alias = json['alias'];

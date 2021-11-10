@@ -28,8 +28,8 @@ class HallProvider {
 }
 
 class TourProvider{
-  Future<TourList> getToursByHallId(int hallId) async{
-    final response = await http.get(Uri.parse(Constants.apiUrl + 'tours/'+ hallId.toString()));
+  Future<TourList> getToursByHallId(String hallId) async{
+    final response = await http.get(Uri.parse(Constants.apiUrl + 'tours/'+ hallId));
     if(response.statusCode == 200){
       return TourList.fromJson(jsonDecode(response.body));
     } else {
