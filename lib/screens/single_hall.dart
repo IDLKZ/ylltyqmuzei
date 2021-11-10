@@ -113,7 +113,7 @@ class _SingleHallsState extends State<SingleHalls> {
                                           icon: const Icon(
                                             FontAwesomeIcons.cubes, size: 35,),
                                           onPressed: () {
-                                            Navigator.pop(context);
+                                            Navigator.pushNamed(context, "/thirdModels");
                                           },
                                           color: Colors.white,
                                           tooltip: "Экспонаты",

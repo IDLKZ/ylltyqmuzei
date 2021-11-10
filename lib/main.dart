@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:welcome/screens/home_screen.dart';
 import 'package:welcome/screens/single_hall.dart';
 import 'package:welcome/screens/single_tour.dart';
+import 'package:welcome/screens/third_models.dart';
 import 'package:welcome/screens/tours.dart';
 import 'package:welcome/screens/welcome_screen.dart';
 
@@ -24,7 +25,8 @@ class Start extends StatelessWidget {
         '/home': (context) => const HomeScreen(),
         "/hall":(context)=>const SingleHalls(),
         "/tours":(context)=> Tours(),
-        '/tour': (context) => const SingleTour()
+        '/tour': (context) => const SingleTour(),
+        "/thirdModels":(context)=> const ThirdModels(),
       },
     );
   }
