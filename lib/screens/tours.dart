@@ -19,16 +19,35 @@ class Tours extends StatelessWidget {
           builder: (context, snapshot) {
             if (!snapshot.hasError) {
               if (snapshot.hasData) {
-                return ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: snapshot.data!.tours.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      height: 100,
-                      color: Colors.blue,
-                      child: Text(snapshot.data!.tours[index].titleRu),
-                    );
-                  },
+                return Column(
+                  children: [
+                    Text("3D Туры "),
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: snapshot.data!.tours.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Padding(
+                            padding: const EdgeInsets.only(left: 10,right: 10),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.all(const Radius.circular(20)),
+                                image: DecorationImage(
+                                    colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.7), BlendMode.dstATop),
+                                    image:  NetworkImage(Mixin().getImage(snapshot.data!.tours[index].image)),
+                                    fit: BoxFit.cover
+                                ),
+
+                              ),
+                              margin: EdgeInsets.only(top:10,bottom: 10),
+                              height: 220,
+
+                              child: Text(snapshot.data!.tours[index].titleRu),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ],
                 );
               } else {
                 return const Center(
