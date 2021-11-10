@@ -67,7 +67,7 @@ class _SingleHallsState extends State<SingleHalls> {
                           ),
                           SafeArea(
                               child: Container(
-                                alignment: Alignment(-1, -1),
+                                alignment: const Alignment(-1, -1),
                                 child: Card(
                                   color: Colors.black.withOpacity(0.5),
                                   child: IconButton(
@@ -102,7 +102,7 @@ class _SingleHallsState extends State<SingleHalls> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(height: 20,),
+                                  const SizedBox(height: 20,),
                                   Container(
                                     alignment: const Alignment(1, 1),
                                     child: Card(
@@ -127,7 +127,7 @@ class _SingleHallsState extends State<SingleHalls> {
                           ),
                           SafeArea(
                               child: Padding(
-                                padding: EdgeInsets.all(20),
+                                padding: const EdgeInsets.all(20),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
@@ -139,7 +139,7 @@ class _SingleHallsState extends State<SingleHalls> {
                                       ),
                                       child: AnimatedTextKit(
                                           totalRepeatCount: 3,
-                                          pause: Duration(seconds: 3),
+                                          pause: const Duration(seconds: 3),
                                           animatedTexts: [
                                             TyperAnimatedText(
                                                 snapshot.data!.titleRu),
@@ -147,7 +147,7 @@ class _SingleHallsState extends State<SingleHalls> {
                                       ),
 
                                     ),
-                                    SizedBox(height: 20,),
+                                    const SizedBox(height: 20,),
                                     DefaultTextStyle(
                                       style: const TextStyle(
                                         fontSize: 25.0,
@@ -184,7 +184,7 @@ class _SingleHallsState extends State<SingleHalls> {
                           child:  BackdropFilter(
                             filter:  ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
                             child:  Container(
-                              decoration: new BoxDecoration(color: Colors.black.withOpacity(0.5)),
+                              decoration: BoxDecoration(color: Colors.black.withOpacity(0.5)),
                             ),
                           ),
                         ),
@@ -205,7 +205,7 @@ class _SingleHallsState extends State<SingleHalls> {
                           child:  BackdropFilter(
                             filter:  ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
                             child:  Container(
-                              decoration: new BoxDecoration(color: Colors.black.withOpacity(0.5)),
+                              decoration: BoxDecoration(color: Colors.black.withOpacity(0.5)),
                             ),
                           ),
                         ),
@@ -214,9 +214,9 @@ class _SingleHallsState extends State<SingleHalls> {
                            mainAxisAlignment: MainAxisAlignment.center,
                            children: [
                              Image.network(Mixin().getImage(snapshot.data!.image)),
-                             SizedBox(height: 10,),
-                             Text("Сейчас играет подкаст к:", style:TextStyle(fontSize: 20, color:Colors.white, fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
-                             Text(snapshot.data!.titleRu, style:TextStyle(fontSize: 20, color:Colors.white, fontWeight: FontWeight.bold),textAlign: TextAlign.center),
+                             const SizedBox(height: 10,),
+                             const Text("Сейчас играет подкаст к:", style:TextStyle(fontSize: 20, color:Colors.white, fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
+                             Text(snapshot.data!.titleRu, style:const TextStyle(fontSize: 20, color:Colors.white, fontWeight: FontWeight.bold),textAlign: TextAlign.center),
                              AudioPlayer(url: snapshot.data!.audioRu,)
                            ],
                          ),
@@ -244,13 +244,13 @@ class _SingleHallsState extends State<SingleHalls> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (currentInd){setState(() {
-          this.currentIndex = currentInd;
+          currentIndex = currentInd;
         });},
         backgroundColor: Colors.black.withOpacity(0.1),
         selectedItemColor: Colors.amberAccent,
         unselectedItemColor: Colors.white,
         elevation: 0,// transparent, you could use 0x44aaaaff to make it slightly less transparent with a blue hue.
-        items:   <BottomNavigationBarItem>[
+        items:   const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.info,size: 50,),title: Text("Инфо")),
           BottomNavigationBarItem(icon: Icon(Icons.video_call,size: 50,),title: Text("ВидеоТур")),
           BottomNavigationBarItem(icon: Icon(Icons.headset,size: 50,),title: Text("АудиоГид")),

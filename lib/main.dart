@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:welcome/screens/home_screen.dart';
 import 'package:welcome/screens/single_hall.dart';
+import 'package:welcome/screens/single_tour.dart';
 import 'package:welcome/screens/tours.dart';
 import 'package:welcome/screens/welcome_screen.dart';
 
@@ -19,10 +20,11 @@ class Start extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => WelcomeScreen(),
+        '/': (context) => const WelcomeScreen(),
         '/home': (context) => const HomeScreen(),
         "/hall":(context)=>const SingleHalls(),
-        "/tours":(context)=> Tours()
+        "/tours":(context)=> Tours(),
+        '/tour': (context) => const SingleTour()
       },
     );
   }

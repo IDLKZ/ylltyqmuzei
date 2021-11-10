@@ -43,6 +43,7 @@ dependencies:
   youtube_player_flutter: ^8.0.0
   just_audio: ^0.9.17
   audio_video_progress_bar: ^0.9.0
+  panorama: ^0.4.1
 
 
 

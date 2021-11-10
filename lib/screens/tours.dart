@@ -21,27 +21,32 @@ class Tours extends StatelessWidget {
               if (snapshot.hasData) {
                 return Column(
                   children: [
-                    Text("3D Туры "),
+                    const Text("3D Туры ", style: TextStyle(fontSize: 30),),
                     Expanded(
                       child: ListView.builder(
                         itemCount: snapshot.data!.tours.length,
                         itemBuilder: (BuildContext context, int index) {
-                          return Padding(
-                            padding: const EdgeInsets.only(left: 10,right: 10),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.all(const Radius.circular(20)),
-                                image: DecorationImage(
-                                    colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.7), BlendMode.dstATop),
-                                    image:  NetworkImage(Mixin().getImage(snapshot.data!.tours[index].image)),
-                                    fit: BoxFit.cover
+                          return GestureDetector(
+                            onTap: (){
+                              Navigator.pushNamed(context, '/tour', arguments: snapshot.data!.tours[index].alias);
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 10),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: const BorderRadius.all(Radius.circular(20)),
+                                  image: DecorationImage(
+                                    // colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.7), BlendMode.dstATop),
+                                      image:  NetworkImage(Mixin().getImage(snapshot.data!.tours[index].image)),
+                                      fit: BoxFit.cover
+                                  ),
+
                                 ),
-
+                                margin: const EdgeInsets.only(top:10,bottom: 10),
+                                height: 220,
+                                alignment: const Alignment(-0.7, 0.7),
+                                child: Text(snapshot.data!.tours[index].titleRu, style: const TextStyle(fontSize: 24, color: Colors.white,fontWeight: FontWeight.w700),),
                               ),
-                              margin: EdgeInsets.only(top:10,bottom: 10),
-                              height: 220,
-
-                              child: Text(snapshot.data!.tours[index].titleRu),
                             ),
                           );
                         },

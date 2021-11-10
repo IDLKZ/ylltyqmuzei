@@ -16,7 +16,7 @@ class PageManager {
    static late String url;
   late AudioPlayer _audioPlayer;
   PageManager({this.musicUrl}) {
-    url = Mixin().getMusic(this.musicUrl);
+    url = Mixin().getMusic(musicUrl);
     _init();
   }
 
