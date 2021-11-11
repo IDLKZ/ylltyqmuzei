@@ -5,6 +5,7 @@ import 'package:welcome/screens/single_model.dart';
 import 'package:welcome/screens/single_tour.dart';
 import 'package:welcome/screens/third_models.dart';
 import 'package:welcome/screens/tours.dart';
+import 'package:welcome/screens/web_view.dart';
 import 'package:welcome/screens/welcome_screen.dart';
 
 void main() {
@@ -28,7 +29,8 @@ class Start extends StatelessWidget {
         "/tours":(context)=> Tours(),
         '/tour': (context) => const SingleTour(),
         "/thirdModels":(context)=> const ThirdModels(),
-        '/model': (context) => SingleModel()
+        '/model': (context) => SingleModel(),
+        '/webView': (context) => const WebViewModel(),
       },
     );
   }

@@ -36,6 +36,10 @@ class Mixin{
        return titles;
     }
 
+     String getWebUrl(String alias){
+       return Constants.apiWebUrl + alias;
+     }
+
     List<Widget> getImages(dynamic data){
        List<Widget> images = [];
        for(var item in data){

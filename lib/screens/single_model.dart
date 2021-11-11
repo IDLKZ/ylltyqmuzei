@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:welcome/mixins/mixins.dart';
 import 'package:welcome/models/models.dart';
 import 'package:welcome/services/api.dart';
+import 'package:welcome/widgets/audio_player.dart';
+import 'package:welcome/widgets/youtube_player.dart';
 
 
 class SingleModel extends StatelessWidget {
@@ -16,6 +18,7 @@ class SingleModel extends StatelessWidget {
     String alias = args.arguments as String;
     model = ThirdModelsProvider().getSingleModelByAlias(alias);
     return Scaffold(
+      backgroundColor: Colors.black,
       body: FutureBuilder<Model>(
         future: model,
         builder: (context, snapshot){
@@ -23,76 +26,132 @@ class SingleModel extends StatelessWidget {
             if(snapshot.hasData){
               return Column(
                 children: [
-                  Expanded(
-                      child: Stack(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.black,
-                              image: DecorationImage(
-                                  colorFilter: ColorFilter.mode(
-                                      Colors.black.withOpacity(0.7),
-                                      BlendMode.dstATop),
-                                  image: NetworkImage(
-                                      Mixin().getImage(snapshot.data!.image)),
-                                  fit: BoxFit.cover
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height/2,
+                      child: Container(
+                        child: Stack(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.black,
+                                image: DecorationImage(
+                                    colorFilter: ColorFilter.mode(
+                                        Colors.black.withOpacity(0.7),
+                                        BlendMode.dstATop),
+                                    image: NetworkImage(
+                                        Mixin().getImage(snapshot.data!.image)),
+                                    fit: BoxFit.contain
+                                ),
                               ),
                             ),
-                          ),
-                          Container(
-                            color: const Color.fromRGBO(
-                                21, 18, 18, 0.18823529411764706),
-                          ),
-                          SafeArea(
-                              child: Container(
-                                alignment: const Alignment(-1, -1),
-                                child: Card(
-                                  color: Colors.black.withOpacity(0.5),
-                                  child: IconButton(
-                                    icon: const Icon(Icons.arrow_back),
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                    color: Colors.white,
+                            Container(
+                              color: const Color.fromRGBO(
+                                  21, 18, 18, 0.18823529411764706),
+                            ),
+                            SafeArea(
+                                child: Container(
+                                  alignment: const Alignment(-1, -1),
+                                  child: Card(
+                                    color: Colors.black.withOpacity(0.5),
+                                    child: IconButton(
+                                      icon: const Icon(Icons.arrow_back),
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      color: Colors.white,
 
+                                    ),
                                   ),
-                                ),
-                              )
-                          ),
-                          SafeArea(
-                              child: Column(
-                                children: [
-                                  Container(
-                                    alignment: const Alignment(1, 1),
-                                    child: Card(
-                                      color: Colors.black.withOpacity(0.5),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: IconButton(
-                                          icon: const Icon(
-                                            Icons.accessibility, size: 35,),
-                                          onPressed: () {
-                                            Navigator.pushNamed(context,"/tours",arguments: snapshot.data!.id.toString());
-                                          },
-                                          color: Colors.white,
-                                          tooltip: "Тур в 360",
+                                )
+                            ),
+                            SafeArea(
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      alignment: const Alignment(1, 1),
+                                      child: Card(
+                                        color: Colors.black.withOpacity(0.5),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: IconButton(
+                                            icon: const Icon(
+                                              Icons.accessibility, size: 35,),
+                                            onPressed: () {
+                                              Navigator.pushNamed(context,"/webView",arguments: snapshot.data!.alias.toString());
+                                            },
+                                            color: Colors.white,
+                                            tooltip: "Тур в 360",
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  )
-                                ],
-                              )
-                          ),
-                        ],
+                                    )
+                                  ],
+                                )
+                            ),
+                          ],
+                        ),
                       )
                   ),
                   Expanded(
-                      child: Container(
-                        decoration: const BoxDecoration(
-                            color: Colors.amber,
-                          borderRadius: BorderRadius.only(topLeft: Radius.circular(50), topRight: Radius.circular(50))
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      decoration: const BoxDecoration(
+                      color: Colors.white,
+
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(50), topRight: Radius.circular(50))
+                      ),
+                      child: SingleChildScrollView(
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 20, bottom: 20,right: 20,left: 20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                          Text(snapshot.data!.titleRu,
+                            style: const TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                            const SizedBox(height: 20,),
+                            const Text(
+                              "Описание:",
+                              style: TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.bold
+                              ),
+                            ),
+                            const SizedBox(height: 20,),
+                            Text(
+                              snapshot.data!.descriptionRu,
+                            ),
+                            const SizedBox(height: 20,),
+                            const Text(
+                              "Аудиогид:",
+                              style: TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.bold
+                              ),
+                            ),
+                            const SizedBox(height: 20,),
+                            AudioPlayer(url: snapshot.data!.audioRu,),
+                            const SizedBox(height: 20,),
+                            const Text(
+                              "ВидеоГид:",
+                              style: TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.bold
+                              ),
+                            ),
+                            const SizedBox(height: 20,),
+                            Youtube(url: snapshot.data!.videoRu,),
+
+
+                          ],
+                          ),
                         ),
-                      )
+                      ),
+                    ),
                   ),
                 ],
               );
