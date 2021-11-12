@@ -4,6 +4,7 @@ import 'package:vertical_card_pager/vertical_card_pager.dart';
 import 'package:welcome/models/halls.dart';
 import 'package:welcome/services/api.dart';
 import 'package:welcome/mixins/mixins.dart';
+import 'package:welcome/widgets/my_appbar.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -22,20 +23,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: const Icon(Icons.qr_code),
-        title: const Text('TIMA'),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: IconButton(
-              icon: const Icon(Icons.language_rounded),
-              onPressed: (){}
-              )
-            ),
-        ],
-        backgroundColor: Colors.black,
-      ),
+      extendBodyBehindAppBar: true,
+      appBar: MyAppBar(),
+
+
       body: Container(
         decoration: const BoxDecoration(
             color: Colors.white

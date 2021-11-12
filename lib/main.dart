@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:welcome/screens/home_screen.dart';
+import 'package:welcome/screens/panorama_view.dart';
 import 'package:welcome/screens/single_hall.dart';
 import 'package:welcome/screens/single_model.dart';
 import 'package:welcome/screens/single_tour.dart';
@@ -31,6 +32,7 @@ class Start extends StatelessWidget {
         "/thirdModels":(context)=> const ThirdModels(),
         '/model': (context) => SingleModel(),
         '/webView': (context) => const WebViewModel(),
+        '/panoramaView':(context)=>PanoramaView(),
       },
     );
   }

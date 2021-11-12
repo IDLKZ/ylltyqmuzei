@@ -21,6 +21,22 @@ class Tours extends StatelessWidget {
               if (snapshot.hasData) {
                 return Column(
                   children: [
+                    SafeArea(
+                        child: Container(
+                          alignment: const Alignment(-1, -1),
+                          child: Card(
+                            color: Colors.black.withOpacity(0.5),
+                            child: IconButton(
+                              icon: const Icon(Icons.arrow_back),
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              color: Colors.white,
+
+                            ),
+                          ),
+                        )
+                    ),
                     const Text("3D Туры ", style: TextStyle(fontSize: 30),),
                     Expanded(
                       child: ListView.builder(
