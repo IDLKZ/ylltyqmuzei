@@ -5,6 +5,7 @@ import 'package:welcome/models/halls.dart';
 import 'package:welcome/services/api.dart';
 import 'package:welcome/mixins/mixins.dart';
 import 'package:welcome/widgets/my_appbar.dart';
+import 'package:welcome/widgets/nav_bar.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -25,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: MyAppBar(),
-
+      drawer: NavBar(),
 
       body: Container(
         decoration: const BoxDecoration(
