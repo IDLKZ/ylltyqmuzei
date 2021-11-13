@@ -2,6 +2,7 @@ import 'package:connectivity/connectivity.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:welcome/constants/constants.dart';
+import 'package:welcome/generated/l10n.dart';
 class Mixin{
 
      isConnected() async {
@@ -81,5 +82,8 @@ class Mixin{
        return images;
     }
 
+    // String getLocale(String current) {
+    //    String locale = S().
+    // }
 
 }
