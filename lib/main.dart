@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:welcome/screens/about_screen.dart';
+import 'package:welcome/screens/faq_screen.dart';
 import 'package:welcome/screens/home_screen.dart';
 import 'package:welcome/screens/news.dart';
 import 'package:welcome/screens/panorama_view.dart';
@@ -40,7 +41,8 @@ class Start extends StatelessWidget {
         "/news":(context)=>NewsScreen(),
         "/stocks":(context)=>StockScreen(),
         "/singleNews":(context)=>SingleNews(),
-        '/about':(context)=>AboutScreen()
+        '/about':(context)=>AboutScreen(),
+        '/faqs':(context)=>FaqScreen()
       },
     );
   }
