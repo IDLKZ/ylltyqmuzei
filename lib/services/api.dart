@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:welcome/constants/constants.dart';
+import 'package:welcome/models/faqs.dart';
 import 'package:welcome/models/halls.dart';
 import 'package:welcome/models/models.dart';
 import 'package:welcome/models/news.dart';
@@ -80,4 +81,15 @@ class NewsModelsProvider{
     }
   }
 
+}
+
+class FaqProvider {
+  Future<FaqList> getFaq() async {
+    final response = await http.get(Uri.parse(Constants.apiUrl + 'faq'));
+    if(response.statusCode == 200){
+      return FaqList.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Server not connected');
+    }
+  }
 }
