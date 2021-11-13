@@ -89,6 +89,15 @@ class NewsModelsProvider{
     }
   }
 
+  Future <ListNews> getAllStock(int page)async{
+    final response = await http.get(Uri.parse(Constants.apiUrl + 'stocks?page=$page'));
+    if(response.statusCode == 200){
+      return ListNews.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Server not connected');
+    }
+  }
+
 }
 
 class FaqProvider {
