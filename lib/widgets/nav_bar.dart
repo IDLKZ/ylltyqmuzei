@@ -11,16 +11,11 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
-  @override
   List<Map<dynamic, dynamic>> routeLists = [
     {"title": "Туры", "icon": Icons.tour, "route": "/home"},
     {"title": "QR сканнер", "icon": Icons.qr_code, "route": "/qr"},
     {"title": "Новости", "icon": FontAwesomeIcons.newspaper, "route": "/news"},
-    {
-      "title": "Акции",
-      "icon": FontAwesomeIcons.calendarCheck,
-      "route": "/stocks"
-    },
+    {"title": "Акции", "icon": FontAwesomeIcons.calendarCheck, "route": "/stocks"},
     {
       "title": "F.A.Q",
       "icon": FontAwesomeIcons.questionCircle,
@@ -31,13 +26,19 @@ class _NavBarState extends State<NavBar> {
       "icon": FontAwesomeIcons.addressBook,
       "route": "/contacts"
     },
+    {
+      "title": "О музее",
+      "icon": Icons.account_balance_outlined,
+      "route": "/about"
+    },
   ];
 
+  @override
   Widget build(BuildContext context) {
     String? currentScreen = ModalRoute.of(context)!.settings.name as String;
     return Drawer(
       child: Container(
-        decoration: BoxDecoration(color: Color(0xFF0c1e34)),
+        decoration: const BoxDecoration(color: Color(0xFF0c1e34)),
         child: ListView(
           children: [
             CircleAvatar(
@@ -50,13 +51,13 @@ class _NavBarState extends State<NavBar> {
                     fit: BoxFit.fill,
                   ),
                 )),
-            Divider(),
+            const Divider(),
             for (var item in routeLists)
               Container(
                 padding: const EdgeInsets.only(left: 5),
                 margin: const EdgeInsets.symmetric(vertical: 10),
                 decoration:  BoxDecoration(
-                  color: item['route'] == currentScreen ? Color(0xFFECC96C) : Colors.white,
+                  color: item['route'] == currentScreen ? const Color(0xFFECC96C) : Colors.white,
                   borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(30.0),
                       bottomLeft: Radius.circular(30.0)),
@@ -72,13 +73,13 @@ class _NavBarState extends State<NavBar> {
                   ),
                   leading: Icon(
                     item['icon'],
-                    color: item['route'] == currentScreen ? Colors.white : Color(0xFF395a7c),
+                    color: item['route'] == currentScreen ? Colors.white : const Color(0xFF395a7c),
                     size: 25,
                   ),
                   title: Text(
                     "${item['title']}",
                     style:  TextStyle(
-                        color: item['route'] == currentScreen ? Colors.white : Color(0xFF395a7c),
+                        color: item['route'] == currentScreen ? Colors.white : const Color(0xFF395a7c),
                         fontSize: 22,
                         fontWeight: FontWeight.bold),
                   ),

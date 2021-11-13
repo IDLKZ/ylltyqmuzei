@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:welcome/constants/constants.dart';
+import 'package:welcome/models/about.dart';
 import 'package:welcome/models/faqs.dart';
 import 'package:welcome/models/halls.dart';
 import 'package:welcome/models/models.dart';
@@ -105,6 +106,17 @@ class FaqProvider {
     final response = await http.get(Uri.parse(Constants.apiUrl + 'faq'));
     if(response.statusCode == 200){
       return FaqList.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Server not connected');
+    }
+  }
+}
+
+class AboutProvider {
+  Future<About> getAbout() async {
+    final response = await http.get(Uri.parse(Constants.apiUrl + 'about'));
+    if(response.statusCode == 200){
+      return About.fromJson(jsonDecode(response.body));
     } else {
       throw Exception('Server not connected');
     }
