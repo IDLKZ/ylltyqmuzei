@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:welcome/constants/constants.dart';
 import 'package:welcome/models/halls.dart';
 import 'package:welcome/models/models.dart';
+import 'package:welcome/models/news.dart';
 import 'package:welcome/models/tours.dart';
 
 class HallProvider {
@@ -65,4 +66,18 @@ class ThirdModelsProvider{
       throw Exception('Server not connected');
     }
   }
+}
+
+class NewsModelsProvider{
+
+
+  Future <ListNews> getAllNews(int page)async{
+    final response = await http.get(Uri.parse(Constants.apiUrl + 'news?page=$page'));
+    if(response.statusCode == 200){
+      return ListNews.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Server not connected');
+    }
+  }
+
 }
