@@ -27,14 +27,9 @@ class _QrWidgetState extends State<QrWidget> {
   }
   @override
   Widget build(BuildContext context) {
-    controller != null ? controller?.resumeCamera() : null;
-    print("hi!");
     return Scaffold(
       body: Column(
         children: <Widget>[
-          Expanded(child: Container(
-            child:result!= null ? Text("${result!.code}") : Text("waiting")
-          )),
           Expanded(flex: 4, child: _buildQrView(context)),
         ],
       ),
@@ -80,18 +75,31 @@ class _QrWidgetState extends State<QrWidget> {
             switch (redirectedDATA[0]){
               case "hall":{
                 controller != null ? controller.pauseCamera() : null;
-                Navigator.pushNamed(context, "/hall",arguments:redirectedDATA[1]);
+                Navigator.pushNamed(context, "/hall",arguments:redirectedDATA[1]).then((value){
+                  if(controller != null){
+                    controller.resumeCamera();
+                  }
+                });
+                print("bye");
               }
               break;
               case "tour":{
                 controller != null ? controller.pauseCamera() : null;
-                Navigator.pushNamed(context, "/tour",arguments:redirectedDATA[1]);
+                Navigator.pushNamed(context, "/tour",arguments:redirectedDATA[1]).then((value){
+                  if(controller != null){
+                    controller.resumeCamera();
+                  }
+                });
 
               }
               break;
               case "thirdModel":{
                 controller != null ? controller.pauseCamera() : null;
-                Navigator.pushNamed(context, "/model",arguments:redirectedDATA[1]);
+                Navigator.pushNamed(context, "/model",arguments:redirectedDATA[1]).then((value){
+                  if(controller != null){
+                    controller.resumeCamera();
+                  }
+                });
               }
               break;
             }

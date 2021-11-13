@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:welcome/mixins/mixins.dart';
 import 'package:welcome/models/models.dart';
+import 'package:welcome/screens/qr_screen.dart';
 import 'package:welcome/services/api.dart';
 import 'package:welcome/widgets/audio_player.dart';
 import 'package:welcome/widgets/youtube_player.dart';
