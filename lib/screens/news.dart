@@ -37,7 +37,7 @@ class _NewsScreenState extends State<NewsScreen> {
       appBar: MyAppBar(),
         drawer: NavBar(),
         body: Center(
-          child: Text("23"),
+          child: Text("${allNews}"),
         ),
 
     );
