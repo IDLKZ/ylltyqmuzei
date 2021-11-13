@@ -4,6 +4,7 @@ import 'package:welcome/screens/faq_screen.dart';
 import 'package:welcome/screens/home_screen.dart';
 import 'package:welcome/screens/news.dart';
 import 'package:welcome/screens/panorama_view.dart';
+import 'package:welcome/screens/qr_screen.dart';
 import 'package:welcome/screens/single_hall.dart';
 import 'package:welcome/screens/single_model.dart';
 import 'package:welcome/screens/single_news.dart';
@@ -38,11 +39,12 @@ class Start extends StatelessWidget {
         '/model': (context) => SingleModel(),
         '/webView': (context) => const WebViewModel(),
         '/panoramaView':(context)=>PanoramaView(),
-        "/news":(context)=>NewsScreen(),
-        "/stocks":(context)=>StockScreen(),
+        "/news":(context)=>const NewsScreen(),
+        "/stocks":(context)=>const StockScreen(),
         "/singleNews":(context)=>SingleNews(),
-        '/about':(context)=>AboutScreen(),
-        '/faqs':(context)=>FaqScreen()
+        '/about':(context)=>const AboutScreen(),
+        '/faqs':(context)=>const FaqScreen(),
+        '/qr':(context)=>const QrScreen()
       },
     );
   }

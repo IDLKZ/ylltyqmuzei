@@ -12,6 +12,7 @@ import 'package:welcome/mixins/mixins.dart';
 import 'package:welcome/widgets/faq.dart';
 import 'package:welcome/widgets/my_appbar.dart';
 import 'package:welcome/widgets/nav_bar.dart';
+import 'package:welcome/widgets/qr.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -32,14 +33,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: MyAppBar(),
-      drawer: NavBar(),
+      appBar: const MyAppBar(),
+      drawer: const NavBar(),
       body: CurvedNavBar(
         actionButton: CurvedActionBar(
-            onTab: (value) {
-              /// perform action here
-              print(value);
-            },
             activeIcon: Container(
               padding: const EdgeInsets.all(8),
               decoration:
@@ -138,10 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           const FaqWidget()
         ],
-        actionBarView: Container(
-          height: MediaQuery.of(context).size.height,
-          color: Colors.orange,
-        ),
+        actionBarView: const QrWidget(),
       ),
     );
   }
