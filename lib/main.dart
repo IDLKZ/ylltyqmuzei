@@ -4,6 +4,7 @@ import 'package:welcome/screens/news.dart';
 import 'package:welcome/screens/panorama_view.dart';
 import 'package:welcome/screens/single_hall.dart';
 import 'package:welcome/screens/single_model.dart';
+import 'package:welcome/screens/single_news.dart';
 import 'package:welcome/screens/single_tour.dart';
 import 'package:welcome/screens/third_models.dart';
 import 'package:welcome/screens/tours.dart';
@@ -35,6 +36,7 @@ class Start extends StatelessWidget {
         '/webView': (context) => const WebViewModel(),
         '/panoramaView':(context)=>PanoramaView(),
         "/news":(context)=>NewsScreen(),
+        "/singleNews":(context)=>SingleNews(),
       },
     );
   }

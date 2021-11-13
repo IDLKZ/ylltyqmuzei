@@ -28,6 +28,10 @@ class Mixin{
        }
     }
 
+    String truncateText(String text, int length ,[int start = 0]){
+       return text.length > length ? text.substring(0, length - 1) + "..." : text;
+    }
+
     List<String> getTitle(dynamic data){
        List<String> titles = [];
        for(var item in data){

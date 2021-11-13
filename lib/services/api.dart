@@ -80,6 +80,14 @@ class NewsModelsProvider{
       throw Exception('Server not connected');
     }
   }
+  Future <News> getSingleNews(String alias)async{
+    final response = await http.get(Uri.parse(Constants.apiUrl + 'single-news/'+ alias));
+    if(response.statusCode == 200){
+      return News.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Server not connected');
+    }
+  }
 
 }
 
