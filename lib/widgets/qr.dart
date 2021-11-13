@@ -7,7 +7,6 @@ import 'package:flutter/foundation.dart';
 
 class QrWidget extends StatefulWidget {
   const QrWidget({Key? key}) : super(key: key);
-
   @override
   _QrWidgetState createState() => _QrWidgetState();
 }
@@ -16,7 +15,6 @@ class _QrWidgetState extends State<QrWidget> {
   Barcode? result;
   QRViewController? controller;
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
-
   // In order to get hot reload to work we need to pause the camera if the platform
   // is android, or resume the camera if the platform is iOS.
   @override
@@ -29,91 +27,15 @@ class _QrWidgetState extends State<QrWidget> {
   }
   @override
   Widget build(BuildContext context) {
+    controller != null ? controller?.resumeCamera() : null;
+    print("hi!");
     return Scaffold(
       body: Column(
         children: <Widget>[
+          Expanded(child: Container(
+            child:result!= null ? Text("${result!.code}") : Text("waiting")
+          )),
           Expanded(flex: 4, child: _buildQrView(context)),
-          Expanded(
-            flex: 1,
-            child: FittedBox(
-              fit: BoxFit.contain,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  if (result != null)
-                    Text(
-                        'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}')
-                  else
-                    const Text('Scan a code'),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        margin: const EdgeInsets.all(8),
-                        child: ElevatedButton(
-                            onPressed: () async {
-                              await controller?.toggleFlash();
-                              setState(() {});
-                            },
-                            child: FutureBuilder(
-                              future: controller?.getFlashStatus(),
-                              builder: (context, snapshot) {
-                                return Text('Flash: ${snapshot.data}');
-                              },
-                            )),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.all(8),
-                        child: ElevatedButton(
-                            onPressed: () async {
-                              await controller?.flipCamera();
-                              setState(() {});
-                            },
-                            child: FutureBuilder(
-                              future: controller?.getCameraInfo(),
-                              builder: (context, snapshot) {
-                                if (snapshot.data != null) {
-                                  return Text(
-                                      'Camera facing ${describeEnum(snapshot.data!)}');
-                                } else {
-                                  return const Text('loading');
-                                }
-                              },
-                            )),
-                      )
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        margin: const EdgeInsets.all(8),
-                        child: ElevatedButton(
-                          onPressed: () async {
-                            await controller?.pauseCamera();
-                          },
-                          child: const Text('pause',
-                              style: TextStyle(fontSize: 20)),
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.all(8),
-                        child: ElevatedButton(
-                          onPressed: () async {
-                            await controller?.resumeCamera();
-                          },
-                          child: const Text('resume',
-                              style: TextStyle(fontSize: 20)),
-                        ),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          )
         ],
       ),
     );
@@ -123,7 +45,7 @@ class _QrWidgetState extends State<QrWidget> {
     // For this example we check how width or tall the device is and change the scanArea and overlay accordingly.
     var scanArea = (MediaQuery.of(context).size.width < 400 ||
         MediaQuery.of(context).size.height < 400)
-        ? 150.0
+        ? 250.0
         : 300.0;
     // To ensure the Scanner view is properly sizes after rotation
     // we need to listen for Flutter SizeChanged notification and update controller
@@ -145,9 +67,37 @@ class _QrWidgetState extends State<QrWidget> {
       this.controller = controller;
     });
     controller.scannedDataStream.listen((scanData) {
+
       setState(() {
         result = scanData;
       });
+      if(result != null){
+
+        String? alias = result!.code as String;
+        if(alias != null && alias != ""){
+          var redirectedDATA = alias.split("/");
+          if(redirectedDATA != null){
+            switch (redirectedDATA[0]){
+              case "hall":{
+                controller != null ? controller.pauseCamera() : null;
+                Navigator.pushNamed(context, "/hall",arguments:redirectedDATA[1]);
+              }
+              break;
+              case "tour":{
+                controller != null ? controller.pauseCamera() : null;
+                Navigator.pushNamed(context, "/tour",arguments:redirectedDATA[1]);
+
+              }
+              break;
+              case "thirdModel":{
+                controller != null ? controller.pauseCamera() : null;
+                Navigator.pushNamed(context, "/model",arguments:redirectedDATA[1]);
+              }
+              break;
+            }
+          }
+        }
+      }
     });
   }
 
@@ -155,7 +105,7 @@ class _QrWidgetState extends State<QrWidget> {
     log('${DateTime.now().toIso8601String()}_onPermissionSet $p');
     if (!p) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('no Permission')),
+        const SnackBar(content: Text('no Permission',style: TextStyle(color:Colors.white,fontSize: 16),), backgroundColor: Colors.red,),
       );
     }
   }

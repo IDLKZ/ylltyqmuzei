@@ -15,6 +15,7 @@ class _QrScreenState extends State<QrScreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+      extendBody: true,
       appBar: MyAppBar(),
       drawer: NavBar(),
       body: QrWidget(),
