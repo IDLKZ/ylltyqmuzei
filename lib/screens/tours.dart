@@ -93,11 +93,10 @@ class Tours extends StatelessWidget {
                   ],
                 );
               } else {
-                return Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Lottie.asset('assets/images/no_data2.json'),
-                  ],
+                return const Center(
+                  child: CircularProgressIndicator(
+                    color: Colors.redAccent,
+                  ),
                 );
               }
             } else {

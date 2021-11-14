@@ -104,11 +104,10 @@ class _ThirdModelsState extends State<ThirdModels> {
                       )
                       ;
                     } else {
-                      return Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Lottie.asset('assets/images/no_data.json'),
-                        ],
+                      return const Center(
+                        child: CircularProgressIndicator(
+                          color: Colors.redAccent,
+                        ),
                       );
                     }
                   } else {
