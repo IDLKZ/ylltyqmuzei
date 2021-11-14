@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:welcome/locale_string.dart';
 import 'package:welcome/screens/about_screen.dart';
 import 'package:welcome/screens/faq_screen.dart';
 import 'package:welcome/screens/home_screen.dart';
@@ -14,7 +15,7 @@ import 'package:welcome/screens/third_models.dart';
 import 'package:welcome/screens/tours.dart';
 import 'package:welcome/screens/web_view.dart';
 import 'package:welcome/screens/welcome_screen.dart';
-
+import 'package:get/get.dart';
 
 void main() {
   runApp(const Start());
@@ -26,9 +27,11 @@ class Start extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'InIt',
       debugShowCheckedModeBanner: false,
+      translations: LocaleString(),
+      locale: const Locale('ru'),
       initialRoute: '/',
       routes: {
         '/': (context) => const WelcomeScreen(),

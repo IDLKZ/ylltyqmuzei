@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
+import 'package:get/get.dart';
+import 'package:welcome/mixins/mixins.dart';
 
 class MyAppBar extends StatefulWidget implements PreferredSizeWidget   {
   const MyAppBar({Key? key}) : super(key: key);
@@ -19,10 +22,11 @@ class _MyAppBarState extends State<MyAppBar> {
     return AppBar(
       backgroundColor: const Color(0xFF0c1e34),
       elevation: 0,
-      title: Text('QAZ MUSEUM',style: const TextStyle(color: Color(0xFFECC96C),fontWeight: FontWeight.w600),),
+      title: Text('app_title'.tr,style: const TextStyle(color: Color(0xFFECC96C),fontWeight: FontWeight.w600),),
       actions: [
         IconButton(onPressed: (){
-
+          var locale = const Locale('en');
+          print(Mixin().getLocale());
         }, icon: const Icon(FontAwesomeIcons.language))
       ],
     );

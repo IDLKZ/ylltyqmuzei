@@ -2,7 +2,7 @@ import 'package:connectivity/connectivity.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:welcome/constants/constants.dart';
-
+import 'package:get/get.dart';
 class Mixin{
 
      isConnected() async {
@@ -82,8 +82,9 @@ class Mixin{
        return images;
     }
 
-    // String getLocale(String current) {
-    //    String locale = S().
-    // }
+    String? getLocale() {
+       String locale = Get.locale!.languageCode;
+       return locale.capitalizeFirst;
+    }
 
 }
