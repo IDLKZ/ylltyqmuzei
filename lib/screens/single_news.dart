@@ -81,7 +81,7 @@ class _SingleNewsState extends State<SingleNews> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(snapshot.data!.titleRu,
+                              Text(snapshot.data!.getTitle(),
                                 style: const TextStyle(
                                     fontSize: 24,
                                     fontWeight: FontWeight.bold
@@ -90,7 +90,7 @@ class _SingleNewsState extends State<SingleNews> {
                               ),
                               const SizedBox(height: 20,),
                               Text(
-                                snapshot.data!.descriptionRu,
+                                snapshot.data!.getDescription(),
                               ),
                             ],
                           ),

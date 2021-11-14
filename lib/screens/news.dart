@@ -79,7 +79,7 @@ class _NewsScreenState extends State<NewsScreen> {
                     fit: BoxFit.fill,
                   ),
                 ),
-                title: Text(Mixin().truncateText(allNews!.listNews[index].titleRu, 40)),
+                title: Text(Mixin().truncateText(allNews!.listNews[index].getTitle(), 40)),
                 subtitle: Text(allNews!.listNews[index].createdAt),
               ),
             ),

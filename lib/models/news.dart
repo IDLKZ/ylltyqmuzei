@@ -1,3 +1,8 @@
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
+import 'package:welcome/models/lang_model.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
 class ListNews{
   List<News> listNews = [];
   int currentPage = 1;
@@ -20,7 +25,7 @@ class ListNews{
 
 }
 
-class News {
+class News extends LangModel  {
   late int id;
   late int type;
   late String image;

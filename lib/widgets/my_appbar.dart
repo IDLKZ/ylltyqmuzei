@@ -6,7 +6,15 @@ import 'package:welcome/mixins/mixins.dart';
 
 class MyAppBar extends StatefulWidget implements PreferredSizeWidget   {
   const MyAppBar({Key? key}) : super(key: key);
-
+  static const List<Map> languagesApp = [
+    {"title":"Рус.","code":"ru"},
+    {"title":"Kaz.","code":"kz"},
+    {"title":"Eng.","code":"en"},
+    {"title":"Deu.","code":"de"},
+    {"title":"Fre.","code":"fr"},
+    {"title":"Esp.","code":"es"},
+    {"title":"Tur.","code":"tr"},
+  ];
   @override
   _MyAppBarState createState() => _MyAppBarState();
   @override
@@ -24,11 +32,31 @@ class _MyAppBarState extends State<MyAppBar> {
       elevation: 0,
       title: Text('app_title'.tr,style: const TextStyle(color: Color(0xFFECC96C),fontWeight: FontWeight.w600),),
       actions: [
-        IconButton(onPressed: (){
-          var locale = const Locale('en');
-          print(Mixin().getLocale());
-        }, icon: const Icon(FontAwesomeIcons.language))
-      ],
+      DropdownButton<String>(
+        value: Get.locale!.languageCode,
+      icon: const Icon(Icons.language, color: Colors.white,),
+      iconSize: 24,
+      style: const TextStyle(color: Colors.white),
+      dropdownColor: Color(0xFF0c1e34),
+      underline: Container(
+        height: 0,
+        color: Colors.transparent,
+      ),
+
+      onChanged: (String? newValue) {
+        setState(() {
+          Get.updateLocale(Locale(newValue ?? "ru"));
+        });
+      },
+      items: MyAppBar.languagesApp.map((value) {
+        return DropdownMenuItem<String>(
+          value: value["code"],
+          child: Text(value["title"] ?? "Рус"),
+        );
+      }).toList(),
+    )
+    ],
+
     );
   }
 }
