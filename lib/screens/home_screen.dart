@@ -3,6 +3,7 @@ import 'package:curved_nav_bar/fab_bar/fab_bottom_app_bar_item.dart';
 import 'package:curved_nav_bar/flutter_curved_bottom_nav_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:vertical_card_pager/vertical_card_pager.dart';
 import 'package:welcome/models/halls.dart';
 import 'package:welcome/services/api.dart';
@@ -70,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Icons.home,
                 color: Colors.white70,
               ),
-              text: 'Главная'),
+              text: 'bottom_main'.tr),
           FABBottomAppBarItem(
               activeIcon: const Icon(
                 Icons.help_outline,

@@ -5,7 +5,10 @@ import 'package:welcome/mixins/mixins.dart';
 import 'package:welcome/models/tours.dart';
 import 'package:welcome/services/api.dart';
 import 'package:welcome/widgets/audio_player.dart';
+import 'package:welcome/widgets/my_appbar.dart';
+import 'package:welcome/widgets/nav_bar.dart';
 import 'package:welcome/widgets/youtube_player.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 
 class SingleTour extends StatefulWidget {
   const SingleTour({Key? key}) : super(key: key);
@@ -23,6 +26,8 @@ class _SingleTourState extends State<SingleTour> {
     String alias = args.arguments as String;
     tour = TourProvider().getSingleTourByAlias(alias);
     return Scaffold(
+      appBar: const MyAppBar(),
+      drawer: const NavBar(),
       backgroundColor: Colors.black,
       body: FutureBuilder<Tour>(
         future: tour,
@@ -33,68 +38,66 @@ class _SingleTourState extends State<SingleTour> {
                 children: [
                   SizedBox(
                       height: MediaQuery.of(context).size.height/2,
-                      child: Container(
-                        child: Stack(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.black,
-                                image: DecorationImage(
-                                    colorFilter: ColorFilter.mode(
-                                        Colors.black.withOpacity(0.7),
-                                        BlendMode.dstATop),
-                                    image: NetworkImage(
-                                        Mixin().getImage(snapshot.data!.image)),
-                                    fit: BoxFit.cover
-                                ),
+                      child: Stack(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                              image: DecorationImage(
+                                  colorFilter: ColorFilter.mode(
+                                      Colors.black.withOpacity(0.7),
+                                      BlendMode.dstATop),
+                                  image: NetworkImage(
+                                      Mixin().getImage(snapshot.data!.image)),
+                                  fit: BoxFit.cover
                               ),
                             ),
-                            Container(
-                              color: const Color.fromRGBO(
-                                  21, 18, 18, 0.18823529411764706),
-                            ),
-                            SafeArea(
-                                child: Container(
-                                  alignment: const Alignment(-1, -1),
-                                  child: Card(
-                                    color: Colors.black.withOpacity(0.5),
-                                    child: IconButton(
-                                      icon: const Icon(Icons.arrow_back),
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
-                                      color: Colors.white,
+                          ),
+                          Container(
+                            color: const Color.fromRGBO(
+                                21, 18, 18, 0.18823529411764706),
+                          ),
+                          SafeArea(
+                              child: Container(
+                                alignment: const Alignment(-1, -1),
+                                child: Card(
+                                  color: Colors.black.withOpacity(0.5),
+                                  child: IconButton(
+                                    icon: const Icon(Icons.arrow_back),
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    color: Colors.white,
 
-                                    ),
                                   ),
-                                )
-                            ),
-                            SafeArea(
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      alignment: const Alignment(1, 1),
-                                      child: Card(
-                                        color: Colors.black.withOpacity(0.5),
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: IconButton(
-                                            icon: const Icon(
-                                              FontAwesomeIcons.hiking, size: 35,),
-                                            onPressed: () {
-                                              Navigator.pushNamed(context,"/panoramaView",arguments: snapshot.data!.alias.toString());
-                                            },
-                                            color: Colors.white,
-                                            tooltip: "Тур в 360",
-                                          ),
+                                ),
+                              )
+                          ),
+                          SafeArea(
+                              child: Column(
+                                children: [
+                                  Container(
+                                    alignment: const Alignment(1, 1),
+                                    child: Card(
+                                      color: Colors.black.withOpacity(0.5),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: IconButton(
+                                          icon: const Icon(
+                                            FontAwesomeIcons.hiking, size: 35,),
+                                          onPressed: () {
+                                            Navigator.pushNamed(context,"/panoramaView",arguments: snapshot.data!.alias.toString());
+                                          },
+                                          color: Colors.white,
+                                          tooltip: "Тур в 360",
                                         ),
                                       ),
-                                    )
-                                  ],
-                                )
-                            ),
-                          ],
-                        ),
+                                    ),
+                                  )
+                                ],
+                              )
+                          ),
+                        ],
                       )
                   ),
                   Expanded(
@@ -109,45 +112,45 @@ class _SingleTourState extends State<SingleTour> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(snapshot.data!.titleRu,
+                              Text(snapshot.data!.getTitle(),
                                 style: const TextStyle(
-                                    fontSize: 24,
+                                    fontSize: 20,
                                     fontWeight: FontWeight.bold
                                 ),
                                 textAlign: TextAlign.center,
                               ),
                               const SizedBox(height: 20,),
-                              const Text(
-                                "Описание:",
-                                style: TextStyle(
-                                    fontSize: 22,
+                              Text(
+                                'description'.tr,
+                                style: const TextStyle(
+                                    fontSize: 16,
                                     fontWeight: FontWeight.bold
                                 ),
                               ),
                               const SizedBox(height: 20,),
                               Text(
-                                snapshot.data!.descriptionRu,
+                                snapshot.data!.getDescription(),
                               ),
                               const SizedBox(height: 20,),
-                              const Text(
-                                "Аудиогид:",
-                                style: TextStyle(
+                              Text(
+                                "audio_guide".tr,
+                                style: const TextStyle(
                                     fontSize: 22,
                                     fontWeight: FontWeight.bold
                                 ),
                               ),
                               const SizedBox(height: 20,),
-                              AudioPlayer(url:snapshot.data!.audioRu,),
+                              AudioPlayer(url:snapshot.data!.getAudio(),),
                               const SizedBox(height: 20,),
-                              const Text(
-                                "ВидеоГид:",
-                                style: TextStyle(
+                              Text(
+                                "video_guide".tr,
+                                style: const TextStyle(
                                     fontSize: 22,
                                     fontWeight: FontWeight.bold
                                 ),
                               ),
                               const SizedBox(height: 20,),
-                              Youtube(url: snapshot.data!.videoRu,),
+                              Youtube(url: snapshot.data!.getVideo(),),
 
 
                             ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:welcome/mixins/mixins.dart';
 import 'package:welcome/models/news.dart';
 import 'package:welcome/services/api.dart';
@@ -79,14 +80,14 @@ class _StockScreenState extends State<StockScreen> {
                     fit: BoxFit.fill,
                   ),
                 ),
-                title: Text(Mixin().truncateText(allNews!.listNews[index].titleRu, 40)),
+                title: Text(Mixin().truncateText(allNews!.listNews[index].getTitle(), 40)),
                 subtitle: Text(allNews!.listNews[index].createdAt),
               ),
             ),
           )
-              : (loading == true ? Center(child: CircularProgressIndicator())
+              : (loading == true ? const Center(child: CircularProgressIndicator())
               : Center(
-            child: (currentPage <= lastPage ? ElevatedButton(onPressed: (){loadMoreData();}, child: Text("Загрузить"),style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF0c1e34)))) : SizedBox()),
+            child: (currentPage <= lastPage ? ElevatedButton(onPressed: (){loadMoreData();}, child: Text("load_more".tr),style: ButtonStyle(backgroundColor: MaterialStateProperty.all(const Color(0xFF0c1e34)))) : const SizedBox()),
           )
 
           );
@@ -96,20 +97,18 @@ class _StockScreenState extends State<StockScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: MyAppBar(),
-        drawer: NavBar(),
+        appBar: const MyAppBar(),
+        drawer: const NavBar(),
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                Container(
-                  child: Text("Все акции", style: TextStyle(fontSize: 30),),
-                ),
-                SizedBox(height: 10,),
+                Text("all_stocks".tr, style: const TextStyle(fontSize: 30),),
+                const SizedBox(height: 10,),
                 allNews != null ?
                 Expanded(child: _buildList())
-                    :Center(child: CircularProgressIndicator(color: Colors.redAccent,),)
+                    :const Center(child: CircularProgressIndicator(color: Colors.redAccent,),)
               ],
             ),
           ),

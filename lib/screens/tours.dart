@@ -1,7 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:welcome/mixins/mixins.dart';
 import 'package:welcome/models/tours.dart';
 import 'package:welcome/services/api.dart';
+import 'package:welcome/widgets/my_appbar.dart';
+import 'package:welcome/widgets/nav_bar.dart';
 
 class Tours extends StatelessWidget {
   late Future<TourList> tours;
@@ -13,6 +17,8 @@ class Tours extends StatelessWidget {
     tours = TourProvider().getToursByHallId(alias);
 
     return Scaffold(
+      appBar: const MyAppBar(),
+      drawer: const NavBar(),
       body: SafeArea(
         child: FutureBuilder<TourList>(
           future: tours,
@@ -21,23 +27,32 @@ class Tours extends StatelessWidget {
               if (snapshot.hasData) {
                 return Column(
                   children: [
-                    SafeArea(
-                        child: Container(
-                          alignment: const Alignment(-1, -1),
-                          child: Card(
-                            color: Colors.black.withOpacity(0.5),
-                            child: IconButton(
-                              icon: const Icon(Icons.arrow_back),
-                              onPressed: () {
-                                Navigator.pop(context);
-                              },
-                              color: Colors.white,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SafeArea(
+                              child: Container(
+                                alignment: const Alignment(-1, -1),
+                                child: Card(
+                                  color: Colors.black.withOpacity(0.5),
+                                  child: IconButton(
+                                    icon: const Icon(Icons.arrow_back),
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    color: Colors.white,
 
-                            ),
+                                  ),
+                                ),
+                              )
                           ),
-                        )
+                          Text("3d_tour".tr, style: const TextStyle(fontSize: 30),),
+                        ],
+                      ),
                     ),
-                    const Text("3D Туры ", style: TextStyle(fontSize: 30),),
+
                     Expanded(
                       child: ListView.builder(
                         itemCount: snapshot.data!.tours.length,
@@ -61,7 +76,7 @@ class Tours extends StatelessWidget {
                                 margin: const EdgeInsets.only(top:10,bottom: 10),
                                 height: 220,
                                 alignment: const Alignment(-0.7, 0.7),
-                                child: Text(snapshot.data!.tours[index].titleRu, style: const TextStyle(fontSize: 24, color: Colors.white,fontWeight: FontWeight.w700),),
+                                child: Text(snapshot.data!.tours[index].getTitle(), style: const TextStyle(fontSize: 24, color: Colors.white,fontWeight: FontWeight.w700),),
                               ),
                             ),
                           );

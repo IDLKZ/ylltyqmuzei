@@ -9,6 +9,7 @@ import 'package:welcome/widgets/youtube_player.dart';
 class PanoramaView extends StatelessWidget {
   late Future<Tour> tour;
 
+
   @override
   Widget build(BuildContext context) {
     RouteSettings args = ModalRoute.of(context)!.settings;

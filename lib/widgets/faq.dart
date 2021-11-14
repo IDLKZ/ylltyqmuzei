@@ -46,11 +46,11 @@ class _FaqWidgetState extends State<FaqWidget> {
                                       ExpansionPanel(
                                         headerBuilder: (context, bool isExpanded) {
                                           return ListTile(
-                                            title: Text(faq.questionRu, style: const TextStyle(color: Colors.black),),
+                                            title: Text(faq.getQuestion(), style: const TextStyle(color: Colors.black),),
                                           );
                                         },
                                         body: ListTile(
-                                          title: Text(faq.answerRu,style: const TextStyle(color: Colors.black)),
+                                          title: Text(faq.getAnswer(),style: const TextStyle(color: Colors.black)),
                                         ),
                                         isExpanded: faq.expanded,
                                         canTapOnHeader: true,

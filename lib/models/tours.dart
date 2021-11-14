@@ -1,3 +1,5 @@
+import 'package:welcome/models/lang_model.dart';
+
 class TourList{
   List <Tour> tours;
   TourList({required this.tours});
@@ -18,7 +20,7 @@ class TourList{
 
 
 
-class Tour {
+class Tour extends LangModel{
   late int id;
   late int hallId;
   Tour ?prevTour;

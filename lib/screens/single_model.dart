@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:welcome/mixins/mixins.dart';
 import 'package:welcome/models/models.dart';
 import 'package:welcome/screens/qr_screen.dart';
@@ -107,7 +108,7 @@ class SingleModel extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                          Text(snapshot.data!.titleRu,
+                          Text(snapshot.data!.getTitle(),
                             style: const TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.bold
@@ -115,37 +116,37 @@ class SingleModel extends StatelessWidget {
                             textAlign: TextAlign.center,
                           ),
                             const SizedBox(height: 20,),
-                            const Text(
-                              "Описание:",
-                              style: TextStyle(
+                            Text(
+                              "description".tr,
+                              style: const TextStyle(
                                   fontSize: 22,
                                   fontWeight: FontWeight.bold
                               ),
                             ),
                             const SizedBox(height: 20,),
                             Text(
-                              snapshot.data!.descriptionRu,
+                              snapshot.data!.getDescription(),
                             ),
                             const SizedBox(height: 20,),
-                            const Text(
-                              "Аудиогид:",
-                              style: TextStyle(
+                            Text(
+                              "audio_guide".tr,
+                              style: const TextStyle(
                                   fontSize: 22,
                                   fontWeight: FontWeight.bold
                               ),
                             ),
                             const SizedBox(height: 20,),
-                            AudioPlayer(url: snapshot.data!.audioRu,),
+                            AudioPlayer(url: snapshot.data!.getAudio(),),
                             const SizedBox(height: 20,),
-                            const Text(
-                              "ВидеоГид:",
-                              style: TextStyle(
+                            Text(
+                              "video_guide".tr,
+                              style: const TextStyle(
                                   fontSize: 22,
                                   fontWeight: FontWeight.bold
                               ),
                             ),
                             const SizedBox(height: 20,),
-                            Youtube(url: snapshot.data!.videoRu,),
+                            Youtube(url: snapshot.data!.getVideo(),),
 
 
                           ],

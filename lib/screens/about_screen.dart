@@ -58,9 +58,9 @@ class _AboutScreenState extends State<AboutScreen> {
                             padding: const EdgeInsets.all(10.0),
                             child: Column(
                               children: [
-                                Text(snapshot.data!.titleRu, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700, fontFamily: 'Lora'), textAlign: TextAlign.center,),
+                                Text(snapshot.data!.getTitle(), style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700, fontFamily: 'Lora'), textAlign: TextAlign.center,),
                                 const SizedBox(height: 30,),
-                                Text(snapshot.data!.descriptionRu, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500, fontFamily: 'Lora'),)
+                                Text(snapshot.data!.getDescription(), style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500, fontFamily: 'Lora'),)
                               ],
                             ),
                           ),

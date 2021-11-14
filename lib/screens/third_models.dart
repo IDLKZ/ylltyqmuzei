@@ -3,6 +3,8 @@ import 'package:webview_flutter/webview_flutter.dart';
 import 'package:welcome/mixins/mixins.dart';
 import 'package:welcome/models/models.dart';
 import 'package:welcome/services/api.dart';
+import 'package:welcome/widgets/my_appbar.dart';
+import 'package:welcome/widgets/nav_bar.dart';
 
 class ThirdModels extends StatefulWidget {
   const ThirdModels({Key? key}) : super(key: key);
@@ -21,6 +23,8 @@ class _ThirdModelsState extends State<ThirdModels> {
     String id = args.arguments as String;
     models = ThirdModelsProvider().getModelsByHallId(id);
     return Scaffold(
+      appBar: const MyAppBar(),
+      drawer: const NavBar(),
       body: SafeArea(
         child: Column(
           children: [
@@ -78,7 +82,7 @@ class _ThirdModelsState extends State<ThirdModels> {
                                               )),
                                         ),
                                         Text(
-                                          snapshot.data!.modelList[index].titleRu,
+                                          snapshot.data!.modelList[index].getTitle(),
                                           style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                                           textAlign: TextAlign.center,
 

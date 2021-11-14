@@ -1,3 +1,5 @@
+import 'package:welcome/models/lang_model.dart';
+
 class ModelList{
   late List<Model> modelList;
   ModelList({required this.modelList});
@@ -12,7 +14,7 @@ class ModelList{
 }
 
 
-class Model {
+class Model extends LangModel{
   late int id;
   late String image;
   late String wavefront;

@@ -21,6 +21,37 @@ import 'package:get/get.dart';
    get descriptionEs => this.descriptionEs;
    get descriptionTr => this.descriptionTr;
 
+  get questionRu => this.questionRu;
+  get questionEn => this.questionEn;
+  get questionKz => this.questionKz;
+  get questionDe => this.questionDe;
+  get questionFr => this.questionFr;
+  get questionEs => this.questionEs;
+  get questionTr => this.questionTr;
+
+  get answerRu => this.answerRu;
+  get answerEn => this.answerEn;
+  get answerKz => this.answerKz;
+  get answerDe => this.answerDe;
+  get answerFr => this.answerFr;
+  get answerEs => this.answerEs;
+  get answerTr => this.answerTr;
+
+  get audioRu => this.audioRu;
+  get audioEn => this.audioEn;
+  get audioKz => this.audioKz;
+  get audioDe => this.audioDe;
+  get audioFr => this.audioFr;
+  get audioEs => this.audioEs;
+  get audioTr => this.audioTr;
+
+  get videoRu => this.videoRu;
+  get videoEn => this.videoEn;
+  get videoKz => this.videoKz;
+  get videoDe => this.videoDe;
+  get videoFr => this.videoFr;
+  get videoEs => this.videoEs;
+  get videoTr => this.videoTr;
 
   getTitle(){
     var locale = Get.locale!.languageCode;
@@ -39,14 +70,14 @@ import 'package:get/get.dart';
       }
       break;
       case 'de' :{
-        if(this.titleDe != null){
+        if(titleDe != null){
           return titleDe;
         }
         return noTranslation;
       }
       break;
       case 'fr' :{
-        if(this.titleFr != null){
+        if(titleFr != null){
           return titleFr;
         }
         else{
@@ -55,7 +86,7 @@ import 'package:get/get.dart';
       }
       break;
       case "es" :{
-        if(this.titleEs != null){
+        if(titleEs != null){
           return titleEs;
         }
         else{
@@ -64,7 +95,7 @@ import 'package:get/get.dart';
       }
       break;
       case "tr" :{
-        if(this.titleTr != null){
+        if(titleTr != null){
           return titleTr;
         }
         else{
@@ -76,8 +107,7 @@ import 'package:get/get.dart';
     }
   }
 
-
-   getDescription(){
+  getDescription(){
      var locale = Get.locale!.languageCode;
      noTranslation = 'no_translation'.tr;
      switch(locale){
@@ -94,14 +124,14 @@ import 'package:get/get.dart';
        }
        break;
        case 'de' :{
-         if(this.descriptionDe != null){
+         if(descriptionDe != null){
            return descriptionDe;
          }
          return noTranslation;
        }
        break;
        case 'fr' :{
-         if(this.descriptionFr != null){
+         if(descriptionFr != null){
            return descriptionFr;
          }
          else{
@@ -110,7 +140,7 @@ import 'package:get/get.dart';
        }
        break;
        case "es" :{
-         if(this.descriptionEs != null){
+         if(descriptionEs != null){
            return descriptionEs;
          }
          else{
@@ -119,12 +149,190 @@ import 'package:get/get.dart';
        }
        break;
        case "tr" :{
-         if(this.descriptionTr != null){
+         if(descriptionTr != null){
            return descriptionTr;
          }
          else{
            return noTranslation;
          }
+       }
+       break;
+
+     }
+   }
+
+  getQuestion(){
+     var locale = Get.locale!.languageCode;
+     noTranslation = 'no_translation'.tr;
+     switch(locale){
+       case 'ru' :{
+         return questionRu;
+       }
+       break;
+       case 'en' :{
+         return questionEn;
+       }
+       break;
+       case "kz" :{
+         return questionKz;
+       }
+       break;
+       case 'de' :{
+         if(questionDe != null){
+           return questionDe;
+         }
+         return noTranslation;
+       }
+       break;
+       case 'fr' :{
+         if(questionFr != null){
+           return questionFr;
+         }
+         else{
+           return noTranslation;
+         }
+       }
+       break;
+       case "es" :{
+         if(questionEs != null){
+           return questionEs;
+         }
+         else{
+           return noTranslation;
+         }
+       }
+       break;
+       case "tr" :{
+         if(questionTr != null){
+           return questionTr;
+         }
+         else{
+           return noTranslation;
+         }
+       }
+       break;
+
+     }
+   }
+
+  getAnswer(){
+     var locale = Get.locale!.languageCode;
+     noTranslation = 'no_translation'.tr;
+     switch(locale){
+       case 'ru' :{
+         return answerRu;
+       }
+       break;
+       case 'en' :{
+         return answerEn;
+       }
+       break;
+       case "kz" :{
+         return answerKz;
+       }
+       break;
+       case 'de' :{
+         if(answerDe != null){
+           return answerDe;
+         }
+         return noTranslation;
+       }
+       break;
+       case 'fr' :{
+         if(answerFr != null){
+           return answerFr;
+         }
+         else{
+           return noTranslation;
+         }
+       }
+       break;
+       case "es" :{
+         if(answerEs != null){
+           return answerEs;
+         }
+         else{
+           return noTranslation;
+         }
+       }
+       break;
+       case "tr" :{
+         if(answerTr != null){
+           return answerTr;
+         }
+         else{
+           return noTranslation;
+         }
+       }
+       break;
+
+     }
+   }
+
+   getAudio(){
+     var locale = Get.locale!.languageCode;
+     switch(locale){
+       case 'ru' :{
+         return audioRu;
+       }
+       break;
+       case 'en' :{
+         return audioEn;
+       }
+       break;
+       case "kz" :{
+         return audioKz;
+       }
+       break;
+       case 'de' :{
+         return audioDe;
+       }
+       break;
+       case 'fr' :{
+         return audioFr;
+       }
+       break;
+       case "es" :{
+         return audioEs;
+       }
+       break;
+       case "tr" :{
+         return audioTr;
+       }
+       break;
+
+     }
+   }
+
+   getVideo(){
+     var locale = Get.locale!.languageCode;
+     switch(locale){
+       case 'ru' :{
+         return videoRu;
+       }
+       break;
+       case 'en' :{
+         return videoEn;
+       }
+       break;
+       case "kz" :{
+         return videoKz;
+       }
+       break;
+       case 'de' :{
+         return videoDe;
+       }
+       break;
+       case 'fr' :{
+         return videoFr;
+       }
+       break;
+       case "es" :{
+         return videoEs;
+       }
+       break;
+       case "tr" :{
+         return videoTr;
        }
        break;
 

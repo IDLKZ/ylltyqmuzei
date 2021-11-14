@@ -1,4 +1,6 @@
 
+import 'lang_model.dart';
+
 class FaqList{
   List<Faq> faqs;
   FaqList({required this.faqs});
@@ -12,7 +14,7 @@ class FaqList{
   }
 }
 
-class Faq {
+class Faq extends LangModel{
   bool expanded = false;
   late int id;
   late String questionRu;

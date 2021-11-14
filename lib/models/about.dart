@@ -1,4 +1,6 @@
-class About {
+import 'package:welcome/models/lang_model.dart';
+
+class About extends LangModel{
   late int id;
   late String image;
   late String titleRu;

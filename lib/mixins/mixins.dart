@@ -36,7 +36,7 @@ class Mixin{
     List<String> getTitle(dynamic data){
        List<String> titles = [];
        for(var item in data){
-         titles.add(item.titleRu);
+         titles.add(item.getTitle());
        }
        return titles;
     }

@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -12,22 +13,22 @@ class NavBar extends StatefulWidget {
 
 class _NavBarState extends State<NavBar> {
   List<Map<dynamic, dynamic>> routeLists = [
-    {"title": "Туры", "icon": Icons.tour, "route": "/home"},
-    {"title": "QR сканнер", "icon": Icons.qr_code, "route": "/qr"},
-    {"title": "Новости", "icon": FontAwesomeIcons.newspaper, "route": "/news"},
-    {"title": "Акции", "icon": FontAwesomeIcons.calendarCheck, "route": "/stocks"},
+    {"title": "menu_tours".tr, "icon": Icons.tour, "route": "/home"},
+    {"title": "menu_qr".tr, "icon": Icons.qr_code, "route": "/qr"},
+    {"title": "menu_news".tr, "icon": FontAwesomeIcons.newspaper, "route": "/news"},
+    {"title": "menu_stocks".tr, "icon": FontAwesomeIcons.calendarCheck, "route": "/stocks"},
     {
-      "title": "F.A.Q",
+      "title": "menu_faq".tr,
       "icon": FontAwesomeIcons.questionCircle,
       "route": "/faqs"
     },
     {
-      "title": "Контакты",
+      "title": "menu_contacts".tr,
       "icon": FontAwesomeIcons.addressBook,
       "route": "/contacts"
     },
     {
-      "title": "О музее",
+      "title": "menu_about".tr,
       "icon": Icons.account_balance_outlined,
       "route": "/about"
     },

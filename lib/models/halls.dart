@@ -1,4 +1,6 @@
 
+import 'package:welcome/models/lang_model.dart';
+
 class HallList{
   List<Hall> halls;
   HallList({required this.halls});
@@ -12,7 +14,7 @@ class HallList{
   }
 }
 
-class Hall {
+class Hall extends LangModel{
   late int id;
   late String image;
   late String alias;
