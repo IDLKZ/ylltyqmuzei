@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:welcome/locale_string.dart';
 import 'package:welcome/screens/about_screen.dart';
+import 'package:welcome/screens/contact_screen.dart';
 import 'package:welcome/screens/faq_screen.dart';
 import 'package:welcome/screens/home_screen.dart';
 import 'package:welcome/screens/news.dart';
@@ -48,7 +49,8 @@ class Start extends StatelessWidget {
         "/singleNews":(context)=>SingleNews(),
         '/about':(context)=>const AboutScreen(),
         '/faqs':(context)=>const FaqScreen(),
-        '/qr':(context)=>const QrScreen()
+        '/qr':(context)=>const QrScreen(),
+        '/contact':(context)=> const ContactScreen()
       },
     );
   }

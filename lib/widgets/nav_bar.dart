@@ -25,7 +25,7 @@ class _NavBarState extends State<NavBar> {
     {
       "title": "menu_contacts".tr,
       "icon": FontAwesomeIcons.addressBook,
-      "route": "/contacts"
+      "route": "/contact"
     },
     {
       "title": "menu_about".tr,
