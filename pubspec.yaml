@@ -52,6 +52,7 @@ dependencies:
   webview_flutter: ^2.3.0
   curved_nav_bar: ^0.0.2
   qr_code_scanner: ^0.6.1
+  lottie: ^1.2.1
 
 
 

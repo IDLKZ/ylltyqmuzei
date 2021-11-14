@@ -7,7 +7,7 @@ import 'package:welcome/screens/qr_screen.dart';
 import 'package:welcome/services/api.dart';
 import 'package:welcome/widgets/audio_player.dart';
 import 'package:welcome/widgets/youtube_player.dart';
-
+import 'package:lottie/lottie.dart';
 
 class SingleModel extends StatelessWidget {
 
@@ -128,25 +128,25 @@ class SingleModel extends StatelessWidget {
                               snapshot.data!.getDescription(),
                             ),
                             const SizedBox(height: 20,),
-                            Text(
+                            snapshot.data!.getAudio() != null ? Text(
                               "audio_guide".tr,
                               style: const TextStyle(
                                   fontSize: 22,
                                   fontWeight: FontWeight.bold
                               ),
-                            ),
+                            ) : SizedBox(),
                             const SizedBox(height: 20,),
-                            AudioPlayer(url: snapshot.data!.getAudio(),),
+                            snapshot.data!.getAudio() != null ? AudioPlayer(url: snapshot.data!.getAudio(),) : SizedBox(),
                             const SizedBox(height: 20,),
-                            Text(
+                            snapshot.data!.getVideo() != null ? Text(
                               "video_guide".tr,
                               style: const TextStyle(
                                   fontSize: 22,
                                   fontWeight: FontWeight.bold
                               ),
-                            ),
+                            ) : SizedBox(),
                             const SizedBox(height: 20,),
-                            Youtube(url: snapshot.data!.getVideo(),),
+                            snapshot.data!.getVideo() != null ? Youtube(url: snapshot.data!.getVideo(),) : SizedBox(),
 
 
                           ],

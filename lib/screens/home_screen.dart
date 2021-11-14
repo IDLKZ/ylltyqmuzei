@@ -110,7 +110,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                     fontSize: 10),
 // optional
                                 onPageChanged: (page) {
-
                                 },
                                 onSelectedItem: (index) {
                                   Navigator.pushNamed(context, "/hall",arguments: snapshot.data!.halls[index].alias);

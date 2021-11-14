@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
+import 'package:lottie/lottie.dart';
 import 'package:welcome/mixins/mixins.dart';
 import 'package:welcome/models/tours.dart';
 import 'package:welcome/services/api.dart';
@@ -25,7 +26,8 @@ class Tours extends StatelessWidget {
           builder: (context, snapshot) {
             if (!snapshot.hasError) {
               if (snapshot.hasData) {
-                return Column(
+                return
+                  Column(
                   children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -52,8 +54,7 @@ class Tours extends StatelessWidget {
                         ],
                       ),
                     ),
-
-                    Expanded(
+                    snapshot.data!.tours.length > 0 ? Expanded(
                       child: ListView.builder(
                         itemCount: snapshot.data!.tours.length,
                         itemBuilder: (BuildContext context, int index) {
@@ -82,14 +83,21 @@ class Tours extends StatelessWidget {
                           );
                         },
                       ),
+                    )
+                        : Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Lottie.asset('assets/images/no_data2.json'),
+                      ],
                     ),
                   ],
                 );
               } else {
-                return const Center(
-                  child: CircularProgressIndicator(
-                    color: Colors.blue,
-                  ),
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Lottie.asset('assets/images/no_data2.json'),
+                  ],
                 );
               }
             } else {

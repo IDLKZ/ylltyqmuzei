@@ -50,7 +50,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           ),
                         ),
                         Container(
-                          color: const Color.fromRGBO(255, 255, 255, 0.19),
+                          color: const Color.fromRGBO(
+                              0, 0, 0, 0.18823529411764706),
                         ),
                         Container(
                           alignment: const Alignment(-0.75, 0.65),
@@ -91,7 +92,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           ),
                         ),
                         Container(
-                          color: const Color.fromRGBO(255, 255, 255, 0.19),
+                          color: const Color.fromRGBO(
+                              0, 0, 0, 0.18823529411764706),
                         ),
                         Container(
                           alignment: const Alignment(-0.75, 0.65),
@@ -132,7 +134,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           ),
                         ),
                         Container(
-                          color: const Color.fromRGBO(255, 255, 255, 0.19),
+                          color: const Color.fromRGBO(
+                              0, 0, 0, 0.18823529411764706),
                         ),
                         Container(
                           alignment: const Alignment(-0.75, 0.65),

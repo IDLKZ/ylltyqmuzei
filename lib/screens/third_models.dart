@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:welcome/mixins/mixins.dart';
 import 'package:welcome/models/models.dart';
@@ -48,7 +49,8 @@ class _ThirdModelsState extends State<ThirdModels> {
                 builder: (context, snapshot) {
                   if (!snapshot.hasError) {
                     if (snapshot.hasData) {
-                      return Padding(
+                      return snapshot.data!.modelList.length > 0 ?
+                      Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: GridView.builder(
                             gridDelegate:
@@ -93,12 +95,20 @@ class _ThirdModelsState extends State<ThirdModels> {
                                 ),
                               );
                             }),
-                      );
+                      )
+                      :Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Lottie.asset('assets/images/no_data.json'),
+                        ],
+                      )
+                      ;
                     } else {
-                      return const Center(
-                        child: CircularProgressIndicator(
-                          color: Colors.blueAccent,
-                        ),
+                      return Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Lottie.asset('assets/images/no_data.json'),
+                        ],
                       );
                     }
                   } else {
