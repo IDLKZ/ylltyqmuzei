@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:welcome/screens/about_screen.dart';
 import 'package:welcome/screens/faq_screen.dart';
 import 'package:welcome/screens/home_screen.dart';
@@ -16,7 +15,6 @@ import 'package:welcome/screens/tours.dart';
 import 'package:welcome/screens/web_view.dart';
 import 'package:welcome/screens/welcome_screen.dart';
 
-import 'generated/l10n.dart';
 
 void main() {
   runApp(const Start());
@@ -29,13 +27,6 @@ class Start extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-      localizationsDelegates: const [
-        S.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: S.delegate.supportedLocales,
       title: 'InIt',
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
