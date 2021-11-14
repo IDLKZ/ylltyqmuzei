@@ -7,11 +7,13 @@ import 'package:welcome/providers/music_manager.dart';
 
 
 class AudioPlayer extends StatefulWidget {
-   String? url;
-   AudioPlayer({Key? key, String? url}) : super(key: key);
+   late String? url;
+   AudioPlayer({Key? key, required this.url}) : super(key: key);
 
   @override
-  _AudioPlayerState createState() => _AudioPlayerState(url: this.url);
+  _AudioPlayerState createState(){
+    return _AudioPlayerState(url: this.url);
+  }
 }
 
 class _AudioPlayerState extends State<AudioPlayer> {
