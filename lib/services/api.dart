@@ -11,6 +11,7 @@ import 'package:welcome/models/tours.dart';
 
 class HallProvider {
   Future<HallList> getHall() async {
+    
     final response = await http.get(Uri.parse(Constants.apiUrl + 'halls'));
     if(response.statusCode == 200){
       return HallList.fromJson(jsonDecode(response.body));

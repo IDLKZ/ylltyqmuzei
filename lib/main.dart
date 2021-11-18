@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:welcome/locale_string.dart';
 import 'package:welcome/screens/about_screen.dart';
@@ -17,8 +19,10 @@ import 'package:welcome/screens/tours.dart';
 import 'package:welcome/screens/web_view.dart';
 import 'package:welcome/screens/welcome_screen.dart';
 import 'package:get/get.dart';
+import 'package:welcome/services/myHttpClient.dart';
 
 void main() {
+  HttpOverrides.global = new MyHttpOverrides();
   runApp(const Start());
 }
 
