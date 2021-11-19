@@ -1,6 +1,7 @@
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:welcome/constants/constants.dart';
 import 'package:get/get.dart';
 class Mixin{
@@ -86,5 +87,37 @@ class Mixin{
        String locale = Get.locale!.languageCode;
        return locale.capitalizeFirst;
     }
+
+    static Future<String> getCurrentLocale() async{
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      String? locale = prefs.getString("langLocale") ?? "ru";
+      return locale;
+    }
+
+     static Future<String> getCurrentRoute() async{
+       SharedPreferences prefs = await SharedPreferences.getInstance();
+       bool route =  prefs.getBool("welcome") ?? false;
+       return route == true ? "/greeting" : "/";
+     }
+
+
+    static setShared(String key, dynamic value ) async{
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      if(value.runtimeType == String){
+        prefs.setString(key, value);
+      }
+      if(value.runtimeType == bool){
+        prefs.setBool(key, value);
+      }
+      if(value.runtimeType == int){
+        prefs.setInt(key, value);
+      }
+      if(value.runtimeType == double){
+        prefs.setDouble(key, value);
+      }
+    }
+
+
+
 
 }

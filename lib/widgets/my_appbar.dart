@@ -43,10 +43,12 @@ class _MyAppBarState extends State<MyAppBar> {
         color: Colors.transparent,
       ),
 
-      onChanged: (String? newValue) {
+      onChanged: (String? newValue) async {
+          String newLang = newValue ?? "ru";
         setState(() {
-          Get.updateLocale(Locale(newValue ?? "ru"));
+          Get.updateLocale(Locale(newLang));
         });
+        await Mixin.setShared("langLocale", newLang);
       },
       items: MyAppBar.languagesApp.map((value) {
         return DropdownMenuItem<String>(

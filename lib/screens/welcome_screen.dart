@@ -2,6 +2,11 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:welcome/mixins/mixins.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -11,7 +16,15 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
-
+  static const List<Map> languagesApp = [
+    {"title":"Русский язык","code":"ru"},
+    {"title":"Қазақ тілі","code":"kz"},
+    {"title":"English Language","code":"en"},
+    {"title":"Deutsche Sprache","code":"de"},
+    {"title":"Français","code":"fr"},
+    {"title":"Español","code":"es"},
+    {"title":"Türkçe","code":"tr"},
+  ];
   CarouselController buttonCarouselController = CarouselController();
   int currentPage = 0;
   @override
@@ -44,6 +57,70 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                             color: Colors.black,
                             image: DecorationImage(
                                 colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.7), BlendMode.dstATop),
+                                image: const AssetImage('assets/images/bg-image-1.jpeg'),
+                                fit: BoxFit.cover
+                            ),
+                          ),
+                        ),
+                        Container(
+                          color: const Color.fromRGBO(
+                              0, 0, 0, 0.18823529411764706),
+                        ),
+                        SafeArea(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Image(image:AssetImage("assets/images/logo.png"),height: 150,),
+                              SizedBox(height: 20,),
+                              const Text("Добро пожаловать,Пожалуйста выберите язык!",style: TextStyle(fontSize: 22, color: Colors.white,fontWeight: FontWeight.w600),textAlign: TextAlign.center),
+                              const Text("Қош келдіңіз, Тілді таңдаңыз!",style: TextStyle(fontSize: 22, color: Colors.white,fontWeight: FontWeight.w600),textAlign: TextAlign.center),
+                              const Text("Welcome, Please choose a language!",style: TextStyle(fontSize: 22, color: Colors.white,fontWeight: FontWeight.w600),textAlign: TextAlign.center),
+                              const SizedBox(height: 20,),
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                      horizontal: 10, vertical: 5),
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(10)),
+
+                                child: DropdownButton<String>(
+
+                                  value: Get.locale!.languageCode,
+                                  icon: const Icon(Icons.language, color:  const Color(0xFF0c1e34),),
+                                  iconSize: 24,
+                                  style: const TextStyle(color:  const Color(0xFF0c1e34)),
+                                  dropdownColor: Colors.white,
+                                  underline: Container(
+                                    height: 0,
+                                    color: Colors.white,
+                                  ),
+                                  onChanged: (String? newValue) async {
+                                    String langLocale = newValue ?? "ru";
+                                    setState(() {
+                                      Get.updateLocale(Locale(langLocale));
+                                    });
+                                    Mixin.setShared("langLocale", langLocale);
+                                  },
+                                  items: languagesApp.map((value) {
+                                    return DropdownMenuItem<String>(
+                                      value: value["code"],
+                                      child: Text(value["title"] ?? "Рус"),
+                                    );
+                                  }).toList(),
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                    Stack(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            image: DecorationImage(
+                                colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.7), BlendMode.dstATop),
                                 image: const AssetImage('assets/images/bg-image.png'),
                                 fit: BoxFit.cover
                             ),
@@ -62,9 +139,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                               child: AnimatedTextKit(
                                 animatedTexts: [
                                   TypewriterAnimatedText(
-                                    'National Museum of the Republic of Kazakhstan',
+                                    'welcome_1'.tr,
                                     textStyle: const TextStyle(
-                                        fontSize: 40.0,
+                                        fontSize: 30.0,
                                         fontWeight: FontWeight.w700,
                                         color: Colors.white
                                     ),
@@ -104,9 +181,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                               child: AnimatedTextKit(
                                 animatedTexts: [
                                   TypewriterAnimatedText(
-                                    '3D Tour in Museums Halls',
+                                    'welcome_2'.tr,
                                     textStyle: const TextStyle(
-                                        fontSize: 40.0,
+                                        fontSize: 30.0,
                                         fontWeight: FontWeight.w700,
                                         color: Colors.white
                                     ),
@@ -146,9 +223,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                               child: AnimatedTextKit(
                                 animatedTexts: [
                                   TypewriterAnimatedText(
-                                    'Information Sculpture and View in our app',
+                                    'welcome_3'.tr,
                                     textStyle: const TextStyle(
-                                        fontSize: 40.0,
+                                        fontSize: 30.0,
                                         fontWeight: FontWeight.w700,
                                         color: Colors.white
                                     ),
@@ -170,7 +247,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           );
         },
       ),
-      floatingActionButton: currentPage < 2 ? FloatingActionButton(
+      floatingActionButton: currentPage < 3 ? FloatingActionButton(
         backgroundColor: Colors.black12,
         focusColor: Colors.transparent,
         hoverColor: Colors.transparent,
@@ -196,12 +273,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   )
               )
           ),
-        onPressed: (){
+        onPressed: () async{
+            Mixin.setShared("welcome", true);
             Navigator.pushNamedAndRemoveUntil(context, '/home', (Route<dynamic> route)=>false);
         },
-        child: const Padding(
-          padding:  EdgeInsets.fromLTRB(10,8,10,8),
-          child:  Text("Let's start!",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(10,8,10,8),
+          child:  Text('start'.tr,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
         ),
       )
     );

@@ -80,7 +80,6 @@ class _QrWidgetState extends State<QrWidget> {
                     controller.resumeCamera();
                   }
                 });
-                print("bye");
               }
               break;
               case "tour":{
@@ -102,6 +101,17 @@ class _QrWidgetState extends State<QrWidget> {
                 });
               }
               break;
+              case "showCase":{
+                controller != null ? controller.pauseCamera() : null;
+                Navigator.pushNamed(context, "/showCase",arguments:redirectedDATA[1]).then((value){
+                  if(controller != null){
+                    controller.resumeCamera();
+                  }
+                });
+
+              }
+              break;
+
             }
           }
         }

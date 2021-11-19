@@ -58,6 +58,54 @@ class _SingleHallsState extends State<SingleHalls> {
                     21, 18, 18, 0.18823529411764706),
               ),
               SafeArea(
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        SingleChildScrollView(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              DefaultTextStyle(
+                                style: const TextStyle(
+                                    fontSize: 24.0,
+                                    fontWeight: FontWeight.bold,
+                                    color:Color(-285354647)
+                                ),
+                                child: AnimatedTextKit(
+                                    totalRepeatCount: 1,
+                                    animatedTexts: [
+                                      TyperAnimatedText(
+                                          snapshot.data!.getTitle()),
+                                    ]
+                                ),
+
+                              ),
+                              const SizedBox(height: 20,),
+                              DefaultTextStyle(
+                                style: const TextStyle(
+                                  fontSize: 16.0,
+                                ),
+                                child: AnimatedTextKit(
+                                  totalRepeatCount: 1,
+                                  animatedTexts: [
+                                    TypewriterAnimatedText(
+                                      snapshot.data!.getDescription(),
+                                      speed: const Duration(milliseconds: 10),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+
+              ),
+              SafeArea(
                   child: Container(
                     alignment: const Alignment(-1, -1),
                     child: Card(
@@ -116,54 +164,6 @@ class _SingleHallsState extends State<SingleHalls> {
 
                     ],
                   )
-              ),
-              SafeArea(
-                  child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        SingleChildScrollView(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              DefaultTextStyle(
-                                style: const TextStyle(
-                                    fontSize: 24.0,
-                                    fontWeight: FontWeight.bold,
-                                    color:Color(-285354647)
-                                ),
-                                child: AnimatedTextKit(
-                                    totalRepeatCount: 1,
-                                    animatedTexts: [
-                                      TyperAnimatedText(
-                                          snapshot.data!.getTitle()),
-                                    ]
-                                ),
-
-                              ),
-                              const SizedBox(height: 20,),
-                              DefaultTextStyle(
-                                style: const TextStyle(
-                                  fontSize: 16.0,
-                                ),
-                                child: AnimatedTextKit(
-                                  totalRepeatCount: 1,
-                                  animatedTexts: [
-                                    TypewriterAnimatedText(
-                                      snapshot.data!.getDescription(),
-                                      speed: const Duration(milliseconds: 10),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
-
               ),
 
             ],

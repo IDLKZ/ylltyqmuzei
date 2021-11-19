@@ -1,27 +1,23 @@
-import 'package:welcome/models/lang_model.dart';
-import 'package:welcome/models/showcases.dart';
 
-class ModelList{
-  late List<Model> modelList;
-  ModelList({required this.modelList});
+import 'lang_model.dart';
 
-  factory ModelList.fromJson(List<dynamic> json){
-    List<Model> rawData = [];
+class ShowcaseList{
+  late List<Showcase> showcaseList;
+  ShowcaseList({required this.showcaseList});
+
+  factory ShowcaseList.fromJson(List<dynamic> json){
+    List<Showcase> rawData = [];
     for(var item in json){
-      rawData.add(Model.fromJson(item));
+      rawData.add(Showcase.fromJson(item));
     }
-    return ModelList(modelList: rawData);
+    return ShowcaseList(showcaseList: rawData);
   }
 }
 
 
-class Model extends LangModel{
+class Showcase extends LangModel{
   late int id;
   late String image;
-  Showcase? showcase;
-  late String wavefront;
-  late String texture;
-  late String textureImage;
   late String alias;
   late String titleRu;
   late String titleKz;
@@ -56,13 +52,10 @@ class Model extends LangModel{
   late int hallId;
 
 
-  Model(
+  Showcase(
       {
         required this.id,
         required this.image,
-        required this.wavefront,
-        required this.texture,
-        required this.textureImage,
         required this.alias,
         required this.titleRu,
         required this.titleKz,
@@ -95,15 +88,11 @@ class Model extends LangModel{
         required this.createdAt,
         required this.updatedAt,
         required this.hallId,
-        this.showcase
-        });
+      });
 
-  Model.fromJson(Map<String, dynamic> json) {
+  Showcase.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     image = json['image'];
-    wavefront = json['wavefront'];
-    texture = json['texture'];
-    textureImage = json['texture_image'];
     alias = json['alias'];
     titleRu = json['title_ru'];
     titleKz = json['title_kz'];
@@ -136,16 +125,13 @@ class Model extends LangModel{
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
     hallId = json['hall_id'];
-    showcase = json["showcase"] != null ? Showcase.fromJson(json["showcase"]) : null;
+
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
     data['image'] = this.image;
-    data['wavefront'] = this.wavefront;
-    data['texture'] = this.texture;
-    data['texture_image'] = this.textureImage;
     data['alias'] = this.alias;
     data['title_ru'] = this.titleRu;
     data['title_kz'] = this.titleKz;

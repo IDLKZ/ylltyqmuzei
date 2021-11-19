@@ -7,6 +7,7 @@ import 'package:welcome/models/faqs.dart';
 import 'package:welcome/models/halls.dart';
 import 'package:welcome/models/models.dart';
 import 'package:welcome/models/news.dart';
+import 'package:welcome/models/showcases.dart';
 import 'package:welcome/models/tours.dart';
 
 class HallProvider {
@@ -69,6 +70,15 @@ class ThirdModelsProvider{
       throw Exception('Server not connected');
     }
   }
+
+  Future <ModelList> getModelByShowcase(String showcase_id) async{
+    final response = await http.get(Uri.parse(Constants.apiUrl + 'showcaseThirdModel/'+ showcase_id));
+    if(response.statusCode == 200){
+      return ModelList.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Server not connected');
+    }
+  }
 }
 
 class NewsModelsProvider{
@@ -118,6 +128,18 @@ class AboutProvider {
     final response = await http.get(Uri.parse(Constants.apiUrl + 'about'));
     if(response.statusCode == 200){
       return About.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Server not connected');
+    }
+  }
+}
+
+
+class ShowcaseProvider{
+  Future <Showcase> getSingleShowcaseByAlias(String alias) async{
+    final response = await http.get(Uri.parse(Constants.apiUrl + 'showcases/'+ alias));
+    if(response.statusCode == 200){
+      return Showcase.fromJson(jsonDecode(response.body));
     } else {
       throw Exception('Server not connected');
     }

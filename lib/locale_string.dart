@@ -22,7 +22,12 @@ class LocaleString extends Translations {
       'all_stocks':'All stocks',
       'all_news':'All news',
       '3d_tour':'3D tours',
-      'info':'Info'
+      'info':'Info',
+      'welcome_1':"Welcome to QazMuseum! Visit the halls and exhibits without leaving home",
+      'welcome_2':"Virtual tour of the museum halls, listen to audio guides and watch video guides!",
+      'welcome_3':"Virtual exhibits in 3D, news and much more!",
+      "start":"Lets go!",
+      "greeting":"Welcome Back!"
     },
     'ru':{
       'app_title':'QAZMUSEUM',
@@ -42,7 +47,13 @@ class LocaleString extends Translations {
       'all_stocks':'Все акции',
       'all_news':'Все новости',
       '3d_tour':'3D туры',
-      'info':'Инфо'
+      'info':'Инфо',
+      'welcome_1':"Добро пожаловать в QazMuseum! Посейщайте залы и экспонаты не выходя из дома",
+      'welcome_2':"Виртуальный тур по залам музея, прослушайте аудиогиды и просматривайте видеогиды!",
+      'welcome_3':"Виртуальные экспонаты в 3D, новости и многое другое!",
+      "start":"Начать!",
+      "greeting":"С Возвращением!"
+
     },
     'kz':{
       'app_title':'QAZMUSEUM',
@@ -62,7 +73,12 @@ class LocaleString extends Translations {
       'all_stocks':'Барлық акциялар',
       'all_news':'Барлық жаңалықтар',
       '3d_tour':'3D турлар',
-      'info':'Инфо'
+      'info':'Инфо',
+      'welcome_1':"QazMuseum-ға қош келдіңіз! Үйдің ыңғайлылығынан залдар мен экспонаттарға барыңыз",
+      'welcome_2': "Мұражай залдары бойынша виртуалды саяхат, аудиогидтерді тыңдаңыз және бейне гидтерді қараңыз!",
+      'welcome_3': "3D виртуалды экспонаттары, жаңалықтар және тағы басқалар!",
+      "start": "Бастау!",
+      "greeting": "қайтарумен!"
     },
     'de':{
       'app_title':'QAZMUSEUM',
@@ -82,7 +98,12 @@ class LocaleString extends Translations {
       'all_stocks':'Alle Bestände',
       'all_news':'Alle neuen Modelle',
       '3d_tour':'3D Touren',
-      'info':'Info'
+      'info':'Info',
+      'welcome_1':"Willkommen im QazMuseum! Besuchen Sie die Hallen und Exponate, ohne das Haus zu verlassen",
+      'welcome_2':"Eine virtuelle Tour durch die Hallen des Museums, hören Sie sich Audio-Guides an und sehen Sie sich Video-Guides an!",
+      'welcome_3':"Virtuelle Exponate in 3D, Nachrichten und vieles mehr!",
+      "start":"Starten!",
+      "greeting":"Willkommen zurück!"
     },
     'fr':{
       'app_title':'QAZMUSEUM',
@@ -102,7 +123,13 @@ class LocaleString extends Translations {
       'all_stocks':'Tous les stocks',
       'all_news':'Toutes les nouveautés',
       '3d_tour':'Visites 3D',
-      'info':'Info'
+      'info':'Info',
+      'welcome_1': "Bienvenue au QazMuseum! Visitez les salles et les expositions dans le confort de votre maison",
+      'welcome_2': "Visite virtuelle Des salles du musée, écoutez des audioguides et visionnez des guides vidéo!",
+      'welcome_3': "Expositions Virtuelles en 3D, Actualités et plus encore!",
+      "start": "Démarrer!",
+      "greeting": "Bon Retour!"
+
     },
     'es':{
       'app_title':'QAZMUSEUM',
@@ -122,7 +149,12 @@ class LocaleString extends Translations {
       'all_stocks':'Todas las existencias',
       'all_news':'Todos los nuevos',
       '3d_tour':'Tours en 3D',
-      'info':'Info'
+      'info':'Info',
+      'welcome_1': "¡Bienvenido a QazMuseum! Visita Salas y exhibiciones desde la comodidad de tu hogar",
+      'welcome_2': "¡Visita Virtual a las Salas del Museo, escucha audioguías y Mira guías de video!",
+      'welcome_3': "¡Exhibiciones Virtuales en 3D, noticias y más!",
+      "start": "Empezar!",
+      "greeting": "¡Bienvenido de Nuevo!"
     },
     'tr':{
       'app_title':'QAZMUSEUM',
@@ -142,7 +174,12 @@ class LocaleString extends Translations {
       'all_stocks':'Tüm stoklar',
       'all_news':'Tüm newws',
       '3d_tour':'3D turlar',
-      'info':'Bilgi'
+      'info':'Bilgi',
+      'welcome_1':"Qazmuseum'a hoş geldiniz! Evinizden ayrılmadan salonları ve sergileri ziyaret edin",
+      'welcome_2':"Müzenin salonlarında sanal bir tur atın, sesli rehberleri dinleyin ve video rehberlerini izleyin!",
+      'welcome_3':"3D sanal sergiler, haberler ve daha fazlası!",
+      "start":"Başla!",
+      "greeting":"Hoş geldiniz!"
     },
   };
 
