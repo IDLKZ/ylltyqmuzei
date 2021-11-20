@@ -57,53 +57,56 @@ class _SingleHallsState extends State<SingleHalls> {
                 color: const Color.fromRGBO(
                     21, 18, 18, 0.18823529411764706),
               ),
-              SafeArea(
-                  child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        SingleChildScrollView(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              DefaultTextStyle(
-                                style: const TextStyle(
-                                    fontSize: 24.0,
-                                    fontWeight: FontWeight.bold,
-                                    color:Color(-285354647)
+              ListView(
+                reverse: true,
+                children: [
+                  SafeArea(
+                      child: Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                DefaultTextStyle(
+                                  style: const TextStyle(
+                                      fontSize: 24.0,
+                                      fontWeight: FontWeight.bold,
+                                      color:Color(-285354647)
+                                  ),
+                                  child: AnimatedTextKit(
+                                      totalRepeatCount: 1,
+                                      animatedTexts: [
+                                        TyperAnimatedText(
+                                            snapshot.data!.getTitle()),
+                                      ]
+                                  ),
+
                                 ),
-                                child: AnimatedTextKit(
+                                const SizedBox(height: 20,),
+                                DefaultTextStyle(
+                                  style: const TextStyle(
+                                    fontSize: 16.0,
+                                  ),
+                                  child: AnimatedTextKit(
                                     totalRepeatCount: 1,
                                     animatedTexts: [
-                                      TyperAnimatedText(
-                                          snapshot.data!.getTitle()),
-                                    ]
+                                      TypewriterAnimatedText(
+                                        snapshot.data!.getDescription(),
+                                        speed: const Duration(milliseconds: 10),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-
-                              ),
-                              const SizedBox(height: 20,),
-                              DefaultTextStyle(
-                                style: const TextStyle(
-                                  fontSize: 16.0,
-                                ),
-                                child: AnimatedTextKit(
-                                  totalRepeatCount: 1,
-                                  animatedTexts: [
-                                    TypewriterAnimatedText(
-                                      snapshot.data!.getDescription(),
-                                      speed: const Duration(milliseconds: 10),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
+                              ],
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  )
+                      )
 
+                  ),
+                ],
               ),
               SafeArea(
                   child: Container(
@@ -170,7 +173,6 @@ class _SingleHallsState extends State<SingleHalls> {
           ),
         ),
         Stack(
-
           children: [
             Container(
               decoration:  BoxDecoration(
@@ -207,17 +209,26 @@ class _SingleHallsState extends State<SingleHalls> {
                 ),
               ),
             ),
+
             SafeArea(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.network(Mixin().getImage(snapshot.data!.image)),
-                  const SizedBox(height: 10,),
-                  const Text("Сейчас играет подкаст к:", style:TextStyle(fontSize: 20, color:Colors.white, fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
-                  Text(snapshot.data!.getTitle(), style:const TextStyle(fontSize: 20, color:Colors.white, fontWeight: FontWeight.bold),textAlign: TextAlign.center),
-                  AudioPlayer(url: snapshot.data!.getAudio(),)
-                ],
+                child:  Center(
+                  child: ListView(
+                    shrinkWrap: true,
+              children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.network(Mixin().getImage(snapshot.data!.image)),
+                      const SizedBox(height: 10,),
+                      const Text("Сейчас играет подкаст к:", style:TextStyle(fontSize: 20, color:Colors.white, fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
+                      Text(snapshot.data!.getTitle(), style:const TextStyle(fontSize: 20, color:Colors.white, fontWeight: FontWeight.bold),textAlign: TextAlign.center),
+                      AudioPlayer(url: snapshot.data!.getAudio(),)
+                    ],
+                  ),
+                  ],
               ),
+                )
+
             ),
 
           ],
