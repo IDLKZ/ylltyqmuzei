@@ -117,6 +117,15 @@ class Mixin{
       }
     }
 
+    static bool isTablet(){
+      // The equivalent of the "smallestWidth" qualifier on Android.
+      final data = MediaQueryData.fromWindow(WidgetsBinding.instance!.window);
+
+// Determine if we should use mobile layout or not, 600 here is
+// a common breakpoint for a typical 7-inch tablet.
+      return data.size.shortestSide < 600 ? false :true;
+    }
+
 
 
 

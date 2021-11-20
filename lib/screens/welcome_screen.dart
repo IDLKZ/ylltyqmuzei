@@ -67,49 +67,51 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                               0, 0, 0, 0.18823529411764706),
                         ),
                         SafeArea(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Image(image:AssetImage("assets/images/logo.png"),height: 150,),
-                              SizedBox(height: 20,),
-                              const Text("Добро пожаловать,Пожалуйста выберите язык!",style: TextStyle(fontSize: 22, color: Colors.white,fontWeight: FontWeight.w600),textAlign: TextAlign.center),
-                              const Text("Қош келдіңіз, Тілді таңдаңыз!",style: TextStyle(fontSize: 22, color: Colors.white,fontWeight: FontWeight.w600),textAlign: TextAlign.center),
-                              const Text("Welcome, Please choose a language!",style: TextStyle(fontSize: 22, color: Colors.white,fontWeight: FontWeight.w600),textAlign: TextAlign.center),
-                              const SizedBox(height: 20,),
-                              Container(
-                                padding: const EdgeInsets.symmetric(
-                                      horizontal: 10, vertical: 5),
-                                  decoration: BoxDecoration(
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Image(image:AssetImage("assets/images/logo.png"),height: 150,),
+                                SizedBox(height: 20,),
+                                const Text("Добро пожаловать,Пожалуйста выберите язык!",style: TextStyle(fontSize: 22, color: Colors.white,fontWeight: FontWeight.w600),textAlign: TextAlign.center),
+                                const Text("Қош келдіңіз, Тілді таңдаңыз!",style: TextStyle(fontSize: 22, color: Colors.white,fontWeight: FontWeight.w600),textAlign: TextAlign.center),
+                                const Text("Welcome, Please choose a language!",style: TextStyle(fontSize: 22, color: Colors.white,fontWeight: FontWeight.w600),textAlign: TextAlign.center),
+                                const SizedBox(height: 20,),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                        horizontal: 10, vertical: 5),
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(10)),
+
+                                  child: DropdownButton<String>(
+
+                                    value: Get.locale!.languageCode,
+                                    icon: const Icon(Icons.language, color:  const Color(0xFF0c1e34),),
+                                    iconSize: 24,
+                                    style: const TextStyle(color:  const Color(0xFF0c1e34)),
+                                    dropdownColor: Colors.white,
+                                    underline: Container(
+                                      height: 0,
                                       color: Colors.white,
-                                      borderRadius: BorderRadius.circular(10)),
-
-                                child: DropdownButton<String>(
-
-                                  value: Get.locale!.languageCode,
-                                  icon: const Icon(Icons.language, color:  const Color(0xFF0c1e34),),
-                                  iconSize: 24,
-                                  style: const TextStyle(color:  const Color(0xFF0c1e34)),
-                                  dropdownColor: Colors.white,
-                                  underline: Container(
-                                    height: 0,
-                                    color: Colors.white,
+                                    ),
+                                    onChanged: (String? newValue) async {
+                                      String langLocale = newValue ?? "ru";
+                                      setState(() {
+                                        Get.updateLocale(Locale(langLocale));
+                                      });
+                                      Mixin.setShared("langLocale", langLocale);
+                                    },
+                                    items: languagesApp.map((value) {
+                                      return DropdownMenuItem<String>(
+                                        value: value["code"],
+                                        child: Text(value["title"] ?? "Рус"),
+                                      );
+                                    }).toList(),
                                   ),
-                                  onChanged: (String? newValue) async {
-                                    String langLocale = newValue ?? "ru";
-                                    setState(() {
-                                      Get.updateLocale(Locale(langLocale));
-                                    });
-                                    Mixin.setShared("langLocale", langLocale);
-                                  },
-                                  items: languagesApp.map((value) {
-                                    return DropdownMenuItem<String>(
-                                      value: value["code"],
-                                      child: Text(value["title"] ?? "Рус"),
-                                    );
-                                  }).toList(),
-                                ),
-                              )
-                            ],
+                                )
+                              ],
+                            ),
                           ),
                         )
                       ],

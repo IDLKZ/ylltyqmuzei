@@ -28,7 +28,7 @@ import 'package:welcome/services/myHttpClient.dart';
 void main() async {
   HttpOverrides.global = new MyHttpOverrides();
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   String currentLocale = await Mixin.getCurrentLocale();
   String currentRoute = await Mixin.getCurrentRoute();
   runApp(Start(currentLocale: currentLocale,currentRoute: currentRoute,));
