@@ -2,18 +2,30 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
 
-class GreetingsScreen extends StatelessWidget {
+class GreetingsScreen extends StatefulWidget {
   const GreetingsScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  _GreetingsScreenState createState() => _GreetingsScreenState();
+}
 
-    Timer.periodic(Duration(milliseconds: 400),(timer){
-      timer.cancel();
-      Navigator.pushNamedAndRemoveUntil(context, '/home', (Route<dynamic> route)=>false);      //your code
-    });    return Scaffold(
+class _GreetingsScreenState extends State<GreetingsScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Future.delayed(const Duration(milliseconds: 1200),
+        (){Navigator.pushNamedAndRemoveUntil(context, '/home', (Route<dynamic> route)=>false);}
+    );
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+     return Scaffold(
       body: Stack(
         children: [
           Container(
@@ -36,10 +48,9 @@ class GreetingsScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Image(image:AssetImage("assets/images/logo.png"),height: 150,),
-                  SizedBox(height: 20,),
-                   Text("greeting".tr,style: TextStyle(fontSize: 24, color: Colors.white,fontWeight: FontWeight.w600),textAlign: TextAlign.center),
-                    SizedBox(height: 20,),
-                    CircularProgressIndicator(color: Colors.white,),
+                  const SizedBox(height: 20,),
+                  Text("greeting".tr,style: const TextStyle(fontSize: 24, color: Colors.white,fontWeight: FontWeight.w600),textAlign: TextAlign.center),
+                  const SizedBox(height: 20,),
                 ],
               ),
             ),
@@ -49,3 +60,6 @@ class GreetingsScreen extends StatelessWidget {
     );
   }
 }
+
+
+

@@ -51,7 +51,7 @@ class Start extends StatelessWidget {
       initialRoute: currentRoute,
       routes: {
         '/': (context) => const WelcomeScreen(),
-        "/greeting":(context)=>const GreetingsScreen(),
+        "/greeting":(context)=> const GreetingsScreen(),
         '/home': (context) => const HomeScreen(),
         "/hall":(context)=>const SingleHalls(),
         "/tours":(context)=> Tours(),

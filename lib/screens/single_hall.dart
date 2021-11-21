@@ -66,40 +66,35 @@ class _SingleHallsState extends State<SingleHalls> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                DefaultTextStyle(
-                                  style: const TextStyle(
-                                      fontSize: 24.0,
-                                      fontWeight: FontWeight.bold,
-                                      color:Color(-285354647)
-                                  ),
-                                  child: AnimatedTextKit(
-                                      totalRepeatCount: 1,
-                                      animatedTexts: [
-                                        TyperAnimatedText(
-                                            snapshot.data!.getTitle()),
-                                      ]
-                                  ),
+                            DefaultTextStyle(
+                              style: const TextStyle(
+                                  fontSize: 24.0,
+                                  fontWeight: FontWeight.bold,
+                                  color:Color(-285354647)
+                              ),
+                              child: AnimatedTextKit(
+                                  totalRepeatCount: 1,
+                                  animatedTexts: [
+                                    TyperAnimatedText(
+                                        snapshot.data!.getTitle()),
+                                  ]
+                              ),
 
-                                ),
-                                const SizedBox(height: 20,),
-                                DefaultTextStyle(
-                                  style: const TextStyle(
-                                    fontSize: 16.0,
+                            ),
+                            const SizedBox(height: 20,),
+                            DefaultTextStyle(
+                              style: const TextStyle(
+                                fontSize: 16.0,
+                              ),
+                              child: AnimatedTextKit(
+                                totalRepeatCount: 1,
+                                animatedTexts: [
+                                  TypewriterAnimatedText(
+                                    snapshot.data!.getDescription(),
+                                    speed: const Duration(milliseconds: 10),
                                   ),
-                                  child: AnimatedTextKit(
-                                    totalRepeatCount: 1,
-                                    animatedTexts: [
-                                      TypewriterAnimatedText(
-                                        snapshot.data!.getDescription(),
-                                        speed: const Duration(milliseconds: 10),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ],
                         ),
