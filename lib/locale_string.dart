@@ -34,7 +34,8 @@ class LocaleString extends Translations {
       'address':'Address',
       'work_time':'Opening hours',
       'phone':'Phone',
-      'discovery':'Discovery'
+      'discovery':'Discovery',
+      'requisites':'Requisites'
     },
     'ru':{
       'app_title':'QAZMUSEUM',
@@ -66,7 +67,8 @@ class LocaleString extends Translations {
       'address':'Адрес',
       'work_time':'Часы работы',
       'phone':'Телефон',
-      'discovery':'Открытие'
+      'discovery':'Открытие',
+      'requisites':'Реквизиты'
 
     },
     'kz':{
@@ -99,7 +101,8 @@ class LocaleString extends Translations {
       'address':'Мекен жайы',
       'work_time':'Жұмыс уақыты',
       'phone':'Телефон',
-      'discovery':'Ашылуы'
+      'discovery':'Ашылуы',
+      'requisites':'Деректемелер'
     },
     'de':{
       'app_title':'QAZMUSEUM',
@@ -131,7 +134,8 @@ class LocaleString extends Translations {
       'address':'Anschrift',
       'work_time':'Öffnungszeit',
       'phone':'Telefon',
-      'discovery':'Entdeckung'
+      'discovery':'Entdeckung',
+      'requisites':'Angaben'
     },
     'fr':{
       'app_title':'QAZMUSEUM',
@@ -163,7 +167,8 @@ class LocaleString extends Translations {
       'address':'Adresse',
       'work_time':'Heures d\'ouverture',
       'phone':'Téléphone',
-      'discovery':'Ouverture'
+      'discovery':'Ouverture',
+      'requisites':'Mentions obligatoires'
 
     },
     'es':{
@@ -196,7 +201,8 @@ class LocaleString extends Translations {
       'address':'Dirección',
       'work_time':'Horario',
       'phone':'Teléfono',
-      'discovery':'Apertura'
+      'discovery':'Apertura',
+      'requisites':'Requisitos'
     },
     'tr':{
       'app_title':'QAZMUSEUM',
@@ -228,7 +234,8 @@ class LocaleString extends Translations {
       'address':'Adres',
       'work_time':'Çalışma saatleri',
       'phone':'Telefon',
-      'discovery':'Açılış'
+      'discovery':'Açılış',
+      'requisites':'Detayları'
     },
   };
 
