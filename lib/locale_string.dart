@@ -10,8 +10,10 @@ class LocaleString extends Translations {
       'bottom_main':'Main',
       'menu_tours':'Tours',
       'menu_qr':'QR Scanner',
+      'menu_services':'Services',
       'menu_news':'News',
       'menu_stocks':'Stocks',
+      'menu_pay':'Online Pay',
       'menu_faq':'F.A.Q',
       'menu_contacts':'Contacts',
       'menu_about':'About museum',
@@ -27,7 +29,12 @@ class LocaleString extends Translations {
       'welcome_2':"Virtual tour of the museum halls, listen to audio guides and watch video guides!",
       'welcome_3':"Virtual exhibits in 3D, news and much more!",
       "start":"Lets go!",
-      "greeting":"Welcome Back!"
+      "greeting":"Welcome Back!",
+      'contact_form':'Contact Form',
+      'address':'Address',
+      'work_time':'Opening hours',
+      'phone':'Phone',
+      'discovery':'Discovery'
     },
     'ru':{
       'app_title':'QAZMUSEUM',
@@ -35,8 +42,10 @@ class LocaleString extends Translations {
       'bottom_main':'Главная',
       'menu_tours':'Туры',
       'menu_qr':'QR сканнер',
+      'menu_services':'Услуги',
       'menu_news':'Новости',
       'menu_stocks':'Акции',
+      'menu_pay':'Онлайн оплата',
       'menu_faq':'F.A.Q',
       'menu_contacts':'Контакты',
       'menu_about':'О музее',
@@ -52,7 +61,12 @@ class LocaleString extends Translations {
       'welcome_2':"Виртуальный тур по залам музея, прослушайте аудиогиды и просматривайте видеогиды!",
       'welcome_3':"Виртуальные экспонаты в 3D, новости и многое другое!",
       "start":"Начать!",
-      "greeting":"С Возвращением!"
+      "greeting":"С Возвращением!",
+      'contact_form':'Контактная Форма',
+      'address':'Адрес',
+      'work_time':'Часы работы',
+      'phone':'Телефон',
+      'discovery':'Открытие'
 
     },
     'kz':{
@@ -61,8 +75,10 @@ class LocaleString extends Translations {
       'bottom_main':'Басты',
       'menu_tours':'Турлар',
       'menu_qr':'QR сканерлеу',
+      'menu_services':'Қызметтер',
       'menu_news':'Жаңалықтар',
       'menu_stocks':'Акциялар',
+      'menu_pay':'Онлайн төлем',
       'menu_faq':'F.A.Q',
       'menu_contacts':'Байланыс',
       'menu_about':'Музей туралы',
@@ -78,7 +94,12 @@ class LocaleString extends Translations {
       'welcome_2': "Мұражай залдары бойынша виртуалды саяхат, аудиогидтерді тыңдаңыз және бейне гидтерді қараңыз!",
       'welcome_3': "3D виртуалды экспонаттары, жаңалықтар және тағы басқалар!",
       "start": "Бастау!",
-      "greeting": "қайтарумен!"
+      "greeting": "Қайта келуіңізбен!",
+      'contact_form':'Байланыс формасы',
+      'address':'Мекен жайы',
+      'work_time':'Жұмыс уақыты',
+      'phone':'Телефон',
+      'discovery':'Ашылуы'
     },
     'de':{
       'app_title':'QAZMUSEUM',
@@ -86,8 +107,10 @@ class LocaleString extends Translations {
       'bottom_main':'Hauptsaechliche',
       'menu_tours':'Touren',
       'menu_qr':'QR Scanner',
+      'menu_services':'Service',
       'menu_news':'Die Nachrichten',
       'menu_stocks':'Aktien',
+      'menu_pay':'Online bezahlen',
       'menu_faq':'F.A.Q',
       'menu_contacts':'Kontakte',
       'menu_about':'Über das museum',
@@ -103,7 +126,12 @@ class LocaleString extends Translations {
       'welcome_2':"Eine virtuelle Tour durch die Hallen des Museums, hören Sie sich Audio-Guides an und sehen Sie sich Video-Guides an!",
       'welcome_3':"Virtuelle Exponate in 3D, Nachrichten und vieles mehr!",
       "start":"Starten!",
-      "greeting":"Willkommen zurück!"
+      "greeting":"Willkommen zurück!",
+      'contact_form':'Kontaktformular',
+      'address':'Anschrift',
+      'work_time':'Öffnungszeit',
+      'phone':'Telefon',
+      'discovery':'Entdeckung'
     },
     'fr':{
       'app_title':'QAZMUSEUM',
@@ -111,8 +139,10 @@ class LocaleString extends Translations {
       'bottom_main':'Principale',
       'menu_tours':'Visites',
       'menu_qr':'QR Scanner',
+      'menu_services':'Service',
       'menu_news':'Nouvelles',
       'menu_stocks':'Actions',
+      'menu_pay':'Paiement en ligne',
       'menu_faq':'F.A.Q',
       'menu_contacts':'Relations',
       'menu_about':'À propos du musée',
@@ -128,7 +158,12 @@ class LocaleString extends Translations {
       'welcome_2': "Visite virtuelle Des salles du musée, écoutez des audioguides et visionnez des guides vidéo!",
       'welcome_3': "Expositions Virtuelles en 3D, Actualités et plus encore!",
       "start": "Démarrer!",
-      "greeting": "Bon Retour!"
+      "greeting": "Bon Retour!",
+      'contact_form':'Formulaire de Contact',
+      'address':'Adresse',
+      'work_time':'Heures d\'ouverture',
+      'phone':'Téléphone',
+      'discovery':'Ouverture'
 
     },
     'es':{
@@ -137,8 +172,10 @@ class LocaleString extends Translations {
       'bottom_main':'Cabeza',
       'menu_tours':'Excursiones',
       'menu_qr':'QR escáner',
+      'menu_services':'Servicio',
       'menu_news':'Novedad',
       'menu_stocks':'Acciones',
+      'menu_pay':'Pago en línea',
       'menu_faq':'F.A.Q',
       'menu_contacts':'Contactos',
       'menu_about':'Acerca del museo',
@@ -154,7 +191,12 @@ class LocaleString extends Translations {
       'welcome_2': "¡Visita Virtual a las Salas del Museo, escucha audioguías y Mira guías de video!",
       'welcome_3': "¡Exhibiciones Virtuales en 3D, noticias y más!",
       "start": "Empezar!",
-      "greeting": "¡Bienvenido de Nuevo!"
+      "greeting": "¡Bienvenido de Nuevo!",
+      'contact_form':'Formulario de Contacto',
+      'address':'Dirección',
+      'work_time':'Horario',
+      'phone':'Teléfono',
+      'discovery':'Apertura'
     },
     'tr':{
       'app_title':'QAZMUSEUM',
@@ -162,8 +204,10 @@ class LocaleString extends Translations {
       'bottom_main':'Ana',
       'menu_tours':'turlar',
       'menu_qr':'QR tarayıcı',
+      'menu_services':'Hizmetler',
       'menu_news':'Haber',
       'menu_stocks':'Hisse senedi',
+      'menu_pay':'Çevrimiçi ödeme',
       'menu_faq':'F.A.Q',
       'menu_contacts':'Temaslar',
       'menu_about':'Müze hakkında',
@@ -179,7 +223,12 @@ class LocaleString extends Translations {
       'welcome_2':"Müzenin salonlarında sanal bir tur atın, sesli rehberleri dinleyin ve video rehberlerini izleyin!",
       'welcome_3':"3D sanal sergiler, haberler ve daha fazlası!",
       "start":"Başla!",
-      "greeting":"Hoş geldiniz!"
+      "greeting":"Hoş geldiniz!",
+      'contact_form':'İletişim Formu',
+      'address':'Adres',
+      'work_time':'Çalışma saatleri',
+      'phone':'Telefon',
+      'discovery':'Açılış'
     },
   };
 

@@ -10,7 +10,9 @@ import 'package:welcome/screens/greeting_screen.dart';
 import 'package:welcome/screens/home_screen.dart';
 import 'package:welcome/screens/news.dart';
 import 'package:welcome/screens/panorama_view.dart';
+import 'package:welcome/screens/payment_screen.dart';
 import 'package:welcome/screens/qr_screen.dart';
+import 'package:welcome/screens/services_screen.dart';
 import 'package:welcome/screens/showcase_model.dart';
 import 'package:welcome/screens/showcase_screen.dart';
 import 'package:welcome/screens/single_hall.dart';
@@ -64,10 +66,12 @@ class Start extends StatelessWidget {
         "/news":(context)=>const NewsScreen(),
         "/stocks":(context)=>const StockScreen(),
         "/singleNews":(context)=>SingleNews(),
-        "/showCase":(context)=>ShowcaseScreen(),
+        "/showCase":(context)=>const ShowcaseScreen(),
         '/about':(context)=>const AboutScreen(),
         '/faqs':(context)=>const FaqScreen(),
         '/qr':(context)=>const QrScreen(),
+        '/services':(context)=>const ServicesScreen(),
+        '/payment':(context)=>const PaymentScreen(),
         '/contact':(context)=> const ContactScreen()
       },
     );
