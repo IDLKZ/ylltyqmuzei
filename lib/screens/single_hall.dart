@@ -25,14 +25,20 @@ class _SingleHallsState extends State<SingleHalls> {
   CarouselController buttonCarouselController = CarouselController();
 
   Widget myCarousel(dynamic snapshot){
+
     return CarouselSlider(
       carouselController: buttonCarouselController,
       options: CarouselOptions(
+        onPageChanged: (index, reason) {
+          setState(() {
+            currentIndex = index;
+          });
+        },
           initialPage: 0,
           enableInfiniteScroll: false,
           viewportFraction: 1.0,
           enlargeCenterPage: false,
-          height: MediaQuery.of(context).size.height
+          height: MediaQuery.of(context).size.height,
         // autoPlay: false,
       ),
       items: [
