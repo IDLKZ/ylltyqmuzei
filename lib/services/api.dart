@@ -71,8 +71,8 @@ class ThirdModelsProvider{
     }
   }
 
-  Future <ModelList> getModelByShowcase(String showcase_id) async{
-    final response = await http.get(Uri.parse(Constants.apiUrl + 'showcaseThirdModel/'+ showcase_id));
+  Future <ModelList> getModelByShowcase(String showcaseId) async{
+    final response = await http.get(Uri.parse(Constants.apiUrl + 'showcaseThirdModel/'+ showcaseId));
     if(response.statusCode == 200){
       return ModelList.fromJson(jsonDecode(response.body));
     } else {
@@ -142,6 +142,23 @@ class ShowcaseProvider{
       return Showcase.fromJson(jsonDecode(response.body));
     } else {
       throw Exception('Server not connected');
+    }
+  }
+}
+
+class SendFormProvider{
+  Future <bool> sendForm(Map<String,dynamic> data) async {
+    final response = await http.post(Uri.parse(Constants.apiUrl + 'send-form',),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(data)
+    );
+
+    if(response.statusCode == 200){
+      return true;
+    } else {
+      return false;
     }
   }
 }

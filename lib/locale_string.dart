@@ -35,7 +35,18 @@ class LocaleString extends Translations {
       'work_time':'Opening hours',
       'phone':'Phone',
       'discovery':'Discovery',
-      'requisites':'Requisites'
+      'requisites':'Requisites',
+      'contact_form_name_hint':'Enter your name',
+      'contact_form_name_label':'Name *',
+      'contact_form_phone_hint':'Enter your phone number',
+      'contact_form_phone_label':'Phone *',
+      'contact_form_message_hint':'Your message',
+      'contact_form_message_label':'Message *',
+      'contact_form_button':'Send',
+      'validation_required':'This field is required',
+      'processing_data':'Processing data...',
+      'success_message':'Successfully sent',
+      'error_message':'An unknown error has occurred'
     },
     'ru':{
       'app_title':'QAZMUSEUM',
@@ -68,8 +79,18 @@ class LocaleString extends Translations {
       'work_time':'Часы работы',
       'phone':'Телефон',
       'discovery':'Открытие',
-      'requisites':'Реквизиты'
-
+      'requisites':'Реквизиты',
+      'contact_form_name_hint':'Введите Ваше имя',
+      'contact_form_name_label':'Имя *',
+      'contact_form_phone_hint':'Введите номер телефона',
+      'contact_form_phone_label':'Номер *',
+      'contact_form_message_hint':'Ваше сообщение',
+      'contact_form_message_label':'Сообщение *',
+      'contact_form_button':'Отправить',
+      'validation_required':'Это поле обязательное',
+      'processing_data':'Обработка данных...',
+      'success_message':'Успешно отправлено',
+      'error_message':'Произошла неизвестная ошибка'
     },
     'kz':{
       'app_title':'QAZMUSEUM',
@@ -102,7 +123,18 @@ class LocaleString extends Translations {
       'work_time':'Жұмыс уақыты',
       'phone':'Телефон',
       'discovery':'Ашылуы',
-      'requisites':'Деректемелер'
+      'requisites':'Деректемелер',
+      'contact_form_name_hint':'Атыңызды енгізіңіз',
+      'contact_form_name_label':'Атыңыз *',
+      'contact_form_phone_hint':'Телефон нөмірін енгізіңіз',
+      'contact_form_phone_label':'Нөмір *',
+      'contact_form_message_hint':'Сіздің хабарламаңыз',
+      'contact_form_message_label':'Хабарлама *',
+      'contact_form_button':'Жіберу',
+      'validation_required':'Бұл нысан міндетті',
+      'processing_data':'Деректерді өңдеу...',
+      'success_message':'Сәтті жіберілді',
+      'error_message':'Белгісіз қате орын алды'
     },
     'de':{
       'app_title':'QAZMUSEUM',
@@ -135,7 +167,18 @@ class LocaleString extends Translations {
       'work_time':'Öffnungszeit',
       'phone':'Telefon',
       'discovery':'Entdeckung',
-      'requisites':'Angaben'
+      'requisites':'Angaben',
+      'contact_form_name_hint':'Geben Sie Ihren Namen ein',
+      'contact_form_name_label':'Name',
+      'contact_form_phone_hint':'Telefonnummer eingeben',
+      'contact_form_phone_label':'Telefon',
+      'contact_form_message_hint':'Ihre Nachricht',
+      'contact_form_message_label':'Nachricht',
+      'contact_form_button':'Senden',
+      'validation_required':'Dieses Feld ist obligatorisch',
+      'processing_data':'Verarbeitung von Daten...',
+      'success_message':'Erfolgreich gesendet',
+      'error_message':'Ein unbekannter Fehler ist aufgetreten'
     },
     'fr':{
       'app_title':'QAZMUSEUM',
@@ -168,8 +211,18 @@ class LocaleString extends Translations {
       'work_time':'Heures d\'ouverture',
       'phone':'Téléphone',
       'discovery':'Ouverture',
-      'requisites':'Mentions obligatoires'
-
+      'requisites':'Mentions obligatoires',
+      'contact_form_name_hint':'Entrez Votre nom',
+      'contact_form_name_label':'Nom',
+      'contact_form_phone_hint':'Entrez le numéro de téléphone',
+      'contact_form_phone_label':'Téléphone',
+      'contact_form_message_hint':'Votre message',
+      'contact_form_message_label':'Message',
+      'contact_form_button':'Envoyer',
+      'validation_required':'Ce champ est obligatoire',
+      'processing_data':'Traitement des données...',
+      'success_message':'Envoyé avec succès',
+      'error_message':'Une erreur inconnue s\'est produite'
     },
     'es':{
       'app_title':'QAZMUSEUM',
@@ -202,7 +255,18 @@ class LocaleString extends Translations {
       'work_time':'Horario',
       'phone':'Teléfono',
       'discovery':'Apertura',
-      'requisites':'Requisitos'
+      'requisites':'Requisitos',
+      'contact_form_name_hint':'Escriba su nombre',
+      'contact_form_name_label':'Nombre',
+      'contact_form_phone_hint':'Introduzca el número de Teléfono',
+      'contact_form_phone_label':'Teléfono',
+      'contact_form_message_hint':'Su mensaje',
+      'contact_form_message_label':'Mensaje',
+      'contact_form_button':'Enviar',
+      'validation_required':'Este campo es obligatorio',
+      'processing_data':'Procesamiento de datos...',
+      'success_message':'Enviado con éxito',
+      'error_message':'Se produjo un error desconocido'
     },
     'tr':{
       'app_title':'QAZMUSEUM',
@@ -235,7 +299,18 @@ class LocaleString extends Translations {
       'work_time':'Çalışma saatleri',
       'phone':'Telefon',
       'discovery':'Açılış',
-      'requisites':'Detayları'
+      'requisites':'Detayları',
+      'contact_form_name_hint':'Adınızı girin',
+      'contact_form_name_label':'İsim',
+      'contact_form_phone_hint':'Telefon numarasını girin',
+      'contact_form_phone_label':'Telefon',
+      'contact_form_message_hint':'Mesajınız',
+      'contact_form_message_label':'Mesaj',
+      'contact_form_button':'Göndermek',
+      'validation_required':'Bu alan zorunludur',
+      'processing_data':'Veri işleme...',
+      'success_message':'Başarıyla gönderildi',
+      'error_message':'Bilinmeyen bir hata oluştu'
     },
   };
 
