@@ -6,6 +6,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:welcome/constants/constants.dart';
 import 'package:welcome/mixins/mixins.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -87,9 +88,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                   child: DropdownButton<String>(
 
                                     value: Get.locale!.languageCode,
-                                    icon: const Icon(Icons.language, color:  const Color(0xFF0c1e34),),
+                                    icon: const Icon(Icons.language, color:  Constants.kMainColor,),
                                     iconSize: 24,
-                                    style: const TextStyle(color:  const Color(0xFF0c1e34)),
+                                    style: const TextStyle(color: Constants.kMainColor),
                                     dropdownColor: Colors.white,
                                     underline: Container(
                                       height: 0,

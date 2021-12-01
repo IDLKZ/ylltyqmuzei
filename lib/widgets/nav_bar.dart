@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
+import 'package:welcome/constants/constants.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -41,7 +42,7 @@ class _NavBarState extends State<NavBar> {
     String? currentScreen = ModalRoute.of(context)!.settings.name as String;
     return Drawer(
       child: Container(
-        decoration: const BoxDecoration(color: Color(0xFF0c1e34)),
+        decoration: const BoxDecoration(color: Constants.kMainColor),
         child: ListView(
           children: [
             CircleAvatar(

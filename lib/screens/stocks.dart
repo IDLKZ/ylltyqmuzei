@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
+import 'package:welcome/constants/constants.dart';
 import 'package:welcome/mixins/mixins.dart';
 import 'package:welcome/models/news.dart';
 import 'package:welcome/services/api.dart';
@@ -87,7 +88,7 @@ class _StockScreenState extends State<StockScreen> {
           )
               : (loading == true ? const Center(child: CircularProgressIndicator())
               : Center(
-            child: (currentPage <= lastPage ? ElevatedButton(onPressed: (){loadMoreData();}, child: Text("load_more".tr),style: ButtonStyle(backgroundColor: MaterialStateProperty.all(const Color(0xFF0c1e34)))) : const SizedBox()),
+            child: (currentPage <= lastPage ? ElevatedButton(onPressed: (){loadMoreData();}, child: Text("load_more".tr),style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Constants.kMainColor))) : const SizedBox()),
           )
 
           );

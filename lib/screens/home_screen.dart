@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:vertical_card_pager/vertical_card_pager.dart';
+import 'package:welcome/constants/constants.dart';
 import 'package:welcome/models/halls.dart';
 import 'package:welcome/services/api.dart';
 import 'package:welcome/mixins/mixins.dart';
@@ -59,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
             text: 'QR'
         ),
         activeColor: Colors.white,
-        navBarBackgroundColor: const Color(0xFF0c1e34),
+        navBarBackgroundColor: Constants.kMainColor,
         inActiveColor: Colors.white70,
         appBarItems: [
           FABBottomAppBarItem(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:get/get.dart';
+import 'package:welcome/constants/constants.dart';
 import 'package:welcome/mixins/mixins.dart';
 
 class MyAppBar extends StatefulWidget implements PreferredSizeWidget   {
@@ -28,7 +29,7 @@ class _MyAppBarState extends State<MyAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: const Color(0xFF0c1e34),
+      backgroundColor: Constants.kMainColor,
       elevation: 0,
       title: Text('app_title'.tr,style: const TextStyle(color: Color(0xFFECC96C),fontWeight: FontWeight.w600),),
       actions: [
@@ -37,7 +38,7 @@ class _MyAppBarState extends State<MyAppBar> {
       icon: const Icon(Icons.language, color: Colors.white,),
       iconSize: 24,
       style: const TextStyle(color: Colors.white),
-      dropdownColor: Color(0xFF0c1e34),
+      dropdownColor: Constants.kMainColor,
       underline: Container(
         height: 0,
         color: Colors.transparent,

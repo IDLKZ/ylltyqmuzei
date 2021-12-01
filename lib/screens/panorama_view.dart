@@ -44,7 +44,7 @@ class PanoramaView extends StatelessWidget {
                                       },
                                           child: Icon(Icons.arrow_back),
                                       tooltip: "Предыдущий. тур",
-                                       ):SizedBox(),
+                                       ):const SizedBox(),
 
                                     snapshot.data!.nextTour != null ?
                                     FloatingActionButton(
@@ -53,9 +53,9 @@ class PanoramaView extends StatelessWidget {
                                       onPressed: (){
                                         Navigator.pushNamed(context,"/panoramaView",arguments: snapshot.data!.nextTour!.alias.toString());
                                       },
-                                      child: Icon(Icons.arrow_forward),
+                                      child: const Icon(Icons.arrow_forward),
                                       tooltip: "Сл. тур",
-                                    ):SizedBox(),
+                                    ):const SizedBox(),
 
                                   ],
                                 ),
