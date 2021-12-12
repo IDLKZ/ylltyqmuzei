@@ -39,7 +39,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   padding: const EdgeInsets.all(10.0),
                   child: Column(
                     children: [
-                      Text('requisites'.tr, style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold, fontFamily: 'Lobster'),),
+                      Text('requisites'.tr, style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold,),),
                       const SizedBox(height: 30,),
                       Table(
                         // border: TableBorder.all(),

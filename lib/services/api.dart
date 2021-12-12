@@ -3,10 +3,12 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:welcome/constants/constants.dart';
 import 'package:welcome/models/about.dart';
+import 'package:welcome/models/events.dart';
 import 'package:welcome/models/faqs.dart';
 import 'package:welcome/models/halls.dart';
 import 'package:welcome/models/models.dart';
 import 'package:welcome/models/news.dart';
+import 'package:welcome/models/services.dart';
 import 'package:welcome/models/showcases.dart';
 import 'package:welcome/models/tours.dart';
 
@@ -159,6 +161,44 @@ class SendFormProvider{
       return true;
     } else {
       return false;
+    }
+  }
+}
+
+class ServiceProvider{
+  Future <ListServices> getAllNews(int page)async{
+    final response = await http.get(Uri.parse(Constants.apiUrl + 'services?page=$page'));
+    if(response.statusCode == 200){
+      return ListServices.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Server not connected');
+    }
+  }
+  Future <Service> getSingleService(String alias)async{
+    final response = await http.get(Uri.parse(Constants.apiUrl + 'serviceSingle/'+ alias));
+    if(response.statusCode == 200){
+      return Service.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Server not connected');
+    }
+  }
+}
+
+class EventProvider{
+  Future <ListEvents> getAllEvents(int page)async{
+    final response = await http.get(Uri.parse(Constants.apiUrl + 'events?page=$page'));
+    if(response.statusCode == 200){
+      return ListEvents.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Server not connected');
+    }
+  }
+  Future <Event> getSingleEvent(String alias)async{
+    final response = await http.get(Uri.parse(Constants.apiUrl + 'singleEvent/'+ alias));
+    if(response.statusCode == 200){
+      return Event.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Server not connected');
     }
   }
 }

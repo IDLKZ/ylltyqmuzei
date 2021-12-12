@@ -5,6 +5,7 @@ import 'package:welcome/locale_string.dart';
 import 'package:welcome/mixins/mixins.dart';
 import 'package:welcome/screens/about_screen.dart';
 import 'package:welcome/screens/contact_screen.dart';
+import 'package:welcome/screens/events_screen.dart';
 import 'package:welcome/screens/faq_screen.dart';
 import 'package:welcome/screens/greeting_screen.dart';
 import 'package:welcome/screens/home_screen.dart';
@@ -15,9 +16,11 @@ import 'package:welcome/screens/qr_screen.dart';
 import 'package:welcome/screens/services_screen.dart';
 import 'package:welcome/screens/showcase_model.dart';
 import 'package:welcome/screens/showcase_screen.dart';
+import 'package:welcome/screens/single_event.dart';
 import 'package:welcome/screens/single_hall.dart';
 import 'package:welcome/screens/single_model.dart';
 import 'package:welcome/screens/single_news.dart';
+import 'package:welcome/screens/single_service.dart';
 import 'package:welcome/screens/single_tour.dart';
 import 'package:welcome/screens/stocks.dart';
 import 'package:welcome/screens/third_models.dart';
@@ -47,6 +50,9 @@ class Start extends StatelessWidget {
     // TODO: implement build
     return GetMaterialApp(
       title: 'QAZMUSEUM',
+      theme: ThemeData(
+        fontFamily: "SFPRO"
+      ),
       debugShowCheckedModeBanner: false,
       translations: LocaleString(),
       locale:Locale(currentLocale),
@@ -71,6 +77,9 @@ class Start extends StatelessWidget {
         '/faqs':(context)=>const FaqScreen(),
         '/qr':(context)=>const QrScreen(),
         '/services':(context)=>const ServicesScreen(),
+        '/singleServices':(context)=>SingleService(),
+        "/events":(context)=>const EventsScreen(),
+        "/singleEvent":(context)=>SingleEvent(),
         '/payment':(context)=>const PaymentScreen(),
         '/contact':(context)=> const ContactScreen()
       },

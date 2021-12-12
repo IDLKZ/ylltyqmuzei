@@ -46,7 +46,9 @@ class LocaleString extends Translations {
       'validation_required':'This field is required',
       'processing_data':'Processing data...',
       'success_message':'Successfully sent',
-      'error_message':'An unknown error has occurred'
+      'error_message':'An unknown error has occurred',
+      "pricing":"Information about Price",
+      "events":"Events",
     },
     'ru':{
       'app_title':'QAZMUSEUM',
@@ -90,7 +92,9 @@ class LocaleString extends Translations {
       'validation_required':'Это поле обязательное',
       'processing_data':'Обработка данных...',
       'success_message':'Успешно отправлено',
-      'error_message':'Произошла неизвестная ошибка'
+      'error_message':'Произошла неизвестная ошибка',
+      "pricing":"Информация о оплате",
+      "events":"Мероприятия",
     },
     'kz':{
       'app_title':'QAZMUSEUM',
@@ -134,7 +138,10 @@ class LocaleString extends Translations {
       'validation_required':'Бұл нысан міндетті',
       'processing_data':'Деректерді өңдеу...',
       'success_message':'Сәтті жіберілді',
-      'error_message':'Белгісіз қате орын алды'
+      'error_message':'Белгісіз қате орын алды',
+      "pricing":"Төлем туралы ақпарат",
+      "events":"Оқиға",
+
     },
     'de':{
       'app_title':'QAZMUSEUM',
@@ -178,7 +185,9 @@ class LocaleString extends Translations {
       'validation_required':'Dieses Feld ist obligatorisch',
       'processing_data':'Verarbeitung von Daten...',
       'success_message':'Erfolgreich gesendet',
-      'error_message':'Ein unbekannter Fehler ist aufgetreten'
+      'error_message':'Ein unbekannter Fehler ist aufgetreten',
+      'pricing':"Informationen zur Zahlung",
+      "events":"Veranstaltung",
     },
     'fr':{
       'app_title':'QAZMUSEUM',
@@ -222,7 +231,9 @@ class LocaleString extends Translations {
       'validation_required':'Ce champ est obligatoire',
       'processing_data':'Traitement des données...',
       'success_message':'Envoyé avec succès',
-      'error_message':'Une erreur inconnue s\'est produite'
+      'error_message':'Une erreur inconnue s\'est produite',
+      "pricing":"Informations de paiement",
+      "events":"Activité",
     },
     'es':{
       'app_title':'QAZMUSEUM',
@@ -266,7 +277,9 @@ class LocaleString extends Translations {
       'validation_required':'Este campo es obligatorio',
       'processing_data':'Procesamiento de datos...',
       'success_message':'Enviado con éxito',
-      'error_message':'Se produjo un error desconocido'
+      'error_message':'Se produjo un error desconocido',
+      "pricing":"Información de pago",
+      "events":"Medida",
     },
     'tr':{
       'app_title':'QAZMUSEUM',
@@ -310,7 +323,9 @@ class LocaleString extends Translations {
       'validation_required':'Bu alan zorunludur',
       'processing_data':'Veri işleme...',
       'success_message':'Başarıyla gönderildi',
-      'error_message':'Bilinmeyen bir hata oluştu'
+      'error_message':'Bilinmeyen bir hata oluştu',
+      "pricing":"Ödeme bilgileri",
+      "events":"Faaliyet",
     },
   };
 

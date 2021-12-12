@@ -3,23 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:welcome/constants/constants.dart';
 import 'package:welcome/mixins/mixins.dart';
-import 'package:welcome/models/services.dart';
+import 'package:welcome/models/events.dart';
 import 'package:welcome/services/api.dart';
 import 'package:welcome/widgets/my_appbar.dart';
 import 'package:welcome/widgets/nav_bar.dart';
 
-class ServicesScreen extends StatefulWidget {
-  const ServicesScreen({Key? key}) : super(key: key);
+class EventsScreen extends StatefulWidget {
+  const EventsScreen({Key? key}) : super(key: key);
 
   @override
-  _ServicesScreenState createState() => _ServicesScreenState();
+  _EventsScreenState createState() => _EventsScreenState();
 }
 
-class _ServicesScreenState extends State<ServicesScreen> {
+class _EventsScreenState extends State<EventsScreen> {
   @override
   int currentPage = 0;
   int lastPage = 1;
-  ListServices? allServices;
+  ListEvents? allEvents;
   ScrollController _scrollController = new ScrollController();
   bool loading = true;
 
@@ -29,13 +29,13 @@ class _ServicesScreenState extends State<ServicesScreen> {
         currentPage++;
         loading = true;
       });
-      ListServices rawData = await ServiceProvider().getAllNews(currentPage);
+      ListEvents rawData = await EventProvider().getAllEvents(currentPage);
       setState(() {
         if(currentPage == 1){
-          allServices = rawData;
+          allEvents = rawData;
         }
         else{
-          allServices!.listService.addAll(rawData.listService);
+          allEvents!.listEvent.addAll(rawData.listEvent);
         }
         loading = false;
         currentPage = rawData.currentPage;
@@ -67,23 +67,33 @@ class _ServicesScreenState extends State<ServicesScreen> {
   Widget _buildList() {
     return ListView.builder(
         controller: _scrollController,
-        itemCount: allServices!.listService.length + 1,
+        itemCount: allEvents!.listEvent.length + 1,
         itemBuilder: (context, index) {
-          return (index != allServices!.listService.length) ? Card(
+          return (index != allEvents!.listEvent.length) ? Card(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: ListTile(
                 onTap: (){
-                  Navigator.pushNamed(context, "/singleServices",arguments: allServices!.listService[index].alias);
+                  Navigator.pushNamed(context, "/singleEvent",arguments: allEvents!.listEvent[index].alias);
                 },
                 leading: ClipRRect(
                   borderRadius: BorderRadius.circular(10.0),
                   child: Image.network(
-                    Mixin().getImage(allServices!.listService[index].image),
+                    Mixin().getImage(allEvents!.listEvent[index].image),
                     fit: BoxFit.fill,
                   ),
                 ),
-                title: Text(Mixin().truncateText(allServices!.listService[index].getTitle(), 40)),
+                title: Text(Mixin().truncateText(allEvents!.listEvent[index].getTitle(), 40)),
+                subtitle: RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(text: allEvents!.listEvent[index].dateStart,style: TextStyle(color: Colors.black)),
+                      TextSpan(text: "-",style: TextStyle(color: Colors.black)),
+                      TextSpan(text: allEvents!.listEvent[index].dateEnd,style: TextStyle(color: Colors.black)),
+                    ]
+                  ),
+
+                ),
               ),
             ),
           )
@@ -106,9 +116,9 @@ class _ServicesScreenState extends State<ServicesScreen> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                Text("menu_services".tr, style: const TextStyle(fontSize: 30),),
+                Text("events".tr, style: const TextStyle(fontSize: 30),),
                 const SizedBox(height: 10,),
-                allServices != null ?
+                allEvents != null ?
                 Expanded(child: _buildList())
                     :const Center(child: CircularProgressIndicator(color: Colors.redAccent,),)
               ],

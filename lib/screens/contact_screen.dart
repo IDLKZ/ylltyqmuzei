@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:welcome/constants/constants.dart';
 import 'package:welcome/services/api.dart';
 import 'package:welcome/widgets/my_appbar.dart';
@@ -22,6 +24,9 @@ class _ContactScreenState extends State<ContactScreen> {
     final TextEditingController _name = TextEditingController();
     final TextEditingController _phone = TextEditingController();
     final TextEditingController _message = TextEditingController();
+    void _launchURL(String _url) async {
+      if (!await launch(_url)) throw 'Невозможно открыть ссылку по адресу $_url';
+    }
     return Scaffold(
       appBar: const MyAppBar(),
       drawer: const NavBar(),
@@ -29,7 +34,7 @@ class _ContactScreenState extends State<ContactScreen> {
         padding: const EdgeInsets.fromLTRB(30,10,30,10),
         child: ListView(
           children: [
-            Text('contact_form'.tr, style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold, fontFamily: 'Lobster'),),
+            Text('contact_form'.tr, style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold),),
             const SizedBox(height: 30,),
             Table(
               // border: TableBorder.all(),
@@ -74,6 +79,34 @@ class _ContactScreenState extends State<ContactScreen> {
                     child: Text('2014'),
                   ),
                 ]),
+              ],
+            ),
+            const SizedBox(height: 30,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                RaisedButton(
+                  onPressed: () {_launchURL("https://www.instagram.com/nationalmuseumkz/?igshid=1d5cinzib7nxs");},
+                  color: Colors.deepPurpleAccent,
+                  shape: CircleBorder(),
+                  padding: EdgeInsets.all(12),
+                  child: Icon(FontAwesomeIcons.instagram,size: 20,color: Colors.white,),
+                ),
+
+                RaisedButton(
+                  onPressed: () {_launchURL("https://www.youtube.com/channel/UCXnUh0rlbZaZMClOrhhYADQ");},
+                  color: Colors.redAccent,
+                  shape: CircleBorder(),
+                  padding: EdgeInsets.all(12),
+                  child: Icon(FontAwesomeIcons.youtube,size: 20,color: Colors.white,),
+                ),
+                RaisedButton(
+                  onPressed: () {_launchURL("https://www.facebook.com/ulttyqmuzei");},
+                  color: Colors.indigoAccent,
+                  shape: CircleBorder(),
+                  padding: EdgeInsets.all(12),
+                  child: Icon(FontAwesomeIcons.facebook,size: 20,color: Colors.white,),
+                ),
               ],
             ),
             const SizedBox(height: 30,),
@@ -172,6 +205,8 @@ class _ContactScreenState extends State<ContactScreen> {
                     },
                     child: Text('contact_form_button'.tr),
                   ),
+                  SizedBox(height: 20,),
+                  
                 ],
               ),
             ),

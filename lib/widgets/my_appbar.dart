@@ -31,7 +31,7 @@ class _MyAppBarState extends State<MyAppBar> {
     return AppBar(
       backgroundColor: Constants.kMainColor,
       elevation: 0,
-      title: Text('app_title'.tr,style: const TextStyle(color: Color(0xFFECC96C),fontWeight: FontWeight.w600),),
+      title: Text('app_title'.tr,style: const TextStyle(color: Colors.white,fontWeight: FontWeight.w600),),
       actions: [
       DropdownButton<String>(
         value: Get.locale!.languageCode,

@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 class Constants{
   static String apiUrl = "https://jitsi.idl.kz/api/";
   static String apiRes = "https://jitsi.idl.kz/uploads/";
@@ -8,6 +10,6 @@ class Constants{
 
   // static const kMainColor = Color(0xFF0c1e34);
   static const kMainColor = Color(0xFFE3AF2A);
-
+  static const myBackgroundColor = Colors.black;
 
 }

@@ -87,8 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
         bodyItems: [
           Container(
             decoration: const BoxDecoration(
-                color: Colors.white
-
+                color: Constants.myBackgroundColor,
             ),
             child: FutureBuilder<HallList>(
               future: halls,
@@ -107,7 +106,6 @@ class _HomeScreenState extends State<HomeScreen> {
 // required
                                 textStyle: const TextStyle(
                                     color: Colors.white,
-                                    fontFamily: "Lobster",
                                     fontSize: 10),
 // optional
                                 onPageChanged: (page) {

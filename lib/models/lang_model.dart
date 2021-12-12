@@ -53,6 +53,14 @@ import 'package:get/get.dart';
   get videoEs => this.videoEs;
   get videoTr => this.videoTr;
 
+  get pricingRu => null;
+  get pricingKz => null;
+  get pricingEn => null;
+  get pricingDe => null;
+  get pricingFr => null;
+  get pricingEs => null;
+  get pricingTr => null;
+
   getTitle(){
     var locale = Get.locale!.languageCode;
     noTranslation = 'no_translation'.tr;
@@ -333,6 +341,41 @@ import 'package:get/get.dart';
        break;
        case "tr" :{
          return videoTr;
+       }
+       break;
+
+     }
+   }
+
+   getPricing(){
+     var locale = Get.locale!.languageCode;
+     switch(locale){
+       case 'ru' :{
+         return pricingRu;
+       }
+       break;
+       case 'en' :{
+         return pricingEn;
+       }
+       break;
+       case "kz" :{
+         return pricingKz;
+       }
+       break;
+       case 'de' :{
+         return pricingDe;
+       }
+       break;
+       case 'fr' :{
+         return pricingFr;
+       }
+       break;
+       case "es" :{
+         return pricingEs;
+       }
+       break;
+       case "tr" :{
+         return pricingTr;
        }
        break;
 

@@ -17,6 +17,7 @@ class _NavBarState extends State<NavBar> {
     {"title": "menu_tours".tr, "icon": Icons.tour, "route": "/home"},
     {"title": "menu_qr".tr, "icon": Icons.qr_code, "route": "/qr"},
     {"title": "menu_services".tr, "icon": Icons.layers, "route": "/services"},
+    {"title": "events".tr, "icon": FontAwesomeIcons.calendarAlt, "route": "/events"},
     {"title": "menu_news".tr, "icon": FontAwesomeIcons.newspaper, "route": "/news"},
     {"title": "menu_stocks".tr, "icon": FontAwesomeIcons.calendarCheck, "route": "/stocks"},
     {"title": "menu_pay".tr, "icon": Icons.payment, "route": "/payment"},
