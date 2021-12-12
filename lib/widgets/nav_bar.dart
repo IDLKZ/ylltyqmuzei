@@ -58,35 +58,38 @@ class _NavBarState extends State<NavBar> {
                 )),
             const Divider(),
             for (var item in routeLists)
-              Container(
-                padding: const EdgeInsets.only(left: 5),
-                margin: const EdgeInsets.symmetric(vertical: 10),
-                decoration:  BoxDecoration(
-                  color: item['route'] == currentScreen ? const Color(0xFFECC96C) : Colors.white,
-                  borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(30.0),
-                      bottomLeft: Radius.circular(30.0)),
-                ),
-                child: ListTile(
-                  onTap: () {
-                    Navigator.pushNamed(context, item['route'] ?? "/home");
-                  },
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(50),
+              Padding(
+                padding: EdgeInsets.only(left: 10),
+                child: Container(
+                  padding: const EdgeInsets.only(left: 5),
+                  margin: const EdgeInsets.symmetric(vertical: 10),
+                  decoration:  BoxDecoration(
+                    color: item['route'] == currentScreen ? const Color(0xFFECC96C) : Colors.white,
+                    borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(30.0),
+                        bottomLeft: Radius.circular(30.0)),
+                  ),
+                  child: ListTile(
+                    onTap: () {
+                      Navigator.pushNamed(context, item['route'] ?? "/home");
+                    },
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(50),
+                      ),
                     ),
-                  ),
-                  leading: Icon(
-                    item['icon'],
-                    color: item['route'] == currentScreen ? Colors.white : const Color(0xFF395a7c),
-                    size: 25,
-                  ),
-                  title: Text(
-                    "${item['title']}",
-                    style:  TextStyle(
-                        color: item['route'] == currentScreen ? Colors.white : const Color(0xFF395a7c),
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold),
+                    leading: Icon(
+                      item['icon'],
+                      color: item['route'] == currentScreen ? Colors.white : const Color(0xFF395a7c),
+                      size: 25,
+                    ),
+                    title: Text(
+                      "${item['title']}",
+                      style:  TextStyle(
+                          color: item['route'] == currentScreen ? Colors.white : const Color(0xFF395a7c),
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ),
