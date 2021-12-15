@@ -49,11 +49,11 @@ class _NavBarState extends State<NavBar> {
             CircleAvatar(
                 backgroundColor: Colors.white,
                 radius: 75,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(70),
+                child: Container(
+                  padding: const EdgeInsets.all(20),
                   child: Image.asset(
                     "assets/images/logo.png",
-                    fit: BoxFit.fill,
+                    fit: BoxFit.contain,
                   ),
                 )),
             const Divider(),

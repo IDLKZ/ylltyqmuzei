@@ -74,9 +74,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                               children: [
                                 const Image(image:AssetImage("assets/images/logo.png"),height: 150,),
                                 SizedBox(height: 20,),
-                                const Text("Добро пожаловать,Пожалуйста выберите язык!",style: TextStyle(fontSize: 22, color: Colors.white,fontWeight: FontWeight.w600),textAlign: TextAlign.center),
-                                const Text("Қош келдіңіз, Тілді таңдаңыз!",style: TextStyle(fontSize: 22, color: Colors.white,fontWeight: FontWeight.w600),textAlign: TextAlign.center),
-                                const Text("Welcome, Please choose a language!",style: TextStyle(fontSize: 22, color: Colors.white,fontWeight: FontWeight.w600),textAlign: TextAlign.center),
+                                const Text("Добро пожаловать!",style: TextStyle(fontSize: 18, color: Colors.white,fontWeight: FontWeight.w600),textAlign: TextAlign.center),
+                                const Text("Пожалуйста выберите язык",style: TextStyle(fontSize: 18, color: Colors.white,fontWeight: FontWeight.w600),textAlign: TextAlign.center),
+                                const SizedBox(height: 10,),
+                                const Text("Қош келдіңіз!",style: TextStyle(fontSize: 18, color: Colors.white,fontWeight: FontWeight.w600),textAlign: TextAlign.center),
+                                const Text("Тілді таңдаңыз",style: TextStyle(fontSize: 18, color: Colors.white,fontWeight: FontWeight.w600),textAlign: TextAlign.center),
+                                const SizedBox(height: 10,),
+                                const Text("Welcome!",style: TextStyle(fontSize: 18, color: Colors.white,fontWeight: FontWeight.w600),textAlign: TextAlign.center),
+                                const Text("Please choose a language",style: TextStyle(fontSize: 18, color: Colors.white,fontWeight: FontWeight.w600),textAlign: TextAlign.center),
                                 const SizedBox(height: 20,),
                                 Container(
                                   padding: const EdgeInsets.symmetric(

@@ -87,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
         bodyItems: [
           Container(
             decoration: const BoxDecoration(
-                color: Constants.myBackgroundColor,
+                color: Colors.white,
             ),
             child: FutureBuilder<HallList>(
               future: halls,
@@ -185,7 +185,7 @@ class HallDetailCard extends StatelessWidget{
                   padding: const EdgeInsets.only(top: 8, bottom: 8),
                   child: Text(
                     hall.titleRu,
-                    style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, fontFamily: 'Pacifico'),
+                    style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                 ),
               ],
