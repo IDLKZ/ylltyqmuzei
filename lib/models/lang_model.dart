@@ -53,6 +53,16 @@ import 'package:get/get.dart';
   get videoEs => this.videoEs;
   get videoTr => this.videoTr;
 
+
+   get urlRu => this.urlRu;
+   get urlEn => this.urlEn;
+   get urlKz => this.urlKz;
+   get urlDe => this.urlDe;
+   get urlFr => this.urlFr;
+   get urlEs => this.urlEs;
+   get urlTr => this.urlTr;
+
+
   get pricingRu => null;
   get pricingKz => null;
   get pricingEn => null;
@@ -378,6 +388,63 @@ import 'package:get/get.dart';
          return pricingTr;
        }
        break;
+
+     }
+   }
+
+   getUrl(){
+     var locale = Get.locale!.languageCode;
+     noTranslation = 'no_translation'.tr;
+     switch(locale){
+       case 'ru' :{
+         return urlRu;
+       }
+       break;
+       case 'en' :{
+         return urlEn;
+       }
+       break;
+       case "kz" :{
+         return urlKz;
+       }
+       break;
+       case 'de' :{
+         if(titleDe != null){
+           return urlDe;
+         }
+         return null;
+       }
+       break;
+       case 'fr' :{
+         if(titleFr != null){
+           return urlFr;
+         }
+         else{
+           return null;
+         }
+       }
+       break;
+       case "es" :{
+         if(titleEs != null){
+           return urlEs;
+         }
+         else{
+           return null;
+         }
+       }
+       break;
+       case "tr" :{
+         if(titleTr != null){
+           return urlTr;
+         }
+         else{
+           return null;
+         }
+       }
+       break;
+       default:{
+         return urlRu;
+       }
 
      }
    }

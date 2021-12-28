@@ -10,6 +10,7 @@ import 'package:welcome/models/models.dart';
 import 'package:welcome/models/news.dart';
 import 'package:welcome/models/services.dart';
 import 'package:welcome/models/showcases.dart';
+import 'package:welcome/models/survey.dart';
 import 'package:welcome/models/tours.dart';
 
 class HallProvider {
@@ -201,4 +202,24 @@ class EventProvider{
       throw Exception('Server not connected');
     }
   }
+}
+
+class SurveyProvider{
+  Future<SurveyList> getAllSurvey() async{
+    final response = await http.get(Uri.parse(Constants.apiUrl + "surveys"));
+    if(response.statusCode == 200){
+      return SurveyList.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Server not connected');
+    }
+  }
+  Future<Survey> getSingleSurvey(String alias) async{
+    final response = await http.get(Uri.parse(Constants.apiUrl + "survey/" + alias));
+    if(response.statusCode == 200){
+      return Survey.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Server not connected');
+    }
+  }
+
 }

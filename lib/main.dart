@@ -24,6 +24,7 @@ import 'package:welcome/screens/single_news.dart';
 import 'package:welcome/screens/single_service.dart';
 import 'package:welcome/screens/single_tour.dart';
 import 'package:welcome/screens/stocks.dart';
+import 'package:welcome/screens/survey_screen.dart';
 import 'package:welcome/screens/third_models.dart';
 import 'package:welcome/screens/tours.dart';
 import 'package:welcome/screens/web_view.dart';
@@ -83,6 +84,7 @@ class Start extends StatelessWidget {
         "/singleEvent":(context)=>SingleEvent(),
         '/payment':(context)=>const PaymentScreen(),
         '/questionnaire':(context)=>const QuestionnaireScreen(),
+        '/singleSurvey':(context)=>SurveyScreen(),
         '/contact':(context)=> const ContactScreen()
       },
     );
