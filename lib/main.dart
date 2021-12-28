@@ -13,6 +13,7 @@ import 'package:welcome/screens/news.dart';
 import 'package:welcome/screens/panorama_view.dart';
 import 'package:welcome/screens/payment_screen.dart';
 import 'package:welcome/screens/qr_screen.dart';
+import 'package:welcome/screens/questionnaire_screen.dart';
 import 'package:welcome/screens/services_screen.dart';
 import 'package:welcome/screens/showcase_model.dart';
 import 'package:welcome/screens/showcase_screen.dart';
@@ -81,6 +82,7 @@ class Start extends StatelessWidget {
         "/events":(context)=>const EventsScreen(),
         "/singleEvent":(context)=>SingleEvent(),
         '/payment':(context)=>const PaymentScreen(),
+        '/questionnaire':(context)=>const QuestionnaireScreen(),
         '/contact':(context)=> const ContactScreen()
       },
     );

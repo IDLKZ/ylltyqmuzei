@@ -21,6 +21,7 @@ class _NavBarState extends State<NavBar> {
     {"title": "menu_news".tr, "icon": FontAwesomeIcons.newspaper, "route": "/news"},
     {"title": "menu_stocks".tr, "icon": FontAwesomeIcons.calendarCheck, "route": "/stocks"},
     {"title": "menu_pay".tr, "icon": Icons.payment, "route": "/payment"},
+    {"title": "menu_questionnaire".tr, "icon": Icons.quiz, "route": "/questionnaire"},
     {
       "title": "menu_faq".tr,
       "icon": FontAwesomeIcons.questionCircle,

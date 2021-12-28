@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:lottie/lottie.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 import 'package:welcome/mixins/mixins.dart';
 import 'package:welcome/models/tours.dart';
 import 'package:welcome/services/api.dart';
@@ -17,6 +18,15 @@ class Tours extends StatelessWidget {
     String alias = args.arguments as String;
     tours = TourProvider().getToursByHallId(alias);
 
+    return const Scaffold(
+      appBar: MyAppBar(),
+      body: SafeArea(
+        child: WebView(
+          initialUrl: 'https://jitsi.idl.kz/second-zal',
+          javascriptMode: JavascriptMode.unrestricted,
+        ),
+      ),
+    );
     return Scaffold(
       appBar: const MyAppBar(),
       drawer: const NavBar(),
