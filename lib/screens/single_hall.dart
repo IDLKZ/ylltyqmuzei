@@ -128,7 +128,8 @@ class _SingleHallsState extends State<SingleHalls> {
               SafeArea(
                   child: Column(
                     children: [
-                      Container(
+                      snapshot.data!.tourUrl != null
+                      ? Container(
                         alignment: const Alignment(1, 1),
                         child: Card(
                           color: Colors.black.withOpacity(0.5),
@@ -138,14 +139,15 @@ class _SingleHallsState extends State<SingleHalls> {
                               icon: const Icon(
                                 Icons.account_balance, size: 35,),
                               onPressed: () {
-                                Navigator.pushNamed(context,"/tours",arguments: snapshot.data!.id.toString());
+                                Navigator.pushNamed(context,"/tours",arguments: snapshot.data!.tourUrl.toString());
                               },
                               color: Colors.white,
                               tooltip: "Тур в 360",
                             ),
                           ),
                         ),
-                      ),
+                      )
+                      :const SizedBox(height: 1,),
                       const SizedBox(height: 20,),
                       Container(
                         alignment: const Alignment(1, 1),
@@ -280,9 +282,9 @@ class _SingleHallsState extends State<SingleHalls> {
         unselectedItemColor: Colors.white,
         elevation: 0,// transparent, you could use 0x44aaaaff to make it slightly less transparent with a blue hue.
         items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: const Icon(Icons.info,size: 50,),title: Text("info".tr)),
-          BottomNavigationBarItem(icon: const Icon(Icons.video_call,size: 50,),title: Text("video_guide".tr)),
-          BottomNavigationBarItem(icon: const Icon(Icons.headset,size: 50,),title: Text("audio_guide".tr)),
+          BottomNavigationBarItem(icon: const Icon(Icons.info,size: 50,),label: "info".tr),
+          BottomNavigationBarItem(icon: const Icon(Icons.video_call,size: 50,),label: "video_guide".tr),
+          BottomNavigationBarItem(icon: const Icon(Icons.headset,size: 50,),label: "audio_guide".tr),
         ],
       ),
     );

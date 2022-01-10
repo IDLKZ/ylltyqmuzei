@@ -25,6 +25,7 @@ class Hall extends LangModel{
   String? titleFr;
   String? titleEs;
   String? titleTr;
+  String? tourUrl;
   late String descriptionRu;
   late String descriptionEn;
   late String descriptionKz;
@@ -62,6 +63,7 @@ class Hall extends LangModel{
         this.titleFr,
         this.titleEs,
         this.titleTr,
+        this.tourUrl,
         required this.descriptionRu,
         required this.descriptionEn,
         required this.descriptionKz,
@@ -98,6 +100,7 @@ class Hall extends LangModel{
     titleFr = json['title_fr'];
     titleEs = json['title_es'];
     titleTr = json['title_tr'];
+    tourUrl = json["tour_url"];
     descriptionRu = json['description_ru'];
     descriptionEn = json['description_en'];
     descriptionKz = json['description_kz'];
@@ -136,6 +139,7 @@ class Hall extends LangModel{
     data['title_fr'] = this.titleFr;
     data['title_es'] = this.titleEs;
     data['title_tr'] = this.titleTr;
+    data["tour_url"] = this.tourUrl;
     data['description_ru'] = this.descriptionRu;
     data['description_en'] = this.descriptionEn;
     data['description_kz'] = this.descriptionKz;
