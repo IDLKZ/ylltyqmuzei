@@ -90,12 +90,12 @@ class _SingleServiceState extends State<SingleService> {
                               ),
                               const SizedBox(height: 20,),
                               Text(
-                                snapshot.data!.getDescription(),
+                                snapshot.data!.getDescription() ?? "",
                               ),
                               Divider(color: Colors.white12,height: 2,),
                               const SizedBox(height: 20,),
                               Text(
-                                snapshot.data!.getPricing(),
+                                snapshot.data!.getPricing() ?? "",
                               ),
                             ],
                           ),
