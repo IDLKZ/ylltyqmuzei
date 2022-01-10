@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
+import 'package:lottie/lottie.dart';
 import 'package:welcome/mixins/mixins.dart';
 import 'package:welcome/widgets/my_appbar.dart';
 import 'package:welcome/widgets/nav_bar.dart';
@@ -25,11 +26,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
             Expanded(
               flex: 1,
               child: Container(
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/credit_card.png')
-                  )
-                ),
+                child: Lottie.asset('assets/images/cards.json'),
               ),
             ),
             Expanded(
@@ -47,71 +44,11 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           TableRow( children: [
                             Padding(
                               padding: EdgeInsets.all(10),
-                              child: Text('Банк получатель:', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),),
+                              child: Text('Наименование:', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),),
                             ),
                             Padding(
                               padding: EdgeInsets.all(10),
-                              child: Text('АО "Евразийский Банк"'),
-                            ),
-                          ]),
-                          TableRow( children: [
-                            Padding(
-                              padding: EdgeInsets.all(10),
-                              child: Text('РНН:', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.all(10),
-                              child: Text('582100003432'),
-                            ),
-                          ]),
-                          TableRow( children: [
-                            Padding(
-                              padding: EdgeInsets.all(10),
-                              child: Text('ИИК (KZT):', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.all(10),
-                              child: Text('KZ 9894815KZT22032170'),
-                            ),
-                          ]),
-                          TableRow( children: [
-                            Padding(
-                              padding: EdgeInsets.all(10),
-                              child: Text('ИИК (USD):', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.all(10),
-                              child: Text('KZ 9894815USD22032170'),
-                            ),
-                          ]),
-                          TableRow( children: [
-                            Padding(
-                              padding: EdgeInsets.all(10),
-                              child: Text('ИИК (RUB):', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.all(10),
-                              child: Text('KZ 9894815RUB22032170'),
-                            ),
-                          ]),
-                          TableRow( children: [
-                            Padding(
-                              padding: EdgeInsets.all(10),
-                              child: Text('БИК:', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.all(10),
-                              child: Text('EURIKZKA'),
-                            ),
-                          ]),
-                          TableRow( children: [
-                            Padding(
-                              padding: EdgeInsets.all(10),
-                              child: Text('Код:', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.all(10),
-                              child: Text('16'),
+                              child: Text('РЕСПУБЛИКАНСКОЕ ГОСУДАРСТВЕННОЕ КАЗЕННОЕ ПРЕДПРИЯТИЕ "НАЦИОНАЛЬНЫЙ МУЗЕЙ РЕСПУБЛИКИ КАЗАХСТАН" МИНИСТЕРСТВА КУЛЬТУРЫ И СПОРТА РЕСПУБЛИКИ КАЗАХСТАН'),
                             ),
                           ]),
                           TableRow( children: [
@@ -121,9 +58,20 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             ),
                             Padding(
                               padding: EdgeInsets.all(10),
-                              child: Text('990240005557'),
+                              child: Text('130740011046'),
                             ),
                           ]),
+                          TableRow( children: [
+                            Padding(
+                              padding: EdgeInsets.all(10),
+                              child: Text('Адрес:', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.all(10),
+                              child: Text('Юридический адрес Г.НУР-СУЛТАН, РАЙОН АЛМАТЫ, ПРОСПЕКТ ТАУЕЛСІЗДІК, 54'),
+                            ),
+                          ]),
+
                         ],
                       ),
                     ],

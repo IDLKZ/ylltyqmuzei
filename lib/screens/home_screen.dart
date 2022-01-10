@@ -106,7 +106,9 @@ class _HomeScreenState extends State<HomeScreen> {
 // required
                                 textStyle: const TextStyle(
                                     color: Colors.white,
-                                    fontSize: 10),
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.bold
+                                ),
 // optional
                                 onPageChanged: (page) {
                                 },
