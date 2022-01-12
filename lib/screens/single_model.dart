@@ -69,7 +69,8 @@ class SingleModel extends StatelessWidget {
                             SafeArea(
                                 child: Column(
                                   children: [
-                                    Container(
+                                     snapshot.data!.wavefront != null
+                                        ?  Container(
                                       alignment: const Alignment(1, 1),
                                       child: Card(
                                         color: Colors.black.withOpacity(0.5),
@@ -87,6 +88,8 @@ class SingleModel extends StatelessWidget {
                                         ),
                                       ),
                                     )
+                                        :
+                                         const SizedBox(),
                                   ],
                                 )
                             ),

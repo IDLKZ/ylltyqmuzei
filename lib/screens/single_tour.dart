@@ -112,7 +112,7 @@ class _SingleTourState extends State<SingleTour> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(snapshot.data!.getTitle(),
+                              Text(snapshot.data!.getTitle() ?? "",
                                 style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold
@@ -129,7 +129,7 @@ class _SingleTourState extends State<SingleTour> {
                               ),
                               const SizedBox(height: 20,),
                               Text(
-                                snapshot.data!.getDescription(),
+                                snapshot.data!.getDescription() ?? "",
                               ),
                               const SizedBox(height: 20,),
                               snapshot.data!.getAudio()!= null ? Text(

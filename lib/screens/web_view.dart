@@ -16,7 +16,7 @@ class WebViewModel extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         child: Stack(
           children: [
-          alias != null ? WebView(
+          alias != "null" ? WebView(
           initialUrl: Mixin().getWebUrl(alias),
           javascriptMode: JavascriptMode.unrestricted,
           ): Text("Oops"),

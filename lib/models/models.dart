@@ -19,9 +19,7 @@ class Model extends LangModel{
   late int id;
   late String image;
   Showcase? showcase;
-  late String wavefront;
-  late String texture;
-  late String textureImage;
+  String? wavefront;
   late String alias;
   late String titleRu;
   late String titleKz;
@@ -60,9 +58,7 @@ class Model extends LangModel{
       {
         required this.id,
         required this.image,
-        required this.wavefront,
-        required this.texture,
-        required this.textureImage,
+        this.wavefront,
         required this.alias,
         required this.titleRu,
         required this.titleKz,
@@ -102,8 +98,6 @@ class Model extends LangModel{
     id = json['id'];
     image = json['image'];
     wavefront = json['wavefront'];
-    texture = json['texture'];
-    textureImage = json['texture_image'];
     alias = json['alias'];
     titleRu = json['title_ru'];
     titleKz = json['title_kz'];
@@ -144,8 +138,6 @@ class Model extends LangModel{
     data['id'] = this.id;
     data['image'] = this.image;
     data['wavefront'] = this.wavefront;
-    data['texture'] = this.texture;
-    data['texture_image'] = this.textureImage;
     data['alias'] = this.alias;
     data['title_ru'] = this.titleRu;
     data['title_kz'] = this.titleKz;
