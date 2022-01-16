@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
             activeIcon: Container(
               padding: const EdgeInsets.all(8),
               decoration:
-              const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+              const BoxDecoration(color: Colors.black, shape: BoxShape.circle),
               child: const Icon(
                 Icons.qr_code_scanner,
                 size: 50,
@@ -87,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
         bodyItems: [
           Container(
             decoration: const BoxDecoration(
-                color: Colors.white,
+                color: Color(0xfffaf5ec),
             ),
             child: FutureBuilder<HallList>(
               future: halls,

@@ -72,7 +72,7 @@ class ThirdModelWidget extends StatelessWidget {
                                               )),
                                         ),
                                         Text(
-                                          snapshot.data!.modelList[index].getTitle(),
+                                          Mixin().truncateText(snapshot.data!.modelList[index].getTitle(), 10),
                                           style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                                           textAlign: TextAlign.center,
                                         ),

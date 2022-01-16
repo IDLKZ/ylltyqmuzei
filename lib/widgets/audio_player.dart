@@ -30,10 +30,10 @@ class _AudioPlayerState extends State<AudioPlayer> {
             valueListenable: _pageManager.progressNotifier,
             builder: (_, value, __) {
               return ProgressBar(
-                timeLabelTextStyle: TextStyle(fontSize:16,color: Colors.white),
+                timeLabelTextStyle: TextStyle(fontSize:16,color: Colors.lightBlueAccent),
                 baseBarColor: Colors.grey,
                 progressBarColor: Colors.redAccent,
-                bufferedBarColor: Colors.white,
+                bufferedBarColor: Colors.lightBlueAccent,
                 thumbColor: Colors.redAccent,
                 thumbGlowColor: Colors.redAccent,
                 progress: value.current,
