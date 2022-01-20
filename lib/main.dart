@@ -51,9 +51,9 @@ class Start extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return GetMaterialApp(
-      title: 'QAZMUSEUM',
+      title: 'QazMuseum',
       theme: ThemeData(
-        fontFamily: "SFPRO"
+        fontFamily: "Philosopher"
       ),
       debugShowCheckedModeBanner: false,
       translations: LocaleString(),

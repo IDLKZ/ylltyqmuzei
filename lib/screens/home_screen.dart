@@ -32,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       extendBodyBehindAppBar: true,
       appBar: const MyAppBar(),
       drawer: const NavBar(),
@@ -60,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
             text: 'QR'
         ),
         activeColor: Colors.white,
-        navBarBackgroundColor: Constants.kMainColor,
+        navBarBackgroundColor: Constants.kHeaderColor,
         inActiveColor: Colors.white70,
         appBarItems: [
           FABBottomAppBarItem(
@@ -87,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
         bodyItems: [
           Container(
             decoration: const BoxDecoration(
-                color: Color(0xfffaf5ec),
+              color: Color(0xfffaf5ec),
             ),
             child: FutureBuilder<HallList>(
               future: halls,
@@ -96,31 +97,40 @@ class _HomeScreenState extends State<HomeScreen> {
                   if(snapshot.hasData){
 
                     return SafeArea(
-                      child: Column(
-                        children: <Widget>[
-                          Expanded(
-                            child: VerticalCardPager(
-                                titles: Mixin().getTitle(snapshot.data!.halls),
+                      child: Container(
+                        // decoration: const BoxDecoration(
+                        //   image: DecorationImage(
+                        //     image: AssetImage("assets/images/inner-bg.png"),
+                        //     fit: BoxFit.cover,
+                        //   ),
+                        // ),
+                        child: Column(
+                          children: <Widget>[
+                            Expanded(
+                              child: VerticalCardPager(
+                                  titles: Mixin().getTitle(snapshot.data!.halls),
 // required
-                                images: Mixin().getImages(snapshot.data!.halls),
+                                  images: Mixin().getImages(snapshot.data!.halls),
 // required
-                                textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 30,
-                                    fontWeight: FontWeight.bold
-                                ),
+                                  textStyle: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Philosopher'
+                                  ),
 // optional
-                                onPageChanged: (page) {
-                                },
-                                onSelectedItem: (index) {
-                                  Navigator.pushNamed(context, "/hall",arguments: snapshot.data!.halls[index].alias);
-                                },
-                                initialPage: 3,
+                                  onPageChanged: (page) {
+                                  },
+                                  onSelectedItem: (index) {
+                                    Navigator.pushNamed(context, "/hall",arguments: snapshot.data!.halls[index].alias);
+                                  },
+                                  initialPage: 3,
 // optional
-                                align: ALIGN.CENTER // optional
+                                  align: ALIGN.CENTER // optional
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     );
                   } else {

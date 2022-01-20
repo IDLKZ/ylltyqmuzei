@@ -29,16 +29,16 @@ class _MyAppBarState extends State<MyAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Constants.kMainColor,
+      backgroundColor: Constants.kHeaderColor,
       elevation: 0,
-      title: Text('app_title'.tr,style: const TextStyle(color: Colors.white,fontWeight: FontWeight.w600),),
+      title: Text('app_title'.tr,style: const TextStyle(color: Colors.white,fontWeight: FontWeight.w600, fontFamily: 'Philosopher'),),
       actions: [
       DropdownButton<String>(
         value: Get.locale!.languageCode,
       icon: const Icon(Icons.language, color: Colors.white,),
       iconSize: 24,
-      style: const TextStyle(color: Colors.white),
-      dropdownColor: Constants.kMainColor,
+      style: const TextStyle(color: Colors.white, fontFamily: 'Philosopher'),
+      dropdownColor: Constants.kHeaderColor,
       underline: Container(
         height: 0,
         color: Colors.transparent,

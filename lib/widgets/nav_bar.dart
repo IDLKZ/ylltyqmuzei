@@ -44,23 +44,41 @@ class _NavBarState extends State<NavBar> {
     String? currentScreen = ModalRoute.of(context)!.settings.name as String;
     return Drawer(
       child: Container(
-        decoration: const BoxDecoration(color: Constants.kMainColor),
+        // decoration: const BoxDecoration(color: Constants.kMainColor),
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/inner-bg.png'),
+            fit: BoxFit.fill
+          )
+        ),
         child: ListView(
           children: [
-            CircleAvatar(
-                backgroundColor: Colors.white,
-                radius: 75,
-                child: Container(
-                  padding: const EdgeInsets.all(20),
-                  child: Image.asset(
-                    "assets/images/logo.png",
-                    fit: BoxFit.contain,
-                  ),
-                )),
+            Container(
+              width: 120,
+              height: 120,
+              padding: const EdgeInsets.all(20),
+              decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0))
+              ),
+              child: Image.asset(
+                "assets/images/logo.png",
+                fit: BoxFit.contain,
+              ),
+            ),
+            // CircleAvatar(
+            //     backgroundColor: Colors.white,
+            //     radius: 75,
+            //     child: Container(
+            //       padding: const EdgeInsets.all(20),
+            //       child: Image.asset(
+            //         "assets/images/logo.png",
+            //         fit: BoxFit.contain,
+            //       ),
+            //     )),
             const Divider(),
             for (var item in routeLists)
               Padding(
-                padding: EdgeInsets.only(left: 10),
+                padding: const EdgeInsets.only(left: 10),
                 child: Container(
                   padding: const EdgeInsets.only(left: 5),
                   margin: const EdgeInsets.symmetric(vertical: 10),
@@ -89,7 +107,9 @@ class _NavBarState extends State<NavBar> {
                       style:  TextStyle(
                           color: item['route'] == currentScreen ? Colors.white : const Color(0xFF395a7c),
                           fontSize: 22,
-                          fontWeight: FontWeight.bold),
+                          fontWeight: FontWeight.bold,
+                        fontFamily: 'Philosopher'
+                      ),
                     ),
                   ),
                 ),

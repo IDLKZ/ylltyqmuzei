@@ -10,6 +10,7 @@ class Constants{
 
   // static const kMainColor = Color(0xFF0c1e34);
   static const kMainColor = Color(0xFFE3AF2A);
+  static const kHeaderColor = Color(0xff171717);
   static const myBackgroundColor = Colors.black;
 
 }

@@ -90,9 +90,9 @@ flutter:
     - assets/images/
 
   fonts:
-    - family: Pacifico
+    - family: Philosopher
       fonts:
-        - asset: assets/fonts/Pacifico-Regular.ttf
+        - asset: assets/fonts/Philosopher-Regular.ttf
     - family: Lora
       fonts:
         - asset: assets/fonts/Lora-Regular.ttf
