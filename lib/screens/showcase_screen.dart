@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:welcome/constants/constants.dart';
 import 'package:welcome/mixins/mixins.dart';
 import 'package:welcome/models/showcases.dart';
 import 'package:welcome/models/tours.dart';
@@ -141,7 +142,7 @@ class _ShowcaseState extends State<ShowcaseScreen> {
                                 ),
                               ) : SizedBox(),
                               const SizedBox(height: 20,),
-                              snapshot.data!.getAudio()!= null ? AudioPlayer(url:snapshot.data!.getAudio(),) : SizedBox(),
+                              snapshot.data!.getAudio()!= null ? AudioPlayer(url:snapshot.data!.getAudio(), progressBar: Constants.kMainColor,) : SizedBox(),
                               const SizedBox(height: 20,),
                               snapshot.data!.getVideo()!= null ? Text(
                                 "video_guide".tr,

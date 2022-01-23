@@ -97,40 +97,77 @@ class _HomeScreenState extends State<HomeScreen> {
                   if(snapshot.hasData){
 
                     return SafeArea(
-                      child: Container(
-                        // decoration: const BoxDecoration(
-                        //   image: DecorationImage(
-                        //     image: AssetImage("assets/images/inner-bg.png"),
-                        //     fit: BoxFit.cover,
-                        //   ),
-                        // ),
-                        child: Column(
-                          children: <Widget>[
-                            Expanded(
-                              child: VerticalCardPager(
-                                  titles: Mixin().getTitle(snapshot.data!.halls),
-// required
-                                  images: Mixin().getImages(snapshot.data!.halls),
-// required
-                                  textStyle: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 30,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'Philosopher'
+                      child: ListView.builder(
+                        itemCount: snapshot.data!.halls.length,
+                        itemBuilder: (BuildContext context, int index){
+                          return Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            child: InkWell(
+                              splashColor: Colors.blue.withAlpha(30),
+                              onTap: () {
+                                Navigator.pushNamed(context, "/hall",arguments: snapshot.data!.halls[index].alias);
+                              },
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    height: MediaQuery.of(context).size.height*0.25,
+                                    decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: NetworkImage(Mixin().getImage(snapshot.data!.halls[index].image)),
+                                          fit: BoxFit.cover,
+                                          // colorFilter: ColorFilter.mode(Colors.black.withOpacity(1), BlendMode.dstATop),
+                                        ),
+                                        borderRadius: BorderRadius.circular(15)
+                                    ),
                                   ),
-// optional
-                                  onPageChanged: (page) {
-                                  },
-                                  onSelectedItem: (index) {
-                                    Navigator.pushNamed(context, "/hall",arguments: snapshot.data!.halls[index].alias);
-                                  },
-                                  initialPage: 3,
-// optional
-                                  align: ALIGN.CENTER // optional
+                                  Container(
+                                    alignment: Alignment.bottomLeft,
+                                    height: MediaQuery.of(context).size.height*0.25,
+                                    width: MediaQuery.of(context).size.width,
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xFF000000).withOpacity(0.5),
+                                        borderRadius: BorderRadius.circular(15)
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: Text(snapshot.data!.halls[index].getTitle(), style: const TextStyle(fontFamily: 'Philosopher', fontSize: 24, color: Constants.kMainColor),),
+                                    ),
+                                  )
+                                ],
                               ),
                             ),
-                          ],
-                        ),
+                          );
+                        },
+//                         child: Column(
+//                           children: <Widget>[
+//                             Expanded(
+//                               child: ,
+// //                               child: VerticalCardPager(
+// //                                   titles: Mixin().getTitle(snapshot.data!.halls),
+// // // required
+// //                                   images: Mixin().getImages(snapshot.data!.halls),
+// // // required
+// //                                   textStyle: const TextStyle(
+// //                                       color: Colors.white,
+// //                                       fontSize: 30,
+// //                                       fontWeight: FontWeight.bold,
+// //                                       fontFamily: 'Philosopher'
+// //                                   ),
+// // // optional
+// //                                   onPageChanged: (page) {
+// //                                   },
+// //                                   onSelectedItem: (index) {
+// //                                     Navigator.pushNamed(context, "/hall",arguments: snapshot.data!.halls[index].alias);
+// //                                   },
+// //                                   initialPage: 3,
+// // // optional
+// //                                   align: ALIGN.CENTER // optional
+// //                               ),
+//                             ),
+//                           ],
+//                         ),
                       ),
                     );
                   } else {

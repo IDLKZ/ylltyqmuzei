@@ -2,23 +2,28 @@ import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:welcome/constants/constants.dart';
 import 'package:welcome/providers/music_manager.dart';
 
 
 
 class AudioPlayer extends StatefulWidget {
    late String? url;
-   AudioPlayer({Key? key, required this.url}) : super(key: key);
+   Color? color;
+   Color? progressBar;
+   AudioPlayer({Key? key, required this.url, this.color = Colors.transparent, this.progressBar = Colors.white}) : super(key: key);
 
   @override
   _AudioPlayerState createState(){
-    return _AudioPlayerState(url: this.url);
+    return _AudioPlayerState(url: url, color: color, progressBar: progressBar);
   }
 }
 
 class _AudioPlayerState extends State<AudioPlayer> {
    String? url;
-  _AudioPlayerState({this.url});
+   Color? color = Colors.transparent;
+   Color? progressBar = Colors.white;
+  _AudioPlayerState({this.url, this.color = Colors.transparent, this.progressBar = Colors.white});
   late final PageManager _pageManager;
   @override
   Widget build(BuildContext context) {
@@ -30,12 +35,12 @@ class _AudioPlayerState extends State<AudioPlayer> {
             valueListenable: _pageManager.progressNotifier,
             builder: (_, value, __) {
               return ProgressBar(
-                timeLabelTextStyle: TextStyle(fontSize:16,color: Colors.lightBlueAccent),
+                timeLabelTextStyle: const TextStyle(fontSize:16,color: Constants.kMainColor),
                 baseBarColor: Colors.grey,
-                progressBarColor: Colors.redAccent,
-                bufferedBarColor: Colors.lightBlueAccent,
-                thumbColor: Colors.redAccent,
-                thumbGlowColor: Colors.redAccent,
+                progressBarColor: progressBar,
+                bufferedBarColor: Constants.kMainColor,
+                thumbColor: progressBar,
+                thumbGlowColor: progressBar,
                 progress: value.current,
                 buffered: value.buffered,
                 total: value.total,
@@ -54,21 +59,38 @@ class _AudioPlayerState extends State<AudioPlayer> {
                     child: const CircularProgressIndicator(),
                   );
                 case ButtonState.paused:
-                  return CircleAvatar(
-                    radius: 40,
-                    backgroundColor: Colors.white,
-                    child: IconButton(
-                      icon: const Icon(Icons.play_arrow,color: Colors.redAccent,),
-                      iconSize: 32.0,
-                      onPressed: _pageManager.play,
+                  return GestureDetector(
+                    onTap: _pageManager.play,
+                    child: CircleAvatar(
+                      radius: 80,
+                      backgroundImage: const AssetImage('assets/images/play-btn.png'),
+                      backgroundColor: color,
+                      // child: IconButton(
+                      //   icon: const Icon(Icons.play_arrow,color: Constants.kMainColor,),
+                      //   iconSize: 44.0,
+                      //   onPressed: _pageManager.play,
+                      // ),
                     ),
                   );
                 case ButtonState.playing:
+                  return GestureDetector(
+                    onTap: _pageManager.pause,
+                    child: CircleAvatar(
+                      radius: 80,
+                      backgroundImage: const AssetImage('assets/images/pause-btn.png'),
+                      backgroundColor: color,
+                      // child: IconButton(
+                      //   icon: const Icon(Icons.play_arrow,color: Constants.kMainColor,),
+                      //   iconSize: 44.0,
+                      //   onPressed: _pageManager.play,
+                      // ),
+                    ),
+                  );
                   return CircleAvatar(
                     backgroundColor: Colors.white,
                     radius: 40,
                     child: IconButton(
-                      icon: const Icon(Icons.pause,color: Colors.blueAccent,),
+                      icon: const Icon(Icons.pause,color: Constants.kMainColor,),
                       iconSize: 32.0,
                       onPressed: _pageManager.pause,
                     ),
@@ -84,7 +106,7 @@ class _AudioPlayerState extends State<AudioPlayer> {
   @override
   void initState() {
     super.initState();
-    _pageManager = new PageManager(musicUrl: this.url);
+    _pageManager = PageManager(musicUrl: url);
   }
   @override
   void dispose() {

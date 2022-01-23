@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
+import 'package:welcome/constants/constants.dart';
 import 'package:welcome/mixins/mixins.dart';
 import 'package:welcome/models/models.dart';
 import 'package:welcome/screens/qr_screen.dart';
@@ -139,7 +140,7 @@ class SingleModel extends StatelessWidget {
                               ),
                             ) : SizedBox(),
                             const SizedBox(height: 20,),
-                            snapshot.data!.getAudio() != null ? AudioPlayer(url: snapshot.data!.getAudio(),) : SizedBox(),
+                            snapshot.data!.getAudio() != null ? AudioPlayer(url: snapshot.data!.getAudio(), color: Constants.kMainColor, progressBar: Colors.black,) : SizedBox(),
                             const SizedBox(height: 20,),
                             snapshot.data!.getVideo() != null ? Text(
                               "video_guide".tr,

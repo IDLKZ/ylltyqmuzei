@@ -24,6 +24,17 @@ class _SingleHallsState extends State<SingleHalls> {
   late int currentIndex = 0;
   CarouselController buttonCarouselController = CarouselController();
 
+  final colorizeColors = [
+    const Color(0xffE3AF2A),
+    const Color(0xff080706),
+  ];
+
+  final colorizeTextStyle = const TextStyle(
+    fontSize: 36.0,
+    fontFamily: 'Philosopher',
+  );
+
+
   Widget myCarousel(dynamic snapshot){
 
     return CarouselSlider(
@@ -81,8 +92,15 @@ class _SingleHallsState extends State<SingleHalls> {
                               child: AnimatedTextKit(
                                   totalRepeatCount: 1,
                                   animatedTexts: [
-                                    TyperAnimatedText(
-                                        snapshot.data!.getTitle()),
+                                    ColorizeAnimatedText(
+                                      snapshot.data!.getTitle(),
+                                      textStyle: colorizeTextStyle,
+                                      colors: colorizeColors,
+                                    ),
+                                    // TyperAnimatedText(
+                                    //     snapshot.data!.getTitle(),
+                                    //   textStyle: const TextStyle(fontFamily: 'Philosopher')
+                                    // ),
                                   ]
                               ),
 
@@ -95,9 +113,16 @@ class _SingleHallsState extends State<SingleHalls> {
                               child: AnimatedTextKit(
                                 totalRepeatCount: 1,
                                 animatedTexts: [
+                                  // ColorizeAnimatedText(
+                                  //   snapshot.data!.getDescription(),
+                                  //   speed: const Duration(milliseconds: 10),
+                                  //   textStyle: const TextStyle(fontFamily: 'Philosopher', fontSize: 18),
+                                  //   colors: colorizeColors,
+                                  // ),
                                   TypewriterAnimatedText(
                                     snapshot.data!.getDescription(),
                                     speed: const Duration(milliseconds: 10),
+                                    textStyle: const TextStyle(fontFamily: 'Philosopher')
                                   ),
                                 ],
                               ),
