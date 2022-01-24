@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:welcome/constants/constants.dart';
 import 'package:welcome/mixins/mixins.dart';
 import 'package:welcome/models/models.dart';
 import 'my_appbar.dart';
@@ -12,6 +13,7 @@ class ThirdModelWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xffF5F5DC),
       appBar: const MyAppBar(),
       drawer: const NavBar(),
       body: SafeArea(
@@ -26,7 +28,7 @@ class ThirdModelWidget extends StatelessWidget {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  color: Colors.white,
+                  color: const Color(0xfffff6d4),
                 ),
               ),
             ),
@@ -37,7 +39,7 @@ class ThirdModelWidget extends StatelessWidget {
                 builder: (context, snapshot) {
                   if (!snapshot.hasError) {
                     if (snapshot.hasData) {
-                      return snapshot.data!.modelList.length > 0 ?
+                      return snapshot.data!.modelList.isNotEmpty ?
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: GridView.builder(
@@ -49,40 +51,42 @@ class ThirdModelWidget extends StatelessWidget {
                                 mainAxisSpacing: 20),
                             itemCount: snapshot.data!.modelList.length,
                             itemBuilder: (BuildContext ctx, index) {
-                              return GestureDetector(
-                                onTap: (){
-                                  Navigator.pushNamed(context, '/model', arguments: snapshot.data!.modelList[index].alias);
-                                },
-                                child: Card(
-                                  elevation:7,
-                                  margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 16.0),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                      children: [
-                                        Container(
-                                          height: 120,
-                                          decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                image: NetworkImage(Mixin().getImage(snapshot.data!.modelList[index].image)),
-                                              )),
+                              return Card(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                                child: InkWell(
+                                  splashColor: Colors.blue.withAlpha(30),
+                                  onTap: () {
+                                    Navigator.pushNamed(context, "/model",arguments: snapshot.data!.modelList[index].alias);
+                                  },
+                                  child: Stack(
+                                    children: [
+                                      Container(
+                                        // height: MediaQuery.of(context).size.height*0.25,
+                                        decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                              image: NetworkImage(Mixin().getImage(snapshot.data!.modelList[index].image)),
+                                              fit: BoxFit.cover,
+                                              // colorFilter: ColorFilter.mode(Colors.black.withOpacity(1), BlendMode.dstATop),
+                                            ),
+                                            borderRadius: BorderRadius.circular(15)
                                         ),
-                                        Text(
-                                          Mixin().truncateText(snapshot.data!.modelList[index].getTitle(), 10),
-                                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-                                          textAlign: TextAlign.center,
+                                      ),
+                                      Container(
+                                        alignment: Alignment.bottomLeft,
+                                        // height: MediaQuery.of(context).size.height*0.25,
+                                        width: MediaQuery.of(context).size.width,
+                                        decoration: BoxDecoration(
+                                            color: const Color(0xFF000000).withOpacity(0.5),
+                                            borderRadius: BorderRadius.circular(15)
                                         ),
-                                        snapshot.data!.modelList[index].showcase != null ? Text(
-                                          snapshot.data!.modelList[index].showcase!.getTitle(),
-                                          style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
-                                          textAlign: TextAlign.center,
-                                        ) : SizedBox()
-                                      ],
-                                    ),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Text(snapshot.data!.modelList[index].getTitle(), style: const TextStyle(fontFamily: 'Philosopher', fontSize: 16, color: Constants.kMainColor),),
+                                        ),
+                                      )
+                                    ],
                                   ),
                                 ),
                               );
