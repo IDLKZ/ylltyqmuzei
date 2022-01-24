@@ -83,7 +83,7 @@ class _NavBarState extends State<NavBar> {
                   padding: const EdgeInsets.only(left: 5),
                   margin: const EdgeInsets.symmetric(vertical: 10),
                   decoration:  BoxDecoration(
-                    color: item['route'] == currentScreen ? const Color(0xFFECC96C) : const Color(0xffF5F5DC),
+                    color: item['route'] == currentScreen ? const Color(0xFFECC96C) : const Color(0xffF3EFE4),
                     borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(30.0),
                         bottomLeft: Radius.circular(30.0)),
@@ -99,13 +99,13 @@ class _NavBarState extends State<NavBar> {
                     ),
                     leading: Icon(
                       item['icon'],
-                      color: item['route'] == currentScreen ? const Color(0xffF5F5DC) : const Color(0xFF395a7c),
+                      color: item['route'] == currentScreen ? const Color(0xffF3EFE4) : const Color(0xFF395a7c),
                       size: 25,
                     ),
                     title: Text(
                       "${item['title']}",
                       style:  TextStyle(
-                          color: item['route'] == currentScreen ? const Color(0xffF5F5DC) : const Color(0xFF395a7c),
+                          color: item['route'] == currentScreen ? const Color(0xffF3EFE4) : const Color(0xFF395a7c),
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                         fontFamily: 'Philosopher'

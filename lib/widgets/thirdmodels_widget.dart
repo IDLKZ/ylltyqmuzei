@@ -13,7 +13,7 @@ class ThirdModelWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF5F5DC),
+      backgroundColor: const Color(0xffF3EFE4),
       appBar: const MyAppBar(),
       drawer: const NavBar(),
       body: SafeArea(
@@ -28,7 +28,7 @@ class ThirdModelWidget extends StatelessWidget {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  color: const Color(0xfffff6d4),
+                  color: const Color(0xffF3EFE4),
                 ),
               ),
             ),
@@ -83,7 +83,7 @@ class ThirdModelWidget extends StatelessWidget {
                                         ),
                                         child: Padding(
                                           padding: const EdgeInsets.all(10.0),
-                                          child: Text(snapshot.data!.modelList[index].getTitle(), style: const TextStyle(fontFamily: 'Philosopher', fontSize: 16, color: Constants.kMainColor),),
+                                          child: Text(Mixin().truncateText(snapshot.data!.modelList[index].getTitle(), 30), style: const TextStyle(fontFamily: 'Philosopher', fontSize: 16, color: Colors.white),),
                                         ),
                                       )
                                     ],
