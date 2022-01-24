@@ -47,8 +47,8 @@ class ThirdModelWidget extends StatelessWidget {
                             const SliverGridDelegateWithMaxCrossAxisExtent(
                                 maxCrossAxisExtent: 200,
                                 childAspectRatio: 3 / 4,
-                                crossAxisSpacing: 20,
-                                mainAxisSpacing: 20),
+                                crossAxisSpacing: 2,
+                                mainAxisSpacing: 2),
                             itemCount: snapshot.data!.modelList.length,
                             itemBuilder: (BuildContext ctx, index) {
                               return Card(
