@@ -3,24 +3,30 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:welcome/mixins/mixins.dart';
 import 'package:welcome/models/news.dart';
+import 'package:welcome/models/stocks.dart';
 import 'package:welcome/services/api.dart';
 
-class SingleNews extends StatefulWidget {
+class SingleStock extends StatefulWidget {
 
   @override
-  _SingleNewsState createState() => _SingleNewsState();
+  _SingleStockState createState() => _SingleStockState();
 }
 
-class _SingleNewsState extends State<SingleNews> {
-  late Future<News> news;
+class _SingleStockState extends State<SingleStock> {
+  late Future<Stocks> news;
   @override
   Widget build(BuildContext context) {
     RouteSettings args = ModalRoute.of(context)!.settings;
-    News news = args.arguments as News;
+    String alias = args.arguments as String;
+    news = NewsModelsProvider().getSingleStock(alias);
     return Scaffold(
       backgroundColor: Colors.black,
-      body: news != null
-        ? Column(
+      body: FutureBuilder<Stocks>(
+        future: news,
+        builder: (context, snapshot){
+          if(!snapshot.hasError){
+            if(snapshot.hasData){
+              return Column(
                 children: [
                   SizedBox(
                       height: MediaQuery.of(context).size.height/2,
@@ -35,7 +41,7 @@ class _SingleNewsState extends State<SingleNews> {
                                         Colors.black.withOpacity(0.7),
                                         BlendMode.dstATop),
                                     image: NetworkImage(
-                                        Mixin().getNewsImage(news.image)),
+                                        Mixin().getImage(snapshot.data!.image)),
                                     fit: BoxFit.cover
                                 ),
                               ),
@@ -76,7 +82,7 @@ class _SingleNewsState extends State<SingleNews> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(news.getTitle() ?? "",
+                              Text(snapshot.data!.getTitle() ?? "",
                                 style: const TextStyle(
                                     fontSize: 24,
                                     fontWeight: FontWeight.bold
@@ -84,15 +90,9 @@ class _SingleNewsState extends State<SingleNews> {
                                 textAlign: TextAlign.center,
                               ),
                               const SizedBox(height: 20,),
-                              Text(news.activeFrom ?? "",
-                                style: const TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold
-                                ),
-                                textAlign: TextAlign.center,
+                              Text(
+                                snapshot.data!.getDescription() ?? "",
                               ),
-                              const SizedBox(height: 20,),
-                              Mixin().getHTML(news.getDescription()),
                             ],
                           ),
                         ),
@@ -100,8 +100,19 @@ class _SingleNewsState extends State<SingleNews> {
                     ),
                   ),
                 ],
-              )
-        : Center(child: CircularProgressIndicator(),)
+              );
+            } else {
+              return const Center(
+                child: CircularProgressIndicator(color: Colors.redAccent,),
+              );
+            }
+          } else {
+            return const Center(
+              child: CircularProgressIndicator(color: Colors.redAccent,),
+            );
+          }
+        },
+      ),
     );
   }
 }

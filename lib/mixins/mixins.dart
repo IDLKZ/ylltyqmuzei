@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:welcome/constants/constants.dart';
 import 'package:get/get.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'package:html/parser.dart' as htmlparser;
+import 'package:html/dom.dart' as dom;
 class Mixin{
 
      isConnected() async {
@@ -20,6 +23,26 @@ class Mixin{
          return Constants.defaultImage;
        }
     }
+
+     String getNewsImage(String? image){
+       if(image != null){
+         return Constants.apiImageNews + image;
+       }
+       else{
+         return Constants.defaultImage;
+       }
+     }
+
+    Widget getHTML(String? description){
+
+       if(description != null){
+         return Html(data: description);
+       }
+       else{
+         return Text("");
+       }
+
+     }
 
     String getMusic(String? musicUrl){
        if(musicUrl != null){

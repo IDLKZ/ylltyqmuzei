@@ -10,6 +10,7 @@ import 'package:welcome/models/models.dart';
 import 'package:welcome/models/news.dart';
 import 'package:welcome/models/services.dart';
 import 'package:welcome/models/showcases.dart';
+import 'package:welcome/models/stocks.dart';
 import 'package:welcome/models/survey.dart';
 import 'package:welcome/models/tours.dart';
 
@@ -88,9 +89,9 @@ class NewsModelsProvider{
 
 
   Future <ListNews> getAllNews(int page)async{
-    final response = await http.get(Uri.parse(Constants.apiUrl + 'news?page=$page'));
+    final response = await http.get(Uri.parse(Constants.apiNEWS + "&page=$page"));
     if(response.statusCode == 200){
-      return ListNews.fromJson(jsonDecode(response.body));
+      return ListNews.fromJson(jsonDecode(utf8.decode(response.bodyBytes)),page);
     } else {
       throw Exception('Server not connected');
     }
@@ -104,10 +105,19 @@ class NewsModelsProvider{
     }
   }
 
-  Future <ListNews> getAllStock(int page)async{
+  Future<ListStocks> getAllStock(int page)async{
     final response = await http.get(Uri.parse(Constants.apiUrl + 'stocks?page=$page'));
     if(response.statusCode == 200){
-      return ListNews.fromJson(jsonDecode(response.body));
+      return ListStocks.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Server not connected');
+    }
+  }
+
+  Future <Stocks> getSingleStock(String alias)async{
+    final response = await http.get(Uri.parse(Constants.apiUrl + 'single-news/'+ alias));
+    if(response.statusCode == 200){
+      return Stocks.fromJson(jsonDecode(response.body));
     } else {
       throw Exception('Server not connected');
     }

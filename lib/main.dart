@@ -17,6 +17,7 @@ import 'package:welcome/screens/questionnaire_screen.dart';
 import 'package:welcome/screens/services_screen.dart';
 import 'package:welcome/screens/showcase_model.dart';
 import 'package:welcome/screens/showcase_screen.dart';
+import 'package:welcome/screens/singleStock.dart';
 import 'package:welcome/screens/single_event.dart';
 import 'package:welcome/screens/single_hall.dart';
 import 'package:welcome/screens/single_model.dart';
@@ -74,6 +75,7 @@ class Start extends StatelessWidget {
         "/news":(context)=>const NewsScreen(),
         "/stocks":(context)=>const StockScreen(),
         "/singleNews":(context)=>SingleNews(),
+        "/singleStocks":(context)=>SingleStock(),
         "/showCase":(context)=>const ShowcaseScreen(),
         '/about':(context)=>const AboutScreen(),
         '/faqs':(context)=>const FaqScreen(),

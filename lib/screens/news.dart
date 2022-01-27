@@ -72,17 +72,17 @@ class _NewsScreenState extends State<NewsScreen> {
               padding: const EdgeInsets.all(8.0),
               child: ListTile(
                 onTap: (){
-                  Navigator.pushNamed(context, "/singleNews",arguments: allNews!.listNews[index].alias);
+                  Navigator.pushNamed(context, "/singleNews",arguments: allNews!.listNews[index]);
                 },
                 leading: ClipRRect(
                   borderRadius: BorderRadius.circular(10.0),
                   child: Image.network(
-                    Mixin().getImage(allNews!.listNews[index].image),
+                    Mixin().getNewsImage(allNews!.listNews[index].image),
                     fit: BoxFit.fill,
                   ),
                 ),
-                title: Text(Mixin().truncateText(allNews!.listNews[index].getTitle(), 40)),
-                subtitle: Text(allNews!.listNews[index].createdAt),
+                title: Text(Mixin().truncateText(allNews!.listNews[index].getTitle() ?? "", 40)),
+                subtitle: Text(allNews!.listNews[index].activeFrom??""),
               ),
             ),
           )
@@ -109,7 +109,7 @@ class _NewsScreenState extends State<NewsScreen> {
               const SizedBox(height: 10,),
               allNews != null ?
               Expanded(child: _buildList())
-                  :const Center(child: CircularProgressIndicator(color: Colors.redAccent,),)
+                  :const Center(child: CircularProgressIndicator(color: Colors.blue,),)
             ],
           ),
         ),

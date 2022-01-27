@@ -3,6 +3,7 @@ import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:welcome/constants/constants.dart';
 import 'package:welcome/mixins/mixins.dart';
 import 'package:welcome/models/news.dart';
+import 'package:welcome/models/stocks.dart';
 import 'package:welcome/services/api.dart';
 import 'package:welcome/widgets/my_appbar.dart';
 import 'package:welcome/widgets/nav_bar.dart';
@@ -18,7 +19,7 @@ class StockScreen extends StatefulWidget {
 class _StockScreenState extends State<StockScreen> {
   int currentPage = 0;
   int lastPage = 1;
-  ListNews? allNews;
+  ListStocks? allNews;
   ScrollController _scrollController = new ScrollController();
   bool loading = true;
   loadMoreData() async {
@@ -27,7 +28,7 @@ class _StockScreenState extends State<StockScreen> {
         currentPage++;
         loading = true;
       });
-      ListNews rawData = await NewsModelsProvider().getAllStock(currentPage);
+      ListStocks rawData = await NewsModelsProvider().getAllStock(currentPage);
       setState(() {
         if(currentPage == 1){
           allNews= rawData;
@@ -72,7 +73,7 @@ class _StockScreenState extends State<StockScreen> {
               padding: const EdgeInsets.all(8.0),
               child: ListTile(
                 onTap: (){
-                  Navigator.pushNamed(context, "/singleNews",arguments: allNews!.listNews[index].alias);
+                  Navigator.pushNamed(context, "/singleStocks",arguments: allNews!.listNews[index].alias);
                 },
                 leading: ClipRRect(
                   borderRadius: BorderRadius.circular(10.0),

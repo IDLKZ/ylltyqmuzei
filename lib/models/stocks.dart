@@ -3,53 +3,56 @@ import 'package:welcome/models/lang_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ListNews{
-  List<News> listNews = [];
+class ListStocks{
+  List<Stocks> listNews = [];
   int currentPage = 1;
   int lastPage = 1;
 
-  ListNews({required this.listNews,required this.currentPage, required this.lastPage});
+  ListStocks({required this.currentPage,required this.lastPage,required this.listNews});
 
-  factory ListNews.fromJson(Map<String,dynamic>json,int page){
-    List<News> rawListNews = [];
+  factory ListStocks.fromJson(Map<String,dynamic>json){
+    List<Stocks> rawListNews = [];
     List<dynamic> rawData = json["data"].toList();
     for(var item in rawData){
-      rawListNews.add(News.fromJson(item));
+      rawListNews.add(Stocks.fromJson(item));
     }
-    return ListNews(
-      currentPage: page,
-      lastPage: rawData.length > 0 ? page+1 : page,
-      listNews: rawListNews
+    return ListStocks(
+        currentPage: json["current_page"],
+        lastPage: json["last_page"],
+        listNews: rawListNews
     );
   }
 
 }
 
-class News extends LangModel  {
-  late String? id;
-  late String? sort;
-  late String? image;
-  late String? titleRu;
-  late String? titleKz;
-  late String? titleEn;
+class Stocks extends LangModel  {
+  late int id;
+  late int type;
+  late String image;
+  late String alias;
+  late String titleRu;
+  late String titleKz;
+  late String titleEn;
   String? titleDe;
   String? titleFr;
   String? titleEs;
   String? titleTr;
-  late String? descriptionRu;
-  late String? descriptionEn;
-  late String? descriptionKz;
+  late String descriptionRu;
+  late String descriptionEn;
+  late String descriptionKz;
   String? descriptionDe;
   String? descriptionFr;
   String? descriptionEs;
   String? descriptionTr;
-  late String? activeFrom;
+  late String createdAt;
+  late String updatedAt;
 
-  News(
+  Stocks(
       {
         required this.id,
-        required this.sort,
+        required this.type,
         required this.image,
+        required this.alias,
         required this.titleRu,
         required this.titleKz,
         required this.titleEn,
@@ -64,13 +67,14 @@ class News extends LangModel  {
         this.descriptionFr,
         this.descriptionEs,
         this.descriptionTr,
-        required this.activeFrom,
-      });
+        required this.createdAt,
+        required this.updatedAt});
 
-  News.fromJson(Map<String, dynamic> json) {
+  Stocks.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    sort = json['sort'];
+    type = json['type'];
     image = json['image'];
+    alias = json['alias'];
     titleRu = json['title_ru'];
     titleKz = json['title_kz'];
     titleEn = json['title_en'];
@@ -85,14 +89,16 @@ class News extends LangModel  {
     descriptionFr = json['description_fr'];
     descriptionEs = json['description_es'];
     descriptionTr = json['description_tr'];
-    activeFrom = json['active_from'];
+    createdAt = json['created_at'];
+    updatedAt = json['updated_at'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
-    data['sort'] = this.sort;
+    data['type'] = this.type;
     data['image'] = this.image;
+    data['alias'] = this.alias;
     data['title_ru'] = this.titleRu;
     data['title_kz'] = this.titleKz;
     data['title_en'] = this.titleEn;
@@ -107,7 +113,8 @@ class News extends LangModel  {
     data['description_fr'] = this.descriptionFr;
     data['description_es'] = this.descriptionEs;
     data['description_tr'] = this.descriptionTr;
-    data['active_from'] = this.activeFrom;
+    data['created_at'] = this.createdAt;
+    data['updated_at'] = this.updatedAt;
     return data;
   }
 }

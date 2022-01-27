@@ -58,6 +58,7 @@ dependencies:
   vertical_card_pager:
     git:
       url: https://github.com/IDLKZ/Vertical_Card_Pager.git
+  flutter_html: ^2.2.1
 
 
 dev_dependencies:
