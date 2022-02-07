@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:welcome/constants/constants.dart';
-import 'package:welcome/services/api.dart';
-import 'package:welcome/widgets/my_appbar.dart';
-import 'package:welcome/widgets/nav_bar.dart';
+import 'package:ylltyqmuzei/constants/constants.dart';
+import 'package:ylltyqmuzei/services/api.dart';
+import 'package:ylltyqmuzei/widgets/my_appbar.dart';
+import 'package:ylltyqmuzei/widgets/nav_bar.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class ContactScreen extends StatefulWidget {

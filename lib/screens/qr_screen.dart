@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:welcome/widgets/my_appbar.dart';
-import 'package:welcome/widgets/nav_bar.dart';
-import 'package:welcome/widgets/qr.dart';
+import 'package:ylltyqmuzei/widgets/my_appbar.dart';
+import 'package:ylltyqmuzei/widgets/nav_bar.dart';
+import 'package:ylltyqmuzei/widgets/qr.dart';
 
 class QrScreen extends StatefulWidget {
   const QrScreen({Key? key}) : super(key: key);

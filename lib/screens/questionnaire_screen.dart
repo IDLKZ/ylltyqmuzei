@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'package:welcome/models/survey.dart';
-import 'package:welcome/services/api.dart';
+import 'package:ylltyqmuzei/models/survey.dart';
+import 'package:ylltyqmuzei/services/api.dart';
 import 'dart:io';
 
-import 'package:welcome/widgets/my_appbar.dart';
+import 'package:ylltyqmuzei/widgets/my_appbar.dart';
 
 class QuestionnaireScreen extends StatefulWidget {
   const QuestionnaireScreen({Key? key}) : super(key: key);

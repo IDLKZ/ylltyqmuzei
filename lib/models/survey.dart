@@ -1,5 +1,5 @@
 
-import 'package:welcome/models/lang_model.dart';
+import 'package:ylltyqmuzei/models/lang_model.dart';
 
 class SurveyList{
   List <Survey> surveyList = [];

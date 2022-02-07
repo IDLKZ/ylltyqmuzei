@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:welcome/constants/constants.dart';
-import 'package:welcome/mixins/mixins.dart';
-import 'package:welcome/models/models.dart';
+import 'package:ylltyqmuzei/constants/constants.dart';
+import 'package:ylltyqmuzei/mixins/mixins.dart';
+import 'package:ylltyqmuzei/models/models.dart';
 import 'my_appbar.dart';
 import 'nav_bar.dart';
 

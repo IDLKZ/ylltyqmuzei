@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:panorama/panorama.dart';
-import 'package:welcome/mixins/mixins.dart';
-import 'package:welcome/models/tours.dart';
-import 'package:welcome/services/api.dart';
-import 'package:welcome/widgets/audio_player.dart';
-import 'package:welcome/widgets/youtube_player.dart';
+import 'package:ylltyqmuzei/mixins/mixins.dart';
+import 'package:ylltyqmuzei/models/tours.dart';
+import 'package:ylltyqmuzei/services/api.dart';
+import 'package:ylltyqmuzei/widgets/audio_player.dart';
+import 'package:ylltyqmuzei/widgets/youtube_player.dart';
 
 class PanoramaView extends StatelessWidget {
   late Future<Tour> tour;

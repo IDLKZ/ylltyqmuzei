@@ -1,4 +1,4 @@
-name: welcome
+name: ylltyqmuzei
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -62,8 +62,10 @@ dependencies:
 
 
 dev_dependencies:
+  change_app_package_name: ^1.0.0
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.9.2"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -129,3 +131,7 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/app_icon.png"

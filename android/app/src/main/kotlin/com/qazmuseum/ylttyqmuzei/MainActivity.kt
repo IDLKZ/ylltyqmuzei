@@ -1,4 +1,4 @@
-package com.example.welcome
+package com.qazmuseum.ylttyqmuzei
 
 import io.flutter.embedding.android.FlutterActivity
 

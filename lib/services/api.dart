@@ -1,18 +1,18 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:welcome/constants/constants.dart';
-import 'package:welcome/models/about.dart';
-import 'package:welcome/models/events.dart';
-import 'package:welcome/models/faqs.dart';
-import 'package:welcome/models/halls.dart';
-import 'package:welcome/models/models.dart';
-import 'package:welcome/models/news.dart';
-import 'package:welcome/models/services.dart';
-import 'package:welcome/models/showcases.dart';
-import 'package:welcome/models/stocks.dart';
-import 'package:welcome/models/survey.dart';
-import 'package:welcome/models/tours.dart';
+import 'package:ylltyqmuzei/constants/constants.dart';
+import 'package:ylltyqmuzei/models/about.dart';
+import 'package:ylltyqmuzei/models/events.dart';
+import 'package:ylltyqmuzei/models/faqs.dart';
+import 'package:ylltyqmuzei/models/halls.dart';
+import 'package:ylltyqmuzei/models/models.dart';
+import 'package:ylltyqmuzei/models/news.dart';
+import 'package:ylltyqmuzei/models/services.dart';
+import 'package:ylltyqmuzei/models/showcases.dart';
+import 'package:ylltyqmuzei/models/stocks.dart';
+import 'package:ylltyqmuzei/models/survey.dart';
+import 'package:ylltyqmuzei/models/tours.dart';
 
 class HallProvider {
   Future<HallList> getHall() async {

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:get/get.dart';
-import 'package:welcome/constants/constants.dart';
-import 'package:welcome/mixins/mixins.dart';
+import 'package:ylltyqmuzei/constants/constants.dart';
+import 'package:ylltyqmuzei/mixins/mixins.dart';
 
 class MyAppBar extends StatefulWidget implements PreferredSizeWidget   {
   const MyAppBar({Key? key}) : super(key: key);

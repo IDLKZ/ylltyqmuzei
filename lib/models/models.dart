@@ -1,5 +1,5 @@
-import 'package:welcome/models/lang_model.dart';
-import 'package:welcome/models/showcases.dart';
+import 'package:ylltyqmuzei/models/lang_model.dart';
+import 'package:ylltyqmuzei/models/showcases.dart';
 
 class ModelList{
   late List<Model> modelList;

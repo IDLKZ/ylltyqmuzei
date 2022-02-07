@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
-import 'package:welcome/constants/constants.dart';
-import 'package:welcome/mixins/mixins.dart';
-import 'package:welcome/models/events.dart';
-import 'package:welcome/services/api.dart';
-import 'package:welcome/widgets/my_appbar.dart';
-import 'package:welcome/widgets/nav_bar.dart';
+import 'package:ylltyqmuzei/constants/constants.dart';
+import 'package:ylltyqmuzei/mixins/mixins.dart';
+import 'package:ylltyqmuzei/models/events.dart';
+import 'package:ylltyqmuzei/services/api.dart';
+import 'package:ylltyqmuzei/widgets/my_appbar.dart';
+import 'package:ylltyqmuzei/widgets/nav_bar.dart';
 
 class EventsScreen extends StatefulWidget {
   const EventsScreen({Key? key}) : super(key: key);

@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:lottie/lottie.dart';
-import 'package:welcome/mixins/mixins.dart';
-import 'package:welcome/widgets/my_appbar.dart';
-import 'package:welcome/widgets/nav_bar.dart';
+import 'package:ylltyqmuzei/mixins/mixins.dart';
+import 'package:ylltyqmuzei/widgets/my_appbar.dart';
+import 'package:ylltyqmuzei/widgets/nav_bar.dart';
 
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({Key? key}) : super(key: key);

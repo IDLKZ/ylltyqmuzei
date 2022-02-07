@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'package:welcome/models/survey.dart';
-import 'package:welcome/services/api.dart';
-import 'package:welcome/widgets/my_appbar.dart';
+import 'package:ylltyqmuzei/models/survey.dart';
+import 'package:ylltyqmuzei/services/api.dart';
+import 'package:ylltyqmuzei/widgets/my_appbar.dart';
 
 class SurveyScreen extends StatelessWidget {
   late Future<Survey> survey;

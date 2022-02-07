@@ -1,5 +1,5 @@
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
-import 'package:welcome/models/lang_model.dart';
+import 'package:ylltyqmuzei/models/lang_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

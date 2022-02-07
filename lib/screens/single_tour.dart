@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:welcome/mixins/mixins.dart';
-import 'package:welcome/models/tours.dart';
-import 'package:welcome/services/api.dart';
-import 'package:welcome/widgets/audio_player.dart';
-import 'package:welcome/widgets/my_appbar.dart';
-import 'package:welcome/widgets/nav_bar.dart';
-import 'package:welcome/widgets/youtube_player.dart';
+import 'package:ylltyqmuzei/mixins/mixins.dart';
+import 'package:ylltyqmuzei/models/tours.dart';
+import 'package:ylltyqmuzei/services/api.dart';
+import 'package:ylltyqmuzei/widgets/audio_player.dart';
+import 'package:ylltyqmuzei/widgets/my_appbar.dart';
+import 'package:ylltyqmuzei/widgets/nav_bar.dart';
+import 'package:ylltyqmuzei/widgets/youtube_player.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
 
 class SingleTour extends StatefulWidget {

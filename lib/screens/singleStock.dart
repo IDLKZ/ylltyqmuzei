@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:welcome/mixins/mixins.dart';
-import 'package:welcome/models/news.dart';
-import 'package:welcome/models/stocks.dart';
-import 'package:welcome/services/api.dart';
+import 'package:ylltyqmuzei/mixins/mixins.dart';
+import 'package:ylltyqmuzei/models/news.dart';
+import 'package:ylltyqmuzei/models/stocks.dart';
+import 'package:ylltyqmuzei/services/api.dart';
 
 class SingleStock extends StatefulWidget {
 

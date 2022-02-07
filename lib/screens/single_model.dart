@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
-import 'package:welcome/constants/constants.dart';
-import 'package:welcome/mixins/mixins.dart';
-import 'package:welcome/models/models.dart';
-import 'package:welcome/screens/qr_screen.dart';
-import 'package:welcome/services/api.dart';
-import 'package:welcome/widgets/audio_player.dart';
-import 'package:welcome/widgets/youtube_player.dart';
+import 'package:ylltyqmuzei/constants/constants.dart';
+import 'package:ylltyqmuzei/mixins/mixins.dart';
+import 'package:ylltyqmuzei/models/models.dart';
+import 'package:ylltyqmuzei/screens/qr_screen.dart';
+import 'package:ylltyqmuzei/services/api.dart';
+import 'package:ylltyqmuzei/widgets/audio_player.dart';
+import 'package:ylltyqmuzei/widgets/youtube_player.dart';
 import 'package:lottie/lottie.dart';
 
 class SingleModel extends StatelessWidget {

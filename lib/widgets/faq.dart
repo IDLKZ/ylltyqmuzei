@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:welcome/models/faqs.dart';
-import 'package:welcome/services/api.dart';
+import 'package:ylltyqmuzei/models/faqs.dart';
+import 'package:ylltyqmuzei/services/api.dart';
 
 class FaqWidget extends StatefulWidget {
   const FaqWidget({Key? key}) : super(key: key);

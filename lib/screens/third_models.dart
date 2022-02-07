@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'package:welcome/mixins/mixins.dart';
-import 'package:welcome/models/models.dart';
-import 'package:welcome/services/api.dart';
-import 'package:welcome/widgets/my_appbar.dart';
-import 'package:welcome/widgets/nav_bar.dart';
-import 'package:welcome/widgets/thirdmodels_widget.dart';
+import 'package:ylltyqmuzei/mixins/mixins.dart';
+import 'package:ylltyqmuzei/models/models.dart';
+import 'package:ylltyqmuzei/services/api.dart';
+import 'package:ylltyqmuzei/widgets/my_appbar.dart';
+import 'package:ylltyqmuzei/widgets/nav_bar.dart';
+import 'package:ylltyqmuzei/widgets/thirdmodels_widget.dart';
 
 class ThirdModels extends StatefulWidget {
   const ThirdModels({Key? key}) : super(key: key);

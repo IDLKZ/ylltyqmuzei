@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'package:welcome/mixins/mixins.dart';
+import 'package:ylltyqmuzei/mixins/mixins.dart';
 
 class WebViewModel extends StatelessWidget {
   const WebViewModel({Key? key}) : super(key: key);

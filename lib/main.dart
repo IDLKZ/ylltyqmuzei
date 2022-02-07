@@ -1,37 +1,38 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:welcome/locale_string.dart';
-import 'package:welcome/mixins/mixins.dart';
-import 'package:welcome/screens/about_screen.dart';
-import 'package:welcome/screens/contact_screen.dart';
-import 'package:welcome/screens/events_screen.dart';
-import 'package:welcome/screens/faq_screen.dart';
-import 'package:welcome/screens/greeting_screen.dart';
-import 'package:welcome/screens/home_screen.dart';
-import 'package:welcome/screens/news.dart';
-import 'package:welcome/screens/panorama_view.dart';
-import 'package:welcome/screens/payment_screen.dart';
-import 'package:welcome/screens/qr_screen.dart';
-import 'package:welcome/screens/questionnaire_screen.dart';
-import 'package:welcome/screens/services_screen.dart';
-import 'package:welcome/screens/showcase_model.dart';
-import 'package:welcome/screens/showcase_screen.dart';
-import 'package:welcome/screens/singleStock.dart';
-import 'package:welcome/screens/single_event.dart';
-import 'package:welcome/screens/single_hall.dart';
-import 'package:welcome/screens/single_model.dart';
-import 'package:welcome/screens/single_news.dart';
-import 'package:welcome/screens/single_service.dart';
-import 'package:welcome/screens/single_tour.dart';
-import 'package:welcome/screens/stocks.dart';
-import 'package:welcome/screens/survey_screen.dart';
-import 'package:welcome/screens/third_models.dart';
-import 'package:welcome/screens/tours.dart';
-import 'package:welcome/screens/web_view.dart';
-import 'package:welcome/screens/welcome_screen.dart';
 import 'package:get/get.dart';
-import 'package:welcome/services/myHttpClient.dart';
+import 'package:ylltyqmuzei/screens/about_screen.dart';
+import 'package:ylltyqmuzei/screens/contact_screen.dart';
+import 'package:ylltyqmuzei/screens/events_screen.dart';
+import 'package:ylltyqmuzei/screens/faq_screen.dart';
+import 'package:ylltyqmuzei/screens/greeting_screen.dart';
+import 'package:ylltyqmuzei/screens/home_screen.dart';
+import 'package:ylltyqmuzei/screens/news.dart';
+import 'package:ylltyqmuzei/screens/panorama_view.dart';
+import 'package:ylltyqmuzei/screens/payment_screen.dart';
+import 'package:ylltyqmuzei/screens/qr_screen.dart';
+import 'package:ylltyqmuzei/screens/questionnaire_screen.dart';
+import 'package:ylltyqmuzei/screens/services_screen.dart';
+import 'package:ylltyqmuzei/screens/showcase_model.dart';
+import 'package:ylltyqmuzei/screens/showcase_screen.dart';
+import 'package:ylltyqmuzei/screens/singleStock.dart';
+import 'package:ylltyqmuzei/screens/single_event.dart';
+import 'package:ylltyqmuzei/screens/single_hall.dart';
+import 'package:ylltyqmuzei/screens/single_model.dart';
+import 'package:ylltyqmuzei/screens/single_news.dart';
+import 'package:ylltyqmuzei/screens/single_service.dart';
+import 'package:ylltyqmuzei/screens/single_tour.dart';
+import 'package:ylltyqmuzei/screens/stocks.dart';
+import 'package:ylltyqmuzei/screens/survey_screen.dart';
+import 'package:ylltyqmuzei/screens/third_models.dart';
+import 'package:ylltyqmuzei/screens/tours.dart';
+import 'package:ylltyqmuzei/screens/web_view.dart';
+import 'package:ylltyqmuzei/screens/welcome_screen.dart';
+import 'package:ylltyqmuzei/services/myHttpClient.dart';
+
+import 'locale_string.dart';
+import 'mixins/mixins.dart';
 
 void main() async {
   HttpOverrides.global = new MyHttpOverrides();
@@ -45,7 +46,7 @@ void main() async {
 class Start extends StatelessWidget {
     late String currentLocale;
     late String currentRoute;
-    Start({required this.currentLocale, required this.currentRoute});
+    Start({Key? key, required this.currentLocale, required this.currentRoute}) : super(key: key);
 
 
   @override

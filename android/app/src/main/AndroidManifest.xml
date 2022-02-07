@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.welcome">
+    package="com.qazmuseum.ylttyqmuzei">
     <uses-permission android:name="android.permission.INTERNET" />
     <queries>
         <!-- If your app opens https URLs -->
@@ -24,8 +24,10 @@
         </intent>
     </queries>
     <application
-        android:label="museum"
-        android:icon="@mipmap/ic_launcher">
+        android:label="Ylttyq Muzei"
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true"
+        >
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

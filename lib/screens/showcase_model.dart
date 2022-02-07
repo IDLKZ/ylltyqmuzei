@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:welcome/models/models.dart';
-import 'package:welcome/services/api.dart';
-import 'package:welcome/widgets/thirdmodels_widget.dart';
+import 'package:ylltyqmuzei/models/models.dart';
+import 'package:ylltyqmuzei/services/api.dart';
+import 'package:ylltyqmuzei/widgets/thirdmodels_widget.dart';
 
 class ShowcaseModels extends StatefulWidget {
   const ShowcaseModels({Key? key}) : super(key: key);
