@@ -5,7 +5,7 @@ class LocaleString extends Translations {
   // TODO: implement keys
   Map<String, Map<String, String>> get keys => {
     'en':{
-      'app_title':'QAZMUSEUM',
+      'app_title':'Ūlttyq Muzei',
       "no_translation":"No translation",
       'bottom_main':'Main',
       'menu_tours':'Tours',
@@ -52,7 +52,7 @@ class LocaleString extends Translations {
       "events":"Events",
     },
     'ru':{
-      'app_title':'QAZMUSEUM',
+      'app_title':'Ūlttyq Muzei',
       "no_translation":"Нет перевода",
       'bottom_main':'Главная',
       'menu_tours':'Туры',
@@ -99,7 +99,7 @@ class LocaleString extends Translations {
       "events":"Мероприятия",
     },
     'kz':{
-      'app_title':'QAZMUSEUM',
+      'app_title':'Ūlttyq Muzei',
       "no_translation":"Аудармасы жоқ",
       'bottom_main':'Басты',
       'menu_tours':'Турлар',
@@ -147,7 +147,7 @@ class LocaleString extends Translations {
 
     },
     'de':{
-      'app_title':'QAZMUSEUM',
+      'app_title':'Ūlttyq Muzei',
       "no_translation":"Keine Übersetzung",
       'bottom_main':'Hauptsaechliche',
       'menu_tours':'Touren',
@@ -194,7 +194,7 @@ class LocaleString extends Translations {
       "events":"Veranstaltung",
     },
     'fr':{
-      'app_title':'QAZMUSEUM',
+      'app_title':'Ūlttyq Muzei',
       "no_translation":"Pas de traduction",
       'bottom_main':'Principale',
       'menu_tours':'Visites',
@@ -241,7 +241,7 @@ class LocaleString extends Translations {
       "events":"Activité",
     },
     'es':{
-      'app_title':'QAZMUSEUM',
+      'app_title':'Ūlttyq Muzei',
       "no_translation":"Sin traducción",
       'bottom_main':'Cabeza',
       'menu_tours':'Excursiones',
@@ -288,7 +288,7 @@ class LocaleString extends Translations {
       "events":"Medida",
     },
     'tr':{
-      'app_title':'QAZMUSEUM',
+      'app_title':'Ūlttyq Muzei',
       "no_translation":"çeviri yok",
       'bottom_main':'Ana',
       'menu_tours':'turlar',
